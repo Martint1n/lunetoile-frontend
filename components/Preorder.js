@@ -3,14 +3,15 @@ import { useEffect, useState } from 'react';
 
 const PreorderForm = () => {
   const router = useRouter();
+
   const [inputValues, setInputValues] = useState({ 
-    inputValue1: '', 
-    inputValue2: '',
-    inputValue3: '',
-    inputValue4: '',
-    inputValue5: '',
-    inputValue6: '',
-    inputValue7: '',
+    lastName: '', 
+    firstName: '',
+    email: '',
+    address: '',
+    zipCode: '',
+    country: '',
+    quantity: '',
   }); 
 
   const handleInputChange = (e) => {
@@ -24,12 +25,20 @@ const PreorderForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const { artist } = router.query;
+    console.log('Artist:', artist);
+
+    // Préparer les données à envoyer au backend
+    const data = { artist, ...inputValues };
+    console.log('Data:', data);
+
+    console.log(inputValues)
+    console.log(artist)
+    console.log('data :', data)
+
     // Ici, vous pouvez récupérer ou générer dynamiquement le paramètre
 
-    const { param } = router.query
-    const data = { param, inputValues };
-
-    fetch('/your-backend-endpoint', {
+    fetch(`http://localhost:3000/preorder/${artist}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -51,77 +60,77 @@ const PreorderForm = () => {
       <form onSubmit={handleSubmit}>
             <div className='h-[50vh] flex flex-col justify-around items-center'>
         <div>
-          <label htmlFor='inputValue1'>Nom</label>
+          <label htmlFor='lastName'>Nom</label>
           <input 
             type='text' 
-            name='inputValue1'
-            value={inputValues.inputValue1} 
+            name='lastName'
+            value={inputValues.lastName} 
             onChange={handleInputChange} 
-            placeholder='Input 1'
+            placeholder='nom'
             className='border-2 border-black'
           />
         </div>
         <div>
-          <label htmlFor='inputValue2'>Prénom</label>
+          <label htmlFor='firstName'>Prénom</label>
           <input 
             type='text' 
-            name='inputValue2'
-            value={inputValues.inputValue2} 
+            name='firstName'
+            value={inputValues.firstName} 
             onChange={handleInputChange} 
-            placeholder='Input 2' 
+            placeholder='prénom' 
             className='border-2 border-black'
           />
         </div>
         <div>
-          <label htmlFor='inputValue3'>Adresse mail</label>
+          <label htmlFor='email'>Adresse mail</label>
           <input 
             type='text'
-            name='inputValue3' 
-            value={inputValues.inputValue3} 
+            name='email' 
+            value={inputValues.email} 
             onChange={handleInputChange} 
             placeholder='dupont@gmail.com'
             className='border-2 border-black'
           />
         </div>
         <div>
-          <label htmlFor='inputValue4'>Adresse</label>
+          <label htmlFor='address'>Adresse</label>
           <input 
             type='text'
-            name='inputValue4' 
-            value={inputValues.inputValue4} 
+            name='address' 
+            value={inputValues.address} 
             onChange={handleInputChange} 
             placeholder='1 rue du moulin vert'
             className='border-2 border-black'
           />
         </div>
         <div>
-          <label htmlFor='inputValue5'>Code postal</label>
+          <label htmlFor='zipCode'>Code postal</label>
           <input 
             type='number'
-            name='inputValue5' 
-            value={inputValues.inputValue5} 
+            name='zipCode' 
+            value={inputValues.zipCode} 
             onChange={handleInputChange} 
             placeholder='75000'
             className='border-2 border-black'
           />
         </div>
         <div>
-          <label htmlFor='inputValue6'>Pays</label>
+          <label htmlFor='country'>Pays</label>
           <input 
             type='text'
-            name='inputValue6' 
-            value={inputValues.inputValue6} 
+            name='country' 
+            value={inputValues.country} 
             onChange={handleInputChange} 
             placeholder='France'
             className='border-2 border-black'
           />
         </div>
         <div>
-          <label htmlFor='inputValue7'>Quantité</label>
+          <label htmlFor='quantity'>Quantité</label>
           <input 
             type='number'
-            name='inputValue7' 
-            value={inputValues.inputValue7} 
+            name='quantity' 
+            value={inputValues.quantity} 
             onChange={handleInputChange} 
             placeholder='1'
             className='border-2 border-black'
