@@ -9,6 +9,12 @@ function App({ Component, pageProps }) {
       </Head>
       <Component {...pageProps} />
     </>
+  //   <Router>
+  //   <Switch>
+  //     <Route exact path="/" component={Home} />
+  //     <Route path="/preorder" component={Preorder} /> {/* Route pour votre nouvelle page */}
+  //   </Switch>
+  // </Router>
   );
 }
 
