@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import Stripe from './Stripe'
 
 const PreorderForm = () => {
   const router = useRouter();

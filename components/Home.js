@@ -1,6 +1,7 @@
 import styles from '../styles/Home.module.css';
 import PreOrderButton from './PreOrderButton';
 import Artist from './Artist';
+import Stripe from '../components/Stripe'
 
 
 
@@ -142,6 +143,7 @@ function Home() {
           Confidentialité
         </p>
       </footer>
+      <Stripe />
     </div>
   );
 };
