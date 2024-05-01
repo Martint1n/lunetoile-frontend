@@ -2,9 +2,13 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Stripe from './Stripe';
 import Header from './Header';
+import { useDispatch } from 'react-redux';
+import { addPreorderInfoToStore } from '../reducers/preorderInfos';
+
 
 const PreorderForm = () => {
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const [inputValues, setInputValues] = useState({ 
     lastName: '', 
@@ -40,21 +44,23 @@ const PreorderForm = () => {
 
     // Ici, vous pouvez récupérer ou générer dynamiquement le paramètre
 
-    fetch(`http://localhost:3000/preorder/${artist}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error('Error submitting data');
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
+    dispatch(addPreorderInfoToStore(data))
+
+    // fetch(`http://localhost:3000/preorder/${artist}`, {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(data),
+    // })
+    // .then((response) => {
+    //   if (!response.ok) {
+    //     throw new Error('Error submitting data');
+    //   }
+    // })
+    // .catch(error => {
+    //   console.error('Error:', error);
+    // });
   };
 
 //https://tailwindui.com/components/application-ui/forms/form-layouts
@@ -146,6 +152,8 @@ const PreorderForm = () => {
             />
           </div>
           <button type='submit'>Soumettre</button>
+          <button onClick={handleSubmit} >test</button>
+          <Stripe onClick={handleSubmit}/>
         </div>
       </form>
       </div>

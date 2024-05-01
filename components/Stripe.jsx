@@ -16,7 +16,7 @@ export default function Stripe() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ 
             product: 'card',
-            price: 29.99 
+            price: 29.99,
         })
     
     })

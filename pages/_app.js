@@ -1,22 +1,36 @@
 import '../styles/globals.css';
 import Head from 'next/head';
 
+import { Provider } from 'react-redux';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import preorderInfos from '../reducers/preorderInfos'
+
+import { persistStore, persistReducer } from 'redux-persist';
+import { PersistGate } from 'redux-persist/integration/react';
+import storage from 'redux-persist/lib/storage';
+
+const reducers = combineReducers({ preorderInfos });
+const persistConfig = { key: 'lunetoile', storage};
+
+const store = configureStore({
+  reducer: persistReducer(persistConfig, reducers),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }),
+});
+
+const persistor = persistStore(store);
+
 function App({ Component, pageProps }) {
 
   
   return (
-    <>
-      <Head>
-        <title>Next.js App</title>
-      </Head>
-      <Component {...pageProps} />
-    </>
-  //   <Router>
-  //   <Switch>
-  //     <Route exact path="/" component={Home} />
-  //     <Route path="/preorder" component={Preorder} /> {/* Route pour votre nouvelle page */}
-  //   </Switch>
-  // </Router>
+    <Provider store={store}>
+        <PersistGate persistor={persistor}>
+        <Head>
+          <title>Next.js App</title>
+        </Head>
+        <Component {...pageProps} />
+      </PersistGate>
+    </Provider>
   );
 }
 
