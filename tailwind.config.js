@@ -4,7 +4,7 @@ const { TbBackground } = require('react-icons/tb')
 module.exports = {
   content: [
     './pages/**/*.js',
-    './components/**/*.js'
+    './components/**/*.jsx'
 ],
   theme: {
     extend: {},

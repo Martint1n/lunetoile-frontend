@@ -1,7 +1,8 @@
 import styles from '../styles/Home.module.css';
 import PreOrderButton from './PreOrderButton';
+import Header from './Header'
 import Artist from './Artist';
-import Stripe from '../components/Stripe'
+import Stripe from './Stripe'
 
 
 
@@ -37,13 +38,7 @@ function Home() {
 
   return (
     <div>
-      <header className='bg-darkBlue flex justify-around items-center h-[5vh]'>
-          <div>
-            <img />
-            <div className='text-white text-lg'>LUNETOILE</div>
-          </div>
-          <img src='./nav.svg' className='h-3'/> 
-      </header>
+      <Header />
       <div className='bg-darkBlue h-[80vh]'>
         <div className='flex flex-col justify-around items-center h-[60vh]'>
           <div className='text-white text-2xl'>LUNETOILE</div>
