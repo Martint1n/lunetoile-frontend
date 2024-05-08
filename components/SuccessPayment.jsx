@@ -4,10 +4,9 @@ import { useSelector } from 'react-redux';
 
 
 function SuccessPayment() {
+    const preorderInfos = useSelector((state) => state.preorderInfos.value);
 
-    useEffect(() => {
-        const preorderInfos = useSelector((state) => state.preorderInfos.value);
-
+    useEffect(() => { //à tester sans le useEffect pour voir s'il ajoute 1 ou 2 documents à la database
         console.log('preorderInfo :', preorderInfos)
         console.log(preorderInfos.artist)
 
@@ -19,14 +18,16 @@ function SuccessPayment() {
             body: JSON.stringify(preorderInfos),
         })
         .then((response) => {
-            if (!response.ok) {
-                throw new Error('Error submitting data');
-            }
+            response.json()
         })
         .catch(error => {
             console.error('Error:', error);
         });
     }, [])
+
+    window.onbeforeunload = function() {
+        localStorage.clear();
+    }
 
     return (
         <div>successpayment</div>
