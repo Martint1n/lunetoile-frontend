@@ -1,40 +1,39 @@
-import {Cloudinary} from "@cloudinary/url-gen";
 import { useState } from 'react';
 
-
-function ArtistGallery () {
+function ArtistGallery() {
     const [imageToUpload, setImageToUpload] = useState("");
-    console.log(imageToUpload[0]);
 
+    const handleImageChange = (e) => {
+        setImageToUpload(e.target.files[0]);
+    };
 
-// cloudinary.config({ 
-//     cloud_name: 'dyrh8xsea', 
-//     api_key: '165223134919377', 
-//     api_secret: 'gpRcV2EF3hMi8fyatX4_WOjYmEw' 
-// });
+    const handleFormSubmit = (e) => {
+        e.preventDefault(); // Empêcher la redirection par défaut
 
-const upload = (image) => {
-    // Création d'un objet FormData pour envoyer le fichier
-    const formData = new FormData();
-    formData.append("file", image[0]);
-    formData.append("upload_preset", "tttmwrr3"); // Upload preset à configurer dans ton tableau de bord Cloudinary
+        // Ton code pour envoyer l'image au backend
+        if (imageToUpload) {
+            const formData = new FormData();
+            formData.append("image", imageToUpload);
 
-    // Envoi de la requête POST vers l'URL d'upload de Cloudinary
-    fetch("https://api.cloudinary.com/v1_1/dyrh8xsea/image/upload", {
-        method: "POST",
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error('Error uploading image:', error));
-};
+            fetch("http://localhost:3000/cloudinary/upload", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error uploading image:', error));
+        }
+    };
 
-    return(
+    return (
         <div>
-            <input type="file" onChange={(e) => { setImageToUpload(e.target.files) }}/>
-            <button onClick={() => {upload(imageToUpload)}}>Upload Image</button>
+            {/* Utilisation d'un formulaire pour soumettre l'image */}
+            <form action='/cloudinary/upload' onSubmit={handleFormSubmit}>
+                <input type="file" onChange={handleImageChange} />
+                <button type="submit">Submit</button>
+            </form>
         </div>
-    )
-};
+    );
+}
 
 export default ArtistGallery;
