@@ -17,9 +17,11 @@ const connect = async () => {
     const data = await response.json();
     if(data.result){
         dispatch(addTokenToStore(data.token))
-        window.location.replace('http://localhost:3001/preorder/bicyclette')
+        window.location.replace('http://localhost:3001/')
+        console.log(data)
     }else {
         setErrorMessage(data.error)
+        console.log(data)
     }
 }
 
@@ -41,8 +43,8 @@ return(
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
             <form className="space-y-6" action="#" method="PUT">
             <div>
-                <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                Email address
+                <label htmlFor="username" className="block text-sm font-medium leading-6 text-gray-900">
+                Pseudo
                 </label>
                 <div className="mt-2">
                 <input

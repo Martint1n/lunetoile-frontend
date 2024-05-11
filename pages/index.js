@@ -4,7 +4,7 @@ import Login from '../components/login'
 
 function Index() {
   // return <Home />;
-  return <Login />;
+  return <Home />;
 }
 
 export default Index;
