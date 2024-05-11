@@ -4,12 +4,13 @@ import Head from 'next/head';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import preorderInfos from '../reducers/preorderInfos'
+import users from '../reducers/users';
 
 import { persistStore, persistReducer } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 import storage from 'redux-persist/lib/storage';
 
-const reducers = combineReducers({ preorderInfos });
+const reducers = combineReducers({ preorderInfos, users });
 const persistConfig = { key: 'lunetoile', storage};
 
 const store = configureStore({
