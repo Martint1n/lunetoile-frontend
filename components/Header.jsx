@@ -9,8 +9,9 @@ const [isAuth, setIsAuth] = useState(false);
 
   useEffect(() => {
     (async () => {
-      await fetch(`http://localhost:3000/users/auth/${token}`)
-      if(result){
+      const response = await fetch(`http://localhost:3000/users/auth/${token}`);
+      const data = await response.json();
+      if(data.result){
         setIsAuth(true)
       }
   })()

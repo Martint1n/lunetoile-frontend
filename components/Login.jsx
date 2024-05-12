@@ -24,7 +24,7 @@ const connect = async () => {
         console.log(data)
     }
 }
-
+console.log(username)
 
 return( 
         <>
@@ -41,7 +41,7 @@ return(
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form className="space-y-6" action="#" method="PUT">
+            <div className="space-y-6">
             <div>
                 <label htmlFor="username" className="block text-sm font-medium leading-6 text-gray-900">
                 Pseudo
@@ -92,7 +92,7 @@ return(
                 se connecter
                 </button>
             </div>
-            </form>
+            </div>
 
             <p className="mt-10 text-center text-sm text-gray-500">
             Not a member?{' '}
