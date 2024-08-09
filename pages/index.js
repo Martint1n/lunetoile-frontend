@@ -1,4 +1,4 @@
-import ArtistGallery from '../components/ArtistGallery';
+import ArtistGallery from '../components/ArtistProfile';
 import Home from '../components/Home';
 import Login from '../components/login'
 
