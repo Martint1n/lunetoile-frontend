@@ -1,5 +1,5 @@
 import React from 'react'
-import SuccessPayment from '../components/successpayment';
+import SuccessPayment from '../components/Successpayment';
 
 
 

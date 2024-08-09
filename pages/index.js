@@ -1,6 +1,6 @@
 import ArtistGallery from '../components/ArtistProfile';
 import Home from '../components/Home';
-import Login from '../components/login'
+import Login from '../components/Login'
 
 function Index() {
   // return <Home />;
