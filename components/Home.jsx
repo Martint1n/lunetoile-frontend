@@ -89,39 +89,50 @@ function Home() {
   return (
     <div>
       <Header />
-      <div className='bg-darkBlue h-[80vh] '>
+      <div className='bg-darkBlue h-[95vh] '>
         <div className='flex flex-col justify-around items-center h-[60vh]'>
-          <Image src='/logo.svg' width={200} height={49}/>
-          <div className='text-white text-center text-[42px] leading-[51px]'> <span className='text-gold'>
+          <div className='relative pt-20 w-[200px] h-[49px] lg:w-[360px] lg:h-[87px]'>
+            <Image 
+              src='/logo.svg' 
+              alt="Logo"
+              layout="fill" 
+              objectFit="contain" 
+            />
+          </div>
+          <div className='text-white text-center text-[42px] leading-[51px] pt-10 pb-10 lg:text-[61px] lg:leading-[74px]'> <span className='text-gold'>
           LE JEU DE <br />
           CARTES</span> <br />
           TRADITONNEL <br />
           MODERNE !
           </div>
-          <p className='text-lg'>
-            <span className='text-lightGrey'>Réinventez vos classiques avec un jeu 
-              de cartes traditionnel modernisé. 
-              Sans nouvelles règles à apprendre,
-              enrichissez vos parties avec </span><span className='text-white'>54 cartes
-              traditionnelles
-              et 26 cartes Lune et Etoile
-              exclusives.</span>
+          <p className='text-white text-lg pb-10 lg:w-[60vw] lg:text-center'>
+            Réinventez vos classiques avec un jeu 
+            de cartes traditionnel modernisé. 
+            Sans nouvelles règles à apprendre,
+            enrichissez vos parties avec <span className='text-white font-bold'>54 cartes
+            traditionnelles
+            et 26 cartes Lune et Étoile
+            exclusives.</span>
           </p>
-          <PreOrderButton />
+          <div className='w-screen flex justify-center'>
+            <div className='flex justify-center w-screen lg:w-1/4'>
+              <PreOrderButton />
+            </div>
+          </div>
         </div>
       </div>
-      <div className='h-[120vh] flex flex-col justify-around border-2 border-black'>
-        <div className='relative w-screen h-1/3 -mt-40 border-2'>
-          <Image src='/display-1.png' layout='fill'/>
+      <div className='h-[120vh] flex flex-col justify-around'>
+        <div className='relative w-screen h-1/3 -mt-40'>
+          <Image src='/display-1.svg' layout='fill'/>
         </div>
         <Image src='/etoile.svg' width={24} height={24}/>
-        <p className='text-center text-3xl pb-10 pt-10'>
+        <div className='text-center text-3xl pb-10 pt-10 pl-[26px] pr-[26px]'>
           UNE COLLABORATION<br />
           <span className='text-gold'>ARTISTIQUE</span><br />
           EXCEPTIONNELLE
-        </p>
+        </div>
 
-        <p className='text-lg'>
+        <p className='text-lg lg:w-[60vw] lg:text-center lg:self-center'>
           Art et Tatouage se rencontre dans
           cette <span className='font-bold'>collaboration unique avec plus
           de 80 artistes tatoueurs franciliens. </span>
@@ -130,22 +141,23 @@ function Home() {
           offrant plus qu'un jeu : une véritable
           galerie d'art portable.
         </p>
-        <div className='h-[50vh] flex overflow-x-scroll scrollbar-thin scrollbar-webkit'>
+        <div className='h-[50vh] w-screen flex overflow-x-scroll scrollbar-thin scrollbar-webkit'>
           {artist}
         </div>
-        <div className='w-screen pt-5 pb-5 flex justify-center'>
-          <PreOrderButton />
+        <div className='w-screen pt-5 pb-5 flex justify-center lg:w-1/4 lg:self-center'>
+          <PreOrderButton color='bg-midBlue' text='text-white' />
         </div>
       </div>
-      <div className='bg-darkBlue h-[90vh]'>
+      <div className='bg-darkBlue h-[90vh] w-screen flex flex-col lg:flex-row-reverse lg:h-[50vh]'>
+        <div>
           <div className='pt-8 pl-[26px]'>
             <Image src='/list-symboles.svg' width={250} height={60}/> 
           </div>
-          <p className='text-white text-3xl'>
+          <div className='text-white text-3xl pl-[26px] pr-[26px]'>
             JOUEZ A LA <span className='text-gold'>VERSION
             LUNETOILE</span> DE VOS
             JEUX PRÉFÉRÉS
-          </p>
+          </div>
           <p className='text-white pt-5 pb-5'>
             lorem<br />
             lorem<br />
@@ -153,62 +165,67 @@ function Home() {
             lorem<br />
             lorem
           </p>
-          <div className='w-screen pl-[26px]'>
-          <PreOrderButton />
+        
+          <div className='w-full pl-[26px] lg:w-2/5'>
+            <PreOrderButton />
+          </div>
         </div>
-          <div className='relative w-screen h-1/2'>
-          <Image src='/display-2.png' layout='fill'/> 
+          <div className='relative w-screen h-1/2 lg:h-full lg:w-2/5 lg:-ml-20'>
+            <Image src='/display-2.png' layout='fill'/> 
           </div>
       </div>
       <div className='flex flex-col justify-center items-center h-[50vh]'>
         <Image src='/lune.svg' width={24} height={24}/>
-        <p className='text-3xl text-center pb-5 pt-10'>
+        <div className='text-3xl text-center pb-5 pt-10 pl-[26px] pr-[26px]'>
           ARTISTIQUE, LUDIQUE,<br />
           UNIQUE<br />
           UNE NOUVELLE<br />
           EXPERIENCE DE JEU<br />
           VOUS ATTEND.
-        </p>
-        <PreOrderButton />
-      </div>
-      <div className=''>
-        <div className='relative w-screen h-[40vh]'>
-          <Image src='/deck6.svg' layout='fill' objectFit="cover"/> 
+        </div>
+        <div className='w-screen flex justify-center lg:w-1/4 '>
+          <PreOrderButton color='bg-midBlue' text='text-white' />
         </div>
       </div>
-      <div className=''>
-        <div className='relative w-screen h-[40vh]'>
+      <div className='lg:flex'>
+        <div className='relative w-screen pb-[105.56%] lg:w-[50vw] lg:pb-[50%]'>
+          <Image src='/deck6.svg' layout='fill' objectFit="cover"/> 
+        </div>
+        <div className='relative w-screen pb-[105.56%] lg:w-[50vw] lg:pb-[50%]'> 
           <Image src='/img-2.svg' layout='fill' objectFit="cover"/> 
         </div>
       </div>
-      <div className='flex items-start pl-[24px] pt-10'>
-        <Image src='/coeur.svg' width={24} height={24}/>
+      
+      <div className='flex flex-col lg:flex-row'>
+      <div className='flex items-start pl-[24px] pt-10 lg:w-[40vw] lg:flex-col lg:justify-center'>
+        <div className='lg:pl-[26px] lg:pb-10'>
+          <Image src='/coeur.svg' width={24} height={24}/>
+        </div>
         <div className='flex flex-col justify-around'>
-          <p  className='text-3xl'>
-          SOUTENEZ L'ART,<br />
-          JOUEZ A<br />
-          LUNETOILE.<br />
+          <div  className='text-3xl pl-[26px] pr-[26px]'>
+          SOUTENEZ L'ART,
+          JOUEZ A
+          LUNETOILE.
           <span className='text-gold'>SIMPLE & UNIQUE !</span>
-          </p>
+          </div>
           <p className='pt-10 pb-10'>
             <span className='font-bold'>Précommandez votre jeu dès<br />
             maintenant</span> et plongez dans<br />
-            une galerie d'art portable.<br />
-            LUNETOILE n'est pas juste un<br />
-            jeu, c'est une expérience à<br />
-            patarrger, une pièce d'art à<br />
+            une galerie d'art portable.
+            LUNETOILE n'est pas juste un
+            jeu, c'est une expérience à
+            patarrger, une pièce d'art à
             collectionner
           </p>
-          <PreOrderButton />
-        </div>
-        </div>
-        <div className=''>
-        <div className='relative w-screen h-[40vh]'>
-          <Image src='/group.svg' layout='fill' objectFit="cover"/> 
+          <PreOrderButton color='bg-midBlue' text='text-white'/>
         </div>
       </div>
+      <div className='relative w-screen pb-[47.5%] lg:w-[60vw]'>
+        <Image src='/group.svg' layout='fill' objectFit="contain"/> 
+      </div>
+      </div>
       <div className=''>
-        <div className='relative w-screen h-[40vh]'>
+        <div className='relative w-screen pb-[45.73%] -mt-1'>
           <Image src='/imgbottom.svg' layout='fill' objectFit="cover"/> 
         </div>
       </div>

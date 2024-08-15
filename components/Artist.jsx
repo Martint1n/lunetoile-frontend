@@ -6,11 +6,11 @@ function Artist(props) { //add origin pour conditional en fonction du component 
 
 
     return(
-        <div className='h-[80%] min-w-full' key={props.key}>
+        <div className='h-[80%] min-w-full lg:min-w-[25%]' key={props.key}>
             <div className="relative flex justify-center">
                 {/* <Icon path={MdiChevronLeft} size={1} /> */}
-                <img src={props.card} className='w-3/4'/>
-                <img src={props.picture} className='absolute right-20 bottom-10 rounded-full h-1/4 '/>
+                <img src={props.card} className='w-3/4' />
+                <img src={props.picture} className='absolute right-20 bottom-10 rounded-full h-1/4 lg:right-10 lg:bottom-5'/>
             </div>
             <p className='text-center text-3xl'>{props.firstName}</p>
             <p className='text-center'>{props.pseudo}</p>
