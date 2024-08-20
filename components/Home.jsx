@@ -171,7 +171,7 @@ function Home() {
           </div>
         </div>
           <div className='relative w-screen h-1/2 lg:h-full lg:w-2/5 lg:-ml-20'>
-            <Image src='/display-2.png' layout='fill'/> 
+            <Image src='/display-2.png' layout='fill' unoptimized={true}/> 
           </div>
       </div>
       <div className='flex flex-col justify-center items-center h-[50vh]'>
