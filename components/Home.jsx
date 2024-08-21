@@ -2,7 +2,6 @@ import styles from '../styles/Home.module.css';
 import PreOrderButton from './PreOrderButton';
 import Header from './Header'
 import Artist from './Artist';
-import Stripe from './Stripe'
 import Image from 'next/image'
 
 
