@@ -13,7 +13,7 @@ function Home() {
   const artistList = [
     //à lier avec la database ArtistGallery
     {
-      card: 'yanncard.svg', 
+      card: 'yanncard.webp', 
       picture: 'yann.svg',
       firstName: 'Yann',
       pseudo: '@arsene.ariel', //doit etre clikable
@@ -21,7 +21,7 @@ function Home() {
       key: 1,
     },
     {
-      card: 'alicecard.svg', 
+      card: 'alicecard.webp', 
       picture: 'alice.svg',
       firstName: 'Alice',
       pseudo: '@lullaby.ttt',
@@ -29,7 +29,7 @@ function Home() {
       key: 2,
     },
     {
-      card: 'damiencard.svg', 
+      card: 'damiencard.webp', 
       picture: 'damien.svg',
       firstName: 'Damien',
       pseudo: '@kaolin.ttt',
@@ -37,7 +37,7 @@ function Home() {
       key: 3,
     },
     {
-      card: 'agathecard.svg', 
+      card: 'agathecard.webp', 
       picture: 'agathe.svg',
       firstName: 'Agathe',
       pseudo: '@poupeekipikdamour',
@@ -45,7 +45,7 @@ function Home() {
       key: 4,
     },
     {
-      card: 'leacard.svg', 
+      card: 'leacard.webp', 
       picture: 'lea.svg',
       firstName: 'Léa',
       pseudo: '@leclair_ttt',
@@ -53,7 +53,7 @@ function Home() {
       key: 5,
     },
     {
-      card: 'martincard.svg', 
+      card: 'martincard.webp', 
       picture: 'martin.svg',
       firstName: 'Martin',
       pseudo: '@10.tattoo',
@@ -61,7 +61,7 @@ function Home() {
       key: 6,
     },
     {
-      card: 'zoecard.svg', 
+      card: 'zoecard.webp', 
       picture: 'zoe.svg',
       firstName: 'Zoé',
       pseudo: '@zozita.slowpoke',
@@ -69,7 +69,7 @@ function Home() {
       key: 7,
     },
     {
-      card: 'inacard.svg', 
+      card: 'inacard.webp', 
       picture: 'ina.svg',
       firstName: 'Ina',
       pseudo: '@aim_dessire',
@@ -123,7 +123,7 @@ function Home() {
       </div>
       <div className='h-[120vh] flex flex-col justify-around'>
         <div className='relative w-screen h-1/3 -mt-40'>
-          <Image src='/display-1.svg' layout='fill'/>
+          <Image src='/display-1.webp' layout='fill'/>
         </div>
         <Image src='/etoile.svg' width={24} height={24}/>
         <div className='text-center text-3xl pb-10 pt-10 pl-[26px] pr-[26px]'>
@@ -171,7 +171,7 @@ function Home() {
           </div>
         </div>
           <div className='relative w-screen h-1/2 lg:h-full lg:w-2/5 lg:-ml-20'>
-            <Image src='/display-2.png' layout='fill' unoptimized={true}/> 
+            <Image src='/display-2.webp' layout='fill' unoptimized={true}/> 
           </div>
       </div>
       <div className='flex flex-col justify-center items-center h-[50vh]'>
@@ -189,10 +189,10 @@ function Home() {
       </div>
       <div className='lg:flex'>
         <div className='relative w-screen pb-[105.56%] lg:w-[50vw] lg:pb-[50%]'>
-          <Image src='/deck6.svg' layout='fill' objectFit="cover"/> 
+          <Image src='/deck6.webp' layout='fill' objectFit="cover"/> 
         </div>
         <div className='relative w-screen pb-[105.56%] lg:w-[50vw] lg:pb-[50%]'> 
-          <Image src='/img-2.svg' layout='fill' objectFit="cover"/> 
+          <Image src='/9cards.webp' layout='fill' objectFit="cover"/> 
         </div>
       </div>
       
@@ -221,12 +221,12 @@ function Home() {
         </div>
       </div>
       <div className='relative w-screen pb-[47.5%] lg:w-[60vw]'>
-        <Image src='/group.svg' layout='fill' objectFit="contain"/> 
+        <Image src='/group.webp' layout='fill' objectFit="contain"/> 
       </div>
       </div>
       <div className=''>
         <div className='relative w-screen pb-[45.73%] -mt-1'>
-          <Image src='/imgbottom.svg' layout='fill' objectFit="cover"/> 
+          <Image src='/imgbottom.webp' layout='fill' objectFit="cover"/> 
         </div>
       </div>
       <footer className='flex flex-col justify-end items-center pt-3 pb-3'>
