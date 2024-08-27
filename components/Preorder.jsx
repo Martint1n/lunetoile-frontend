@@ -10,7 +10,10 @@ import { Input } from "@nextui-org/react";
 
 const PreorderForm = () => {
   const router = useRouter();
+  const { artist } = router.query;
   const dispatch = useDispatch();
+
+  console.log('Artist Name:', artist);
 
   const [inputValues, setInputValues] = useState({ 
     lastName: '', 
@@ -23,6 +26,20 @@ const PreorderForm = () => {
     phoneNumber: '',
     quantity: '',
   }); 
+
+  const [deckNumber, setDeckNumber] = useState(1)
+  const price = (deckNumber * 49.99).toFixed(2)
+  const priceWithCurrency = `${price}€`
+
+  const handAddDeckNumberChange = () => {
+    setDeckNumber(prevDeckNumber => prevDeckNumber + 1)
+  }
+
+  const handMinusDeckNumberChange = () => {
+    if(deckNumber > 0) {
+      setDeckNumber(prevDeckNumber => prevDeckNumber - 1)
+    }else {}
+  }
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -194,11 +211,17 @@ const PreorderForm = () => {
               </div>
               <div className='flex flex-col'>
                 <div>jeu de cartes Lunétoile</div>
+                <div className='flex items-center'>
+                  <p className='-ml-[26px]'>X {deckNumber}</p>
+                  <button onClick={handAddDeckNumberChange} className='-ml-[14px] flex justify-center items-end w-[32px] h-[32px] text-gold text-3xl border border-gold rounded-full mr-2'>+</button>
+                  <button onClick={handMinusDeckNumberChange} className='flex justify-center items-end w-[32px] h-[32px] text-gold text-3xl border border-gold rounded-full'>-</button>
+                  <p>{priceWithCurrency}</p>
+                </div>
                 <div>Livraison Gratuite</div>
               </div>
             </div>
             <div className='text-xl self-center'>Votre achat soutient directement</div>
-
+            <div className='self-center text-xl'>{ artist }</div>
 
           <Stripe onClick={handleSubmit}/>
         </div>
