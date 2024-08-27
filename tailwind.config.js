@@ -1,22 +1,41 @@
 const { TbBackground } = require('react-icons/tb')
+const { nextui } = require("@nextui-org/react");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     './pages/**/*.js',
-    './components/**/*.jsx'
+    './components/**/*.jsx',
+    './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
 ],
   theme: {
     extend: {},
+    darkMode: "class",
     colors: {
       darkBlue: 'rgb(12, 12, 17)',
       midBlue: '#16203B',
       gold: 'rgb(222, 183, 93)',
       white: '#FFFFFF',
       lightGrey: 'rgb(125, 127, 129)'
-    }
+    },
   },
   plugins: [
+    nextui({
+      themes: {
+      dark: {
+        colors: {
+          background: "#0C0C11",
+          primary: {
+            50: "#fff",
+            DEFAULT: "#000",
+            foreground: "#fff",
+          },
+          focus: "#fff",
+        },
+      },
+    },
+  }),
+    require('@tailwindcss/aspect-ratio'),
     function ({addUtilities}){
       const newUtilities = {
         '.scrollbar-thin': {

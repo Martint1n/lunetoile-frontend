@@ -1,9 +1,11 @@
 import { useRouter } from 'next/router';
+import React from 'react'
 import { useEffect, useState } from 'react';
 import Stripe from './Stripe';
-import Header from './Header';
 import { useDispatch } from 'react-redux';
 import { addPreorderInfoToStore } from '../reducers/preorderInfos';
+import Image from 'next/image';
+import { Input } from "@nextui-org/react";
 
 
 const PreorderForm = () => {
@@ -17,6 +19,8 @@ const PreorderForm = () => {
     address: '',
     zipCode: '',
     country: '',
+    city: '',
+    phoneNumber: '',
     quantity: '',
   }); 
 
@@ -66,97 +70,140 @@ const PreorderForm = () => {
 //https://tailwindui.com/components/application-ui/forms/form-layouts
 
   return (
-    <div>
-      <Header />
-      <form onSubmit={handleSubmit} >
-        <div className='h-[95vh] flex flex-col justify-around items-center border-black border-2 border-solid'>
-          <div className='w-full flex justify-around'>
-            <div>
-              <label htmlFor='lastName'>Nom</label>
-              <input 
-                type='text' 
-                name='lastName'
-                value={inputValues.lastName} 
-                onChange={handleInputChange} 
-                placeholder='nom'
-                className='border-2 border-black'
-              />
-            </div>
-            <div>
-              <label htmlFor='firstName'>Prénom</label>
-              <input 
-                type='text' 
-                name='firstName'
-                value={inputValues.firstName} 
-                onChange={handleInputChange} 
-                placeholder='prénom' 
-                className='border-2 border-black'
-              />
-            </div>
+    <div className='bg-dark-background w-screen h-screen'>
+      <div className='flex flex-col items-center w-screen'>
+        <div className='relative pt-10 w-4/5 lg:w-[360px] lg:h-[87px]'>
+          <Image 
+            src='/logo.svg' 
+            alt="Logo"
+            layout="fill" 
+            objectFit="contain" 
+          />
+          <div className='relative mt-4 w-1/2 h-[49px] lg:w-[200px] lg:h-[87px] m-auto'>
+          <Image 
+            src='/list-symboles.svg' 
+            alt="maisons"
+            layout="fill" 
+            objectFit="contain" 
+          /> 
           </div>
-          <div>
-            <label htmlFor='email'>Adresse mail</label>
-            <input 
-              type='text'
-              name='email' 
-              value={inputValues.email} 
-              onChange={handleInputChange} 
-              placeholder='dupont@gmail.com'
-              className='border-2 border-black'
+        </div>
+      </div>
+      <div className='flex flex-col pl-[26px]'>
+        <div className='w-full flex flex-col justify-around'>
+        
+        <div className=' pr-[26px]'>
+          <p className='text-gold text-2xl -ml-[26px]'>Contact</p>
+          <div className="flex w-full flex-wrap lg:flex-nowrap gap-4">
+          <Input
+                isRequired
+                color="primary"
+                type="email"
+                label="Adresse e-mail"
+                name='email'
+                value={inputValues.email}
+                onChange={handleInputChange}
+                className="max-w-full"
             />
           </div>
-          <div>
-            <div>
-              <label htmlFor='address'>Adresse</label>
-              <input 
+
+            <p className='text-gold text-2xl pt-5 -ml-[26px]'>Livraison</p>
+            <div className="w-full flex lg:flex-nowrap gap-4">
+              <Input
+                isRequired
+                color="primary"
+                label="Prénom"
+                name='firstName'
                 type='text'
-                name='address' 
-                value={inputValues.address} 
-                onChange={handleInputChange} 
-                placeholder='1 rue du moulin vert'
-                className='border-2 border-black'
+                value={inputValues.firstName}
+                onChange={handleInputChange}
+                className="max-w-full"
+              />
+              <Input
+                isRequired
+                color="primary"
+                label="Nom"
+                name='lastName'
+                type='text'
+                value={inputValues.lastName}
+                onChange={handleInputChange}
+                className="max-w-full"
               />
             </div>
-            <div>
-              <label htmlFor='zipCode'>Code postal</label>
-              <input 
+            <div className="w-full flex pt-2 lg:flex-nowrap gap-4">
+              <Input 
+                isRequired
+                color="primary"
+                type='text'
+                name='country'
+                label='Pays/Région' 
+                value={inputValues.country} 
+                onChange={handleInputChange}
+                className='max-w-full' 
+              />
+              <Input 
+                isRequired
+                color="primary"
                 type='number'
-                name='zipCode' 
+                name='zipCode'
+                label='Code postal' 
                 value={inputValues.zipCode} 
                 onChange={handleInputChange} 
-                placeholder='75000'
-                className='border-2 border-black'
+                className='max-w-full'
               />
             </div>
-            <div>
-              <label htmlFor='country'>Pays</label>
-              <input 
+            <div className='w-full flex flex-col pt-2 lg:flex-nowrap gap-4'>
+              <Input 
+                isRequired
+                color="primary"
                 type='text'
-                name='country' 
-                value={inputValues.country} 
+                name='city'
+                label='Ville'
+                value={inputValues.city} 
                 onChange={handleInputChange} 
-                placeholder='France'
-                className='border-2 border-black'
+                className='max-w-full'
+              />
+              <Input 
+                isRequired
+                color="primary"
+                type='text'
+                name='address'
+                label='Adresse' 
+                value={inputValues.address} 
+                onChange={handleInputChange} 
+                className='max-w-full'
+              />
+              <Input 
+                isRequired
+                color="primary"
+                type='number'
+                name='phoneNumber'
+                label='Télélphone' 
+                value={inputValues.phoneNumber} 
+                onChange={handleInputChange} 
+                className='max-w-full'
               />
             </div>
           </div>
-          <div>
-            <label htmlFor='quantity'>Quantité</label>
-            <input 
-              type='number'
-              name='quantity' 
-              value={inputValues.quantity} 
-              onChange={handleInputChange} 
-              placeholder='1'
-              className='border-2 border-black'
-            />
-          </div>
-          <button type='submit'>Soumettre</button>
-          <button onClick={handleSubmit} >test</button>
+      </div>
+
+            <p className='text-gold text-2xl pt-5 -ml-[26px]'>Aperçu</p>
+            <div className='flex pb-2 border-b mr-[26px]'>
+              <div className='relative w-1/3 aspect-[4/3] lg:w-1/2'>
+                <Image src='/display-1.webp' layout='fill' objectFit="contain" alt='deck acheté'/>
+              </div>
+              <div className='flex flex-col'>
+                <div>jeu de cartes Lunétoile</div>
+                <div>Livraison Gratuite</div>
+              </div>
+            </div>
+            <div className='text-xl self-center'>Votre achat soutient directement</div>
+
+
           <Stripe onClick={handleSubmit}/>
         </div>
-      </form>
       </div>
+
     );
   };
 

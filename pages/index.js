@@ -1,11 +1,21 @@
-import ArtistGallery from '../components/ArtistProfile';
 import Home from '../components/Home';
-import Login from '../components/Login'
-import Preorder from '../components/Preorder'
+import { NextUIProvider } from '@nextui-org/react';
+import Head from 'next/head';
 
 function Index() {
   // return <Home />;
   return <Home />;
 }
+
+Index.getLayout = function getLayout(page) {
+  return (
+      <NextUIProvider>
+        <Head>
+          <title>Preorder Page</title>
+        </Head>
+        {page}
+      </NextUIProvider>
+  );
+};
 
 export default Index;

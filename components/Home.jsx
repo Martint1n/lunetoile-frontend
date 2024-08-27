@@ -88,9 +88,9 @@ function Home() {
   return (
     <div>
       <Header />
-      <div className='bg-darkBlue h-[95vh] '>
+      <div className='bg-darkBlue h-[95vh]'>
         <div className='flex flex-col justify-around items-center h-[60vh]'>
-          <div className='relative pt-20 w-[200px] h-[49px] lg:w-[360px] lg:h-[87px]'>
+          <div className='relative mt-20 pt-20 w-[200px] h-[49px] lg:w-[360px] lg:h-[87px]'>
             <Image 
               src='/logo.svg' 
               alt="Logo"
@@ -120,11 +120,13 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className='h-[120vh] flex flex-col justify-around'>
-        <div className='relative w-screen h-1/3 -mt-40'>
-          <Image src='/display-1.webp' layout='fill'/>
+      <div className='h-[120vh] w-screen flex flex-col justify-around'>
+        <div className='relative w-full aspect-[4/3] -mt-40 self-center lg:w-1/2'>
+          <Image src='/display-1.webp' layout='fill' objectFit="contain" />
         </div>
-        <Image src='/etoile.svg' width={24} height={24}/>
+        <div className='self-center'>
+          <Image src='/etoile.svg' width={24} height={24}/>
+        </div>
         <div className='text-center text-3xl pb-10 pt-10 pl-[26px] pr-[26px]'>
           UNE COLLABORATION<br />
           <span className='text-gold'>ARTISTIQUE</span><br />
