@@ -88,7 +88,7 @@ const PreorderForm = () => {
 
   return (
     <div className='bg-dark-background w-screen h-screen'>
-      <div className='flex flex-col items-center w-screen'>
+      <div className='flex flex-col items-center w-screen '>
         <div className='relative pt-10 w-4/5 lg:w-[360px] lg:h-[87px]'>
           <Image 
             src='/logo.svg' 
@@ -96,20 +96,20 @@ const PreorderForm = () => {
             layout="fill" 
             objectFit="contain" 
           />
-          <div className='relative mt-4 w-1/2 h-[49px] lg:w-[200px] lg:h-[87px] m-auto'>
+        </div>
+        <div className='relative w-1/2 h-[49px] lg:w-[200px] lg:h-[60px]'>
           <Image 
             src='/list-symboles.svg' 
             alt="maisons"
             layout="fill" 
             objectFit="contain" 
           /> 
-          </div>
         </div>
       </div>
-      <div className='flex flex-col pl-[26px]'>
-        <div className='w-full flex flex-col justify-around'>
+      
+      <div className='flex flex-col pl-[26px] lg:flex-row lg:justify-around lg:h-4/5'>
         
-        <div className=' pr-[26px]'>
+        <div className=' w-full flex flex-col justify-around pr-[26px] lg:w-2/5 lg:justify-between'>
           <p className='text-gold text-2xl -ml-[26px]'>Contact</p>
           <div className="flex w-full flex-wrap lg:flex-nowrap gap-4">
           <Input
@@ -123,109 +123,109 @@ const PreorderForm = () => {
                 className="max-w-full"
             />
           </div>
-
-            <p className='text-gold text-2xl pt-5 -ml-[26px]'>Livraison</p>
-            <div className="w-full flex lg:flex-nowrap gap-4">
-              <Input
-                isRequired
-                color="primary"
-                label="Prénom"
-                name='firstName'
-                type='text'
-                value={inputValues.firstName}
-                onChange={handleInputChange}
-                className="max-w-full"
-              />
-              <Input
-                isRequired
-                color="primary"
-                label="Nom"
-                name='lastName'
-                type='text'
-                value={inputValues.lastName}
-                onChange={handleInputChange}
-                className="max-w-full"
-              />
-            </div>
-            <div className="w-full flex pt-2 lg:flex-nowrap gap-4">
-              <Input 
-                isRequired
-                color="primary"
-                type='text'
-                name='country'
-                label='Pays/Région' 
-                value={inputValues.country} 
-                onChange={handleInputChange}
-                className='max-w-full' 
-              />
-              <Input 
-                isRequired
-                color="primary"
-                type='number'
-                name='zipCode'
-                label='Code postal' 
-                value={inputValues.zipCode} 
-                onChange={handleInputChange} 
-                className='max-w-full'
-              />
-            </div>
-            <div className='w-full flex flex-col pt-2 lg:flex-nowrap gap-4'>
-              <Input 
-                isRequired
-                color="primary"
-                type='text'
-                name='city'
-                label='Ville'
-                value={inputValues.city} 
-                onChange={handleInputChange} 
-                className='max-w-full'
-              />
-              <Input 
-                isRequired
-                color="primary"
-                type='text'
-                name='address'
-                label='Adresse' 
-                value={inputValues.address} 
-                onChange={handleInputChange} 
-                className='max-w-full'
-              />
-              <Input 
-                isRequired
-                color="primary"
-                type='number'
-                name='phoneNumber'
-                label='Télélphone' 
-                value={inputValues.phoneNumber} 
-                onChange={handleInputChange} 
-                className='max-w-full'
-              />
-            </div>
+          <p className='text-gold text-2xl pt-5 -ml-[26px]'>Livraison</p>
+          <div className="w-full flex lg:flex-nowrap gap-4">
+            <Input
+              isRequired
+              color="primary"
+              label="Prénom"
+              name='firstName'
+              type='text'
+              value={inputValues.firstName}
+              onChange={handleInputChange}
+              className="max-w-full"
+            />
+            <Input
+              isRequired
+              color="primary"
+              label="Nom"
+              name='lastName'
+              type='text'
+              value={inputValues.lastName}
+              onChange={handleInputChange}
+              className="max-w-full"
+            />
+          </div>
+          <div className="w-full flex pt-2 lg:flex-nowrap gap-4">
+            <Input 
+              isRequired
+              color="primary"
+              type='text'
+              name='country'
+              label='Pays/Région' 
+              value={inputValues.country} 
+              onChange={handleInputChange}
+              className='max-w-full' 
+            />
+            <Input 
+              isRequired
+              color="primary"
+              type='number'
+              name='zipCode'
+              label='Code postal' 
+              value={inputValues.zipCode} 
+              onChange={handleInputChange} 
+              className='max-w-full'
+            />
+          </div>
+          <div className='w-full flex flex-col pt-2 lg:flex-nowrap gap-4'>
+            <Input 
+              isRequired
+              color="primary"
+              type='text'
+              name='city'
+              label='Ville'
+              value={inputValues.city} 
+              onChange={handleInputChange} 
+              className='max-w-full'
+            />
+            <Input 
+              isRequired
+              color="primary"
+              type='text'
+              name='address'
+              label='Adresse' 
+              value={inputValues.address} 
+              onChange={handleInputChange} 
+              className='max-w-full'
+            />
+            <Input 
+              isRequired
+              color="primary"
+              type='number'
+              name='phoneNumber'
+              label='Télélphone' 
+              value={inputValues.phoneNumber} 
+              onChange={handleInputChange} 
+              className='max-w-full'
+            />
           </div>
       </div>
 
-            <p className='text-gold text-2xl pt-5 -ml-[26px]'>Aperçu</p>
-            <div className='flex pb-2 border-b mr-[26px]'>
-              <div className='relative w-1/3 aspect-[4/3] lg:w-1/2'>
-                <Image src='/display-1.webp' layout='fill' objectFit="contain" alt='deck acheté'/>
-              </div>
-              <div className='flex flex-col'>
-                <div>jeu de cartes Lunétoile</div>
-                <div className='flex items-center'>
-                  <p className='-ml-[26px]'>X {deckNumber}</p>
-                  <button onClick={handAddDeckNumberChange} className='-ml-[14px] flex justify-center items-end w-[32px] h-[32px] text-gold text-3xl border border-gold rounded-full mr-2'>+</button>
-                  <button onClick={handMinusDeckNumberChange} className='flex justify-center items-end w-[32px] h-[32px] text-gold text-3xl border border-gold rounded-full'>-</button>
-                  <p>{priceWithCurrency}</p>
-                </div>
-                <div>Livraison Gratuite</div>
-              </div>
+      <div className='lg:w-2/5 lg:flex lg:flex-col lg:justify-between'>
+        <p className='text-gold text-2xl pt-5 -ml-[26px] lg:pt-0'>Aperçu</p>
+        <div className='flex pb-2 border-b mr-[26px]'>
+          <div className='relative w-1/3 aspect-[4/3] lg:w-1/2'>
+            <Image src='/display-1.webp' layout='fill' objectFit="contain" alt='deck acheté'/>
+          </div>
+          <div className='flex flex-col'>
+            <div>jeu de cartes Lunétoile</div>
+            <div className='flex items-center'>
+              <p className='-ml-[26px]'>X {deckNumber}</p>
+              <button onClick={handAddDeckNumberChange} className='-ml-[14px] flex justify-center items-end w-[32px] h-[32px] text-gold text-3xl border border-gold rounded-full mr-2'>+</button>
+              <button onClick={handMinusDeckNumberChange} className='flex justify-center items-end w-[32px] h-[32px] text-gold text-3xl border border-gold rounded-full'>-</button>
+              <p>{priceWithCurrency}</p>
             </div>
-            <div className='text-xl self-center'>Votre achat soutient directement</div>
-            <div className='self-center text-xl'>{ artist }</div>
-
-          <Stripe onClick={handleSubmit}/>
+            <div>Livraison Gratuite</div>
+          </div>
         </div>
+        <div className='text-xl self-center'>Votre achat soutient directement</div>
+        <div className='self-center text-xl'>{ artist }</div>
+
+        <Stripe onClick={handleSubmit}/>
       </div>
+    </div>
+  </div>
 
     );
   };
