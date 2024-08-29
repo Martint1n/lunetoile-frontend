@@ -24,7 +24,6 @@ const PreorderForm = () => {
     country: '',
     city: '',
     phoneNumber: '',
-    quantity: '',
   }); 
 
   const [deckNumber, setDeckNumber] = useState(1)
@@ -86,6 +85,7 @@ const PreorderForm = () => {
 
 //https://tailwindui.com/components/application-ui/forms/form-layouts
 
+console.log(inputValues.address)
   return (
     <div className='bg-dark-background w-screen h-screen'>
       <div className='flex flex-col items-center w-screen '>
@@ -222,7 +222,7 @@ const PreorderForm = () => {
         <div className='text-xl self-center'>Votre achat soutient directement</div>
         <div className='self-center text-xl'>{ artist }</div>
 
-        <Stripe onClick={handleSubmit}/>
+        <Stripe onClick={handleSubmit} firstName={inputValues.firstName} lastName={inputValues.lastName} country={inputValues.country} phoneNumber={inputValues.phoneNumber} address={inputValues.address} zipCode={inputValues.zipCode} deckNumber={deckNumber} email={inputValues.email} price={price}/>
       </div>
     </div>
   </div>
