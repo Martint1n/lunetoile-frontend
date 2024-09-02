@@ -22,7 +22,7 @@ function PreOrderButton({ color = 'bg-gold', text= 'text-black'}) {
     console.log('Artist Name:', artistName);
 
     return(
-        <Link href={preorderLink} passHref><button className={`${color} ${text} rounded-3xl w-1/2 h-12`}>Précommander</button></Link>
+        <Link href={preorderLink} passHref><button className={`${color} ${text} rounded-3xl w-full h-12`}>Précommander</button></Link>
     )
 };
 

@@ -87,7 +87,7 @@ function Home() {
       <Header />
       <div className='bg-darkBlue h-[95vh]'>
         <div className='flex flex-col justify-around items-center h-[60vh]'>
-          <div className='relative mt-20 pt-20 w-[200px] h-[49px] lg:w-[360px] lg:h-[87px]'>
+          <div className='relative mt-10 pt-10 w-[200px] h-[49px] lg:w-[360px] lg:h-[87px]'>
             <Image 
               src='/logo.svg' 
               alt="Logo"
@@ -111,7 +111,7 @@ function Home() {
             exclusives.</span>
           </p>
           <div className='w-screen flex justify-center'>
-            <div className='flex justify-center w-screen lg:w-1/4'>
+            <div className='w-1/2 lg:w-1/4'>
               <PreOrderButton />
             </div>
           </div>
@@ -142,12 +142,14 @@ function Home() {
         <div className='h-[50vh] w-screen flex overflow-x-scroll scrollbar-thin scrollbar-webkit'>
           {artist}
         </div>
-        <div className='w-screen pt-5 pb-5 flex justify-center lg:w-1/4 lg:self-center'>
-          <PreOrderButton color='bg-midBlue' text='text-white' />
+        <div className='w-screen flex justify-center'>
+          <div className='w-1/2 pt-5 pb-5 lg:w-1/4 lg:self-center'>
+            <PreOrderButton color='bg-midBlue' text='text-white' />
+          </div>
         </div>
       </div>
       <div className='bg-darkBlue h-[90vh] w-screen flex flex-col lg:flex-row-reverse lg:h-[50vh]'>
-        <div>
+        <div className=''>
           <div className='pt-8 pl-[26px]'>
             <Image src='/list-symboles.svg' width={250} height={60}/> 
           </div>
@@ -163,8 +165,7 @@ function Home() {
             lorem<br />
             lorem
           </p>
-        
-          <div className='w-full pl-[26px] lg:w-2/5'>
+          <div className='pl-[26px] w-1/2 lg:w-2/5'>
             <PreOrderButton />
           </div>
         </div>
@@ -181,8 +182,10 @@ function Home() {
           EXPERIENCE DE JEU<br />
           VOUS ATTEND.
         </div>
-        <div className='w-screen flex justify-center lg:w-1/4 '>
-          <PreOrderButton color='bg-midBlue' text='text-white' />
+        <div className='w-screen flex justify-center'>
+          <div className='w-1/2 lg:w-1/4 '>
+            <PreOrderButton color='bg-midBlue' text='text-white' />
+          </div>
         </div>
       </div>
       <div className='lg:flex'>
@@ -203,19 +206,23 @@ function Home() {
           <div  className='text-3xl pl-[26px] pr-[26px]'>
           SOUTENEZ L'ART,
           JOUEZ A
-          LUNETOILE.
+          LUNETOILE. <br/>
           <span className='text-gold'>SIMPLE & UNIQUE !</span>
           </div>
           <p className='pt-10 pb-10'>
             <span className='font-bold'>Précommandez votre jeu dès<br />
             maintenant</span> et plongez dans<br />
-            une galerie d'art portable.
-            LUNETOILE n'est pas juste un
-            jeu, c'est une expérience à
-            patarrger, une pièce d'art à
+            une galerie d'art portable. <br/>
+            LUNETOILE n'est pas juste un <br/>
+            jeu, c'est une expérience à<br/>
+            patarrger, une pièce d'art à<br/>
             collectionner
           </p>
-          <PreOrderButton color='bg-midBlue' text='text-white'/>
+          <div className='w-screen flex justify-center lg:justify-start'>
+            <div className='w-1/2 lg:w-1/4 pb-5 -ml-[24px] lg:ml-0'>
+              <PreOrderButton color='bg-midBlue' text='text-white'/>
+            </div>
+          </div>
         </div>
       </div>
       <div className='relative w-screen pb-[47.5%] lg:w-[60vw]'>
