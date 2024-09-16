@@ -84,8 +84,7 @@ function Home() {
 
   return (
     <div>
-      <Header />
-      <div className='bg-darkBlue h-[95vh]'>
+      <div className='bg-darkBlue h-screen'>
         <div className='flex flex-col justify-around items-center h-[60vh]'>
           <div className='relative mt-10 pt-10 w-[200px] h-[49px] lg:w-[360px] lg:h-[87px]'>
             <Image 
@@ -118,7 +117,7 @@ function Home() {
         </div>
       </div>
       <div className='h-[120vh] w-screen flex flex-col justify-around'>
-        <div className='relative w-full aspect-[4/3] -mt-40 self-center lg:w-1/2'>
+        <div className='relative w-full aspect-[4/3] -mt-40 self-center lg:w-1/2 lg:-mt-28'>
           <Image src='/display-1.webp' layout='fill' objectFit="contain" />
         </div>
         <div className='self-center'>
@@ -225,7 +224,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className='relative w-screen pb-[47.5%] lg:w-[60vw]'>
+      <div className='relative w-screen pb-[78%] lg:w-[60vw] lg:pb-[47.5%]'>
         <Image src='/group.webp' layout='fill' objectFit="contain"/> 
       </div>
       </div>
