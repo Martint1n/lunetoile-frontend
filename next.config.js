@@ -14,8 +14,12 @@ const nextConfig = {
       ...config.resolve.alias,
       '@react-stately/utils': path.resolve(__dirname, 'node_modules/@react-stately/utils/dist/main.js'),
     };
+    console.log(config.resolve.alias); // Confirmez les changements
+
+    config.optimization = {
+      minimize: false,
+    };
     
-    // Assurez-vous de retourner le config modifié
     return config;
   },
 };
