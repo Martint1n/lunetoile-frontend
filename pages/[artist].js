@@ -1,8 +1,11 @@
-import Home from '../components/Home';
 import Link from 'next/link';
 import Head from 'next/head';
 import { NextUIProvider } from '@nextui-org/react';
 const BACKEND = process.env.BACKEND;
+import dynamic from 'next/dynamic';
+
+const Home = dynamic(() => import('../components/Home'));
+
 
 function ArtistPage({ artist, isAllowed }) {
   if (!isAllowed) {
