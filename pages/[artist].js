@@ -31,14 +31,28 @@ ArtistPage.getLayout = function getLayout(page) {
 
 export default ArtistPage;
 
+let artistCache = {}; // Cache basique stocké en mémoire
+const CACHE_DURATION = 1000 * 60 * 5; // 5 minutes de cache
+
 export async function getServerSideProps(context) {
-  
   console.log("Query params:", context.query);
   console.log("Params:", context.params);
   const { artist = '' } = context.params;
 
   // Nettoyer le nom de l'artiste pour supprimer les @
   const cleanedArtist = artist.replace(/^@/, '').toLowerCase();
+
+  // Vérifier si l'artiste est dans le cache
+  const currentTime = Date.now();
+  if (artistCache[cleanedArtist] && currentTime - artistCache[cleanedArtist].timestamp < CACHE_DURATION) {
+    console.log('Returning cached data for artist:', cleanedArtist);
+    return {
+      props: {
+        artist: cleanedArtist,
+        isAllowed: artistCache[cleanedArtist].isAllowed,
+      },
+    };
+  }
 
   try {
     // Récupérer la liste des artistes autorisés depuis votre backend
@@ -57,6 +71,12 @@ export async function getServerSideProps(context) {
     const isAllowed = allowedArtists.includes(artistWithPrefix);
     console.log('Is artist allowed:', isAllowed);
 
+    // Stocker le résultat dans le cache avec un timestamp
+    artistCache[cleanedArtist] = {
+      isAllowed,
+      timestamp: Date.now(),
+    };
+
     return {
       props: {
         artist: cleanedArtist,
@@ -73,3 +93,4 @@ export async function getServerSideProps(context) {
     };
   }
 }
+
