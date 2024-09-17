@@ -18,6 +18,9 @@ function Preorder({ artist, isAllowed }) {
 export default Preorder;
 
 export async function getServerSideProps(context) {
+  
+  console.log("Query params:", context.query);
+  console.log("Params:", context.params);
   const { artist = '' } = context.params;
 
   // Nettoyer le nom de l'artiste pour supprimer les @
