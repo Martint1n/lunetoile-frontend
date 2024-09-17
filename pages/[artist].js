@@ -1,7 +1,8 @@
 import Home from '../components/Home';
 import Link from 'next/link';
+const BACKEND = process.env.BACKEND;
 
-function Preorder({ artist, isAllowed }) {
+function ArtistPage({ artist, isAllowed }) {
   if (!isAllowed) {
     return (
       <div>
@@ -15,7 +16,7 @@ function Preorder({ artist, isAllowed }) {
   return <Home />;
 }
 
-export default Preorder;
+export default ArtistPage;
 
 export async function getServerSideProps(context) {
   
@@ -28,7 +29,7 @@ export async function getServerSideProps(context) {
 
   try {
     // Récupérer la liste des artistes autorisés depuis votre backend
-    const response = await fetch('http://localhost:3000/artists/getartists');
+    const response = await fetch(BACKEND);
     const data = await response.json();
     console.log('Backend artists data:', data);
 
