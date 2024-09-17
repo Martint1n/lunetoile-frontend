@@ -1,5 +1,3 @@
-'use client';
-
 import Home from '../components/Home';
 import Link from 'next/link';
 const BACKEND = process.env.BACKEND;
