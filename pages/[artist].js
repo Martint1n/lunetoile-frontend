@@ -29,7 +29,7 @@ export async function getServerSideProps(context) {
 
   try {
     // Récupérer la liste des artistes autorisés depuis votre backend
-    const response = await fetch(BACKEND);
+    const response = await fetch(`${BACKEND}/artists/getartists`);
     const data = await response.json();
     console.log('Backend artists data:', data);
 
