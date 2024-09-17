@@ -1,5 +1,6 @@
 import Home from '../components/Home';
 import Link from 'next/link';
+import { NextUIProvider } from '@nextui-org/react';
 const BACKEND = process.env.BACKEND;
 
 function ArtistPage({ artist, isAllowed }) {
@@ -15,6 +16,17 @@ function ArtistPage({ artist, isAllowed }) {
 
   return <Home />;
 }
+
+ArtistPage.getLayout = function getLayout(page) {
+  return (
+      <NextUIProvider>
+        <Head>
+          <title>Home page</title>
+        </Head>
+        {page}
+      </NextUIProvider>
+  );
+};
 
 export default ArtistPage;
 
