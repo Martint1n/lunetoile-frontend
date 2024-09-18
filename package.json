@@ -32,6 +32,7 @@
     "dotenv": "^16.4.5",
     "framer-motion": "^11.2.14",
     "next": "^13.5.3",
+    "next-fonts": "^1.5.1",
     "next-themes": "^0.3.0",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^10.0.2",

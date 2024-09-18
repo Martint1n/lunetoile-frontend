@@ -3,26 +3,26 @@ require('dotenv').config();
 import '../styles/globals.css';
 import Head from 'next/head';
 
-import { Provider } from 'react-redux';
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import preorderInfos from '../reducers/preorderInfos'
-import users from '../reducers/users';
+// import { Provider } from 'react-redux';
+// import { combineReducers, configureStore } from '@reduxjs/toolkit';
+// import preorderInfos from '../reducers/preorderInfos'
+// import users from '../reducers/users';
 import {NextUIProvider} from "@nextui-org/react";
-import { ThemeProvider as NextThemesProvider } from 'next-themes';
+// import { ThemeProvider as NextThemesProvider } from 'next-themes';
 
-import { persistStore, persistReducer } from 'redux-persist';
-import { PersistGate } from 'redux-persist/integration/react';
-import storage from 'redux-persist/lib/storage';
+// import { persistStore, persistReducer } from 'redux-persist';
+// import { PersistGate } from 'redux-persist/integration/react';
+// import storage from 'redux-persist/lib/storage';
 
-const reducers = combineReducers({ preorderInfos, users });
-const persistConfig = { key: 'lunetoile', storage};
+// const reducers = combineReducers({ preorderInfos, users });
+// const persistConfig = { key: 'lunetoile', storage};
 
-const store = configureStore({
-  reducer: persistReducer(persistConfig, reducers),
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }),
-});
+// const store = configureStore({
+//   reducer: persistReducer(persistConfig, reducers),
+//   middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }),
+// });
 
-const persistor = persistStore(store);
+// const persistor = persistStore(store);
 
 function App({ Component, pageProps }) {
   
@@ -30,8 +30,8 @@ function App({ Component, pageProps }) {
   
   return (
     
-      <Provider store={store}>
-        <PersistGate persistor={persistor}>
+      // <Provider store={store}>
+      //   <PersistGate persistor={persistor}>
         <NextUIProvider>
           <Head>
             <title>Next.js App</title>
@@ -42,8 +42,8 @@ function App({ Component, pageProps }) {
           </Head>
           {getLayout(<Component {...pageProps} />)}
           </NextUIProvider>
-        </PersistGate>
-      </Provider>
+      //   </PersistGate>
+      // </Provider>
     
   );
 }
