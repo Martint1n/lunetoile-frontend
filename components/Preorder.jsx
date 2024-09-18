@@ -2,8 +2,8 @@ import { useRouter } from 'next/router';
 import React from 'react'
 import { useEffect, useState } from 'react';
 import Stripe from './Stripe';
-import { useDispatch } from 'react-redux';
-import { addPreorderInfoToStore } from '../reducers/preorderInfos';
+// import { useDispatch } from 'react-redux';
+// import { addPreorderInfoToStore } from '../reducers/preorderInfos';
 import Image from 'next/image';
 import { Input } from "@nextui-org/react";
 
@@ -11,7 +11,7 @@ import { Input } from "@nextui-org/react";
 const PreorderForm = () => {
   const router = useRouter();
   const { artist } = router.query;
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   console.log('Artist Name:', artist);
 
@@ -64,7 +64,7 @@ const PreorderForm = () => {
 
     // Ici, vous pouvez récupérer ou générer dynamiquement le paramètre
 
-    dispatch(addPreorderInfoToStore(data))
+    // dispatch(addPreorderInfoToStore(data))
 
     // fetch(`http://localhost:3000/preorder/${artist}`, {
     //   method: 'POST',
