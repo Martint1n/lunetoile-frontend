@@ -118,7 +118,7 @@ function Home() {
       </div>
       <div className='h-[120vh] w-screen flex flex-col justify-around'>
         <div className='relative w-full aspect-[4/3] -mt-40 self-center lg:w-1/2 lg:-mt-28'>
-          <Image src='/display-1.webp' layout='fill' objectFit="contain" />
+          <Image src='/Still-01-Hero-Site0001-1.webp' layout='fill' objectFit="contain" />
         </div>
         <div className='self-center'>
           <Image src='/etoile.svg' width={24} height={24}/>
@@ -169,7 +169,7 @@ function Home() {
           </div>
         </div>
           <div className='relative w-screen h-1/2 lg:h-full lg:w-2/5 lg:-ml-20'>
-            <Image src='/display-2.webp' layout='fill' unoptimized={true}/> 
+            <Image src='/display-2.webp' layout='fill' unoptimized={false}/> 
           </div>
       </div>
       <div className='flex flex-col justify-center items-center h-[50vh]'>
