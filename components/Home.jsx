@@ -83,7 +83,7 @@ function Home() {
 
 
   return (
-    <div>
+    <div className='overflow-x-hidden'>
       <div className='bg-darkBlue h-screen'>
         <div className='flex flex-col justify-around items-center h-[60vh]'>
           <div className='relative mt-10 pt-10 w-[200px] h-[49px] lg:w-[360px] lg:h-[87px]'>
@@ -116,9 +116,11 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className='h-[120vh] w-screen flex flex-col justify-around'>
-        <div className='relative w-full aspect-[4/3] -mt-40 self-center lg:w-1/2 lg:-mt-28'>
-          <Image src='/Still-01-Hero-Site0001-1.webp' layout='fill' objectFit="contain" />
+      <div className='h-[200vh] w-screen flex flex-col justify-between -mt-1'>
+        <div className='w-full flex flex-col' style={{ background: 'linear-gradient(to bottom, rgb(12, 12, 17) 50%, white 50%)' }}>
+          <div className='relative w-full aspect-[4/3] self-center lg:w-1/2'>
+            <Image src='/Still-01-Hero-Site0001-1.webp' layout='fill' objectFit="contain" />
+          </div>
         </div>
         <div className='self-center'>
           <Image src='/etoile.svg' width={24} height={24}/>
@@ -138,7 +140,7 @@ function Home() {
           offrant plus qu'un jeu : une véritable
           galerie d'art portable.
         </p>
-        <div className='h-[50vh] w-screen flex overflow-x-scroll scrollbar-thin scrollbar-webkit'>
+        <div className='h-[60vh] w-screen flex overflow-x-scroll scrollbar-thin scrollbar-webkit'>
           {artist}
         </div>
         <div className='w-screen flex justify-center'>
@@ -169,7 +171,7 @@ function Home() {
           </div>
         </div>
           <div className='relative w-screen h-1/2 lg:h-full lg:w-2/5 lg:-ml-20'>
-            <Image src='/display-2.webp' layout='fill' unoptimized={false}/> 
+            <Image src='/display-2-2.webp' layout='fill' unoptimized={false}/> 
           </div>
       </div>
       <div className='flex flex-col justify-center items-center h-[50vh]'>
@@ -189,7 +191,7 @@ function Home() {
       </div>
       <div className='lg:flex'>
         <div className='relative w-screen pb-[105.56%] lg:w-[50vw] lg:pb-[50%]'>
-          <Image src='/deck6.webp' layout='fill' objectFit="cover"/> 
+          <Image src='/deck-6-2.webp' layout='fill' objectFit="cover"/> 
         </div>
         <div className='relative w-screen pb-[105.56%] lg:w-[50vw] lg:pb-[50%]'> 
           <Image src='/9cards.webp' layout='fill' objectFit="cover"/> 
@@ -229,7 +231,7 @@ function Home() {
       </div>
       </div>
       <div className=''>
-        <div className='relative w-screen pb-[45.73%] -mt-1'>
+        <div className='relative w-screen pb-[80%] -mt-1 lg:pb-[45%]'>
           <Image src='/imgbottom.webp' layout='fill' objectFit="cover"/> 
         </div>
       </div>
