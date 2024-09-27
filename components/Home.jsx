@@ -94,11 +94,16 @@ function Home() {
               objectFit="contain" 
             />
           </div>
-          <div className='text-white text-center text-[42px] leading-[51px] pt-10 pb-10 lg:text-[61px] lg:leading-[74px]'> <span className='text-gold'>
-          LE JEU DE <br />
-          CARTES</span> <br />
-          TRADITONNEL <br />
-          MODERNE !
+          <div className='text-white text-center text-[42px] leading-[51px] pt-10 pb-10 lg:text-[61px] lg:leading-[74px]'>
+            <span className='text-gold'>
+              LE JEU DE 
+              <span className='block lg:hidden'>CARTES</span> {/* Affiché uniquement sur petits écrans */}
+              <span className='hidden lg:inline'>CARTES</span> {/* Affiché uniquement sur grands écrans */}
+            </span>
+            <span>
+              <span className='block lg:hidden'>TRADITIONNEL <br />MODERNE !</span> {/* Affiché uniquement sur petits écrans */}
+              <span className='hidden lg:inline'> <br />TRADITIONNEL MODERNE !</span> {/* Affiché uniquement sur grands écrans */}
+            </span>
           </div>
           <p className='text-white text-lg pb-10 lg:w-[60vw] lg:text-center'>
             Réinventez vos classiques avec un jeu 
@@ -116,8 +121,8 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className='h-[200vh] w-screen flex flex-col justify-between -mt-1'>
-        <div className='w-full flex flex-col' style={{ background: 'linear-gradient(to bottom, rgb(12, 12, 17) 50%, white 50%)' }}>
+      <div className='h-[150vh] w-screen flex flex-col justify-between -mt-1'>
+        <div className='w-full flex flex-col mt-[-20vh]' style={{ background: 'linear-gradient(to bottom, rgb(12, 12, 17) 50%, white 50%)' }}>
           <div className='relative w-full aspect-[4/3] self-center lg:w-1/2'>
             <Image src='/Still-01-Hero-Site0001-1.webp' layout='fill' objectFit="contain" />
           </div>
