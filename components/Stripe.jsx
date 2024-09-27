@@ -15,7 +15,7 @@ export default function Stripe({ firstName, lastName, country, phoneNumber, addr
   }, []);
 
   const makePayment = async () => {
-    const response = await fetch('http://localhost:3000/testpayment/create-checkout-session', {
+    const response = await fetch('https://lunetoile-backend.vercel.app/testpayment/create-checkout-session', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ product: 'card', price, firstName, lastName, country, phoneNumber, address, zipCode, email}),
