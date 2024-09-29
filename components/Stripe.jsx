@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 
-export default function Stripe({ firstName, lastName, country, phoneNumber, address, zipCode, email, price, artist }) {
+export default function Stripe({ firstName, lastName, country, phoneNumber, address, zipCode, email, price, artist, city }) {
   const [stripePromise, setStripePromise] = useState(null);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export default function Stripe({ firstName, lastName, country, phoneNumber, addr
     const response = await fetch('https://lunetoile-backend.vercel.app/testpayment/create-checkout-session', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ product: 'card', price, firstName, lastName, country, phoneNumber, address, zipCode, email, artist}),
+      body: JSON.stringify({ product: 'card', price, firstName, lastName, city, country, phoneNumber, address, zipCode, email, artist}),
     });
 
     const session = await response.json();

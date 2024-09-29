@@ -19,6 +19,7 @@ const PreorderForm = () => {
     lastName: '', 
     firstName: '',
     email: '',
+    city:'',
     address: '',
     zipCode: '',
     country: '',
@@ -233,7 +234,7 @@ console.log(inputValues.address)
         {artist && <div><div className='text-xl self-center'>Votre achat soutient directement</div>
         <div className='self-center text-xl'>{ artist } ✨</div></div>}
         
-        <Stripe onClick={handleSubmit} firstName={inputValues.firstName} lastName={inputValues.lastName} country={inputValues.country} phoneNumber={inputValues.phoneNumber} address={inputValues.address} zipCode={inputValues.zipCode} deckNumber={deckNumber} email={inputValues.email} price={price} artist={artist}/>
+        <Stripe onClick={handleSubmit} firstName={inputValues.firstName} lastName={inputValues.lastName} city={inputValues.city} country={inputValues.country} phoneNumber={inputValues.phoneNumber} address={inputValues.address} zipCode={inputValues.zipCode} deckNumber={deckNumber} email={inputValues.email} price={price} artist={artist}/>
       </div>
     </div>
   </div>
