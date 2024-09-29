@@ -26,8 +26,19 @@ const PreorderForm = () => {
     phoneNumber: '',
   }); 
 
+  const adressMailTest = ['test@gmail.com', 'zozita.slowpoke@gmail.com']
   const [deckNumber, setDeckNumber] = useState(1)
-  const price = (deckNumber * 49.99).toFixed(2)
+  const [price, setPrice] = useState((deckNumber * 49.99).toFixed(2))
+  useEffect(() => {
+    for (let i = 0; i < adressMailTest.length; i++){
+    if (inputValues.email === adressMailTest[i]) {
+      setPrice((deckNumber * 35.99).toFixed(2))
+      break
+    }else {
+      setPrice((deckNumber * 49.99).toFixed(2));
+    }
+  }
+  },[inputValues.email, deckNumber])
   const priceWithCurrency = `${price}€`
 
   const handAddDeckNumberChange = () => {
@@ -219,10 +230,10 @@ console.log(inputValues.address)
             <div>Livraison Gratuite</div>
           </div>
         </div>
-        <div className='text-xl self-center'>Votre achat soutient directement</div>
-        <div className='self-center text-xl'>{ artist }</div>
-
-        <Stripe onClick={handleSubmit} firstName={inputValues.firstName} lastName={inputValues.lastName} country={inputValues.country} phoneNumber={inputValues.phoneNumber} address={inputValues.address} zipCode={inputValues.zipCode} deckNumber={deckNumber} email={inputValues.email} price={price}/>
+        {artist && <div><div className='text-xl self-center'>Votre achat soutient directement</div>
+        <div className='self-center text-xl'>{ artist } ✨</div></div>}
+        
+        <Stripe onClick={handleSubmit} firstName={inputValues.firstName} lastName={inputValues.lastName} country={inputValues.country} phoneNumber={inputValues.phoneNumber} address={inputValues.address} zipCode={inputValues.zipCode} deckNumber={deckNumber} email={inputValues.email} price={price} artist={artist}/>
       </div>
     </div>
   </div>
