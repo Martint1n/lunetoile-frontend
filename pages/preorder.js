@@ -9,7 +9,7 @@ function preorder() {
 
 preorder.getLayout = function getLayout(page) {
   return (
-    <NextThemesProvider attribute="class" defaultTheme="system">
+    <NextThemesProvider attribute="class" defaultTheme="dark" forcedTheme="dark">
       <NextUIProvider>
         <Head>
           <title>Preorder Page</title>

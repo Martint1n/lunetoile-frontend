@@ -5,6 +5,10 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+html {
+  color-scheme: light; /* Forcer le mode light */
+}
+
 * {
   box-sizing: border-box;
 }
