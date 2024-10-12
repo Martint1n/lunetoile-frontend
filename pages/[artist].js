@@ -6,6 +6,8 @@ const Home = dynamic(() => import('../components/Home'));
 
 
 function ArtistPage({ artist, isAllowed }) {
+  console.log("Artist:", artist);      // Ajout pour débogage
+  console.log("IsAllowed:", isAllowed); // Ajout pour débogage
   if (!isAllowed) {
     return (
       <div>
@@ -27,7 +29,7 @@ const CACHE_DURATION = 1000 * 60 * 5; // 5 minutes de cache
 export async function getServerSideProps(context) {
   console.log("Query params:", context.query);
   console.log("Params:", context.params);
-  const { artist = '' } = context.params;
+  const { artist = '' } = context.params || context.query;
 
   // Nettoyer le nom de l'artiste pour supprimer les @
   const cleanedArtist = artist.replace(/^@/, '').toLowerCase();
