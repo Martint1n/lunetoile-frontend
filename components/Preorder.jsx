@@ -27,7 +27,10 @@ const PreorderForm = () => {
     phoneNumber: '',
   }); 
 
-  const adressMailTest = ['test@gmail.com', 'zozita.slowpoke@gmail.com']
+  const adressMailTest = ['test@gmail.com', 
+                          'zozita.slowpoke@gmail.com', 
+                          'guilbertmartin75@gmail.com',
+                        ]
   const [deckNumber, setDeckNumber] = useState(1)
   const [price, setPrice] = useState((deckNumber * 49.99).toFixed(2))
   useEffect(() => {
@@ -40,6 +43,7 @@ const PreorderForm = () => {
     }
   }
   },[inputValues.email, deckNumber])
+  
   const priceWithCurrency = `${price}€`
 
   const handAddDeckNumberChange = () => {

@@ -30,8 +30,8 @@ export default function Stripe({ firstName, lastName, country, phoneNumber, addr
   };
 
   return (
-    <button onClick={makePayment} disabled={!stripePromise}>
-      Make Payment
+    <button onClick={makePayment} disabled={!stripePromise} className={`${color} ${text} rounded-3xl w-full h-12`}>
+      Précommander
     </button>
   );
 }
