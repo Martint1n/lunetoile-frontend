@@ -12,6 +12,7 @@ function PreOrderButton({ color = 'bg-gold', text= 'text-black'}) {
         // Vérifiez si router.query.artistName est défini et mettez à jour l'état
         if (router.query.artist) {
             setArtistName(router.query.artist);
+            console.log('Artist query:', router.query.artist);
         }
     }, [router.query.artist]);
 
