@@ -2,29 +2,29 @@ import Link from 'next/link'
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-function PreOrderButton({ color = 'bg-gold', text= 'text-black'}) {
-
+function PreOrderButton({ color = 'bg-gold', text = 'text-black', hoverBg = 'hover:bg-gold', hoverText = 'hover:text-black'}) {
     const router = useRouter();
     const [artistName, setArtistName] = useState('');
 
     useEffect(() => {
-        console.log('Router Query:', router.query);
-        // Vérifiez si router.query.artistName est défini et mettez à jour l'état
         if (router.query.artist) {
             setArtistName(router.query.artist);
-            console.log('Artist query:', router.query.artist);
         }
     }, [router.query.artist]);
 
     const preorderLink = artistName 
-    ? `/preorder?artist=${artistName}` 
-    : '/preorder'; // Fallback if artistName is undefined
+        ? `/preorder?artist=${artistName}` 
+        : '/preorder';
 
-    console.log('Artist Name:', artistName);
-
-    return(
-        <Link href={preorderLink} passHref><button className={`${color} ${text} rounded-3xl w-full h-12`}>Précommander</button></Link>
-    )
-};
+    return (
+        <Link href={preorderLink} className="sm:w-[200px]">
+            <button className={`${color} ${text} rounded-3xl min-h-[56px] sm:min-h-[48px] font-montserrat font-bold flex items-center justify-center ${hoverBg} ${hoverText} transition-all duration-300 px-4 sm:px-8 whitespace-nowrap`}>
+                <span className="body-m sm:body-s tracking-wide">
+                    Précommander
+                </span>
+            </button>
+        </Link>
+    );
+}
 
 export default PreOrderButton;
