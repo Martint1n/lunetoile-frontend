@@ -18,7 +18,7 @@ export default function Stripe({ firstName, lastName, country, phoneNumber, addr
     const response = await fetch('https://lunetoile-backend.vercel.app/testpayment/create-checkout-session', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ product: 'card', price, firstName, lastName, city, country, phoneNumber, address, zipCode, email, artist}),
+      body: JSON.stringify({ product: 'card', price, firstName, lastName, city, country, phoneNumber, address, zipCode, email, artist, deckNumber}),
     });
 
     const session = await response.json();
