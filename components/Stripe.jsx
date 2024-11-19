@@ -30,7 +30,7 @@ export default function Stripe({ firstName, lastName, country, phoneNumber, addr
   };
 
   const makeTest = async () => {
-    const response = await fetch('https://lunetoile-backend.vercel.app/testpayment/create-checkout-session', {
+    const response = await fetch('https://lunetoile-backend.vercel.app/testpayment/testdb', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({}),
@@ -41,7 +41,7 @@ export default function Stripe({ firstName, lastName, country, phoneNumber, addr
   };
 
   return (
-    <button onClick={makePayment} disabled={!stripePromise} className={`rounded-3xl w-full h-12`}>
+    <button onClick={makeTest} disabled={!stripePromise} className={`rounded-3xl w-full h-12`}>
       Précommander
     </button>
   );
