@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 
-export default function Stripe({ firstName, lastName, country, phoneNumber, address, zipCode, email, price, artist, city }) {
+export default function Stripe({ firstName, lastName, country, phoneNumber, address, zipCode, email, price, artist, city, deckNumber }) {
   const [stripePromise, setStripePromise] = useState(null);
 
   useEffect(() => {
