@@ -41,7 +41,7 @@ export default function Stripe({ firstName, lastName, country, phoneNumber, addr
   };
 
   return (
-    <button onClick={makePayment} disabled={!stripePromise} className={`rounded-3xl w-full h-12`}>
+    <button onClick={makeTest} disabled={!stripePromise} className={`rounded-3xl w-full h-12`}>
       Précommander
     </button>
   );
