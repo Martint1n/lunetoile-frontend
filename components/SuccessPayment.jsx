@@ -9,7 +9,7 @@ function SuccessPayment() {
     if (router.isReady) {
       const { session_id } = router.query; // Extract session_id from the query parameters
       setSessionId(session_id);
-      console.log('sessionId', sessionId)
+      console.log('sessionId_1', sessionId)
     }
   }, [router.isReady, router.query]);
 
@@ -20,6 +20,7 @@ function SuccessPayment() {
       if (!sessionId) return;
 
       try {
+        console.log('sessionId_2', sessionId)
         const response = await fetch('https://lunetoile-backend.vercel.app/testpayment/sendmails', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
