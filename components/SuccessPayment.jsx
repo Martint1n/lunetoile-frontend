@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 function SuccessPayment() {
+  const router = useRouter(); // Access to the router object
   const [sessionId, setSessionId] = useState(null);
 
   useEffect(() => {
-    // Extract the session ID from the URL query parameters
-    const urlParams = new URLSearchParams(window.location.search);
-    const id = urlParams.get('session_id');
-    setSessionId(id);
-  }, []);
+    if (router.isReady) {
+      const { session_id } = router.query; // Extract session_id from the query parameters
+      setSessionId(session_id);
+    }
+  }, [router.isReady, router.query]);
+
 
   useEffect(() => {
     // Send mail only after sessionId is set
