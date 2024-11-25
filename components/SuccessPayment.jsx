@@ -2,16 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
 function SuccessPayment() {
-  const router = useRouter(); // Access to the router object
-  const [sessionId, setSessionId] = useState(null);
-
-  useEffect(() => {
-    if (router.isReady) {
-      const { session_id } = router.query; // Extract session_id from the query parameters
-      setSessionId(session_id);
-      console.log('sessionId_1', sessionId)
-    }
-  }, [router.isReady, router.query]);
+    const router = useRouter(); // Access the router object
+    const [sessionId, setSessionId] = useState(null);
+  
+    useEffect(() => {
+      if (router.isReady) {
+        const { session_id } = router.query; // Extract session_id
+        console.log('router.query', router.query)
+        if (session_id) {
+          setSessionId(session_id);
+          console.log('Session ID found:', session_id); // Log for debugging
+        } else {
+          console.warn('No session_id found in query parameters');
+        }
+      }
+    }, [router.isReady, router.query]);
 
 
   useEffect(() => {
