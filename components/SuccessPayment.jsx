@@ -9,6 +9,7 @@ function SuccessPayment() {
     if (router.isReady) {
       const { session_id } = router.query; // Extract session_id from the query parameters
       setSessionId(session_id);
+      console.log('sessionId', sessionId)
     }
   }, [router.isReady, router.query]);
 
