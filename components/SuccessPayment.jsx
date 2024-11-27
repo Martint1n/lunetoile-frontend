@@ -26,10 +26,9 @@ function SuccessPayment() {
 
       try {
         console.log('sessionId_2', sessionId)
-        const response = await fetch('https://lunetoile-backend.vercel.app/testpayment/sendmails', {
-          method: 'POST',
+        const response = await fetch(`https://lunetoile-backend.vercel.app/testpayment/sendmails/sessionId=${sessionId}`, {
+          method: 'GET',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ sessionId }),
         });
 
         const result = await response.json();
