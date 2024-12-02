@@ -6,21 +6,21 @@
 
 @layer base {
   h1 {
-    @apply font-cormorant text-[61px] leading-[74px];
+    @apply font-cormorant text-[min(8vw,61px)] leading-[1.2] 2xl:text-[61px] 2xl:leading-[74px] tracking-[-0.02em];
   }
   
   h2 {
-    @apply font-cormorant text-[45px] leading-[55px];
+    @apply font-cormorant text-[min(6vw,45px)] leading-[1.2] 2xl:text-[45px] 2xl:leading-[55px] tracking-[-0.01em];
   }
   
   h3 {
-    @apply font-cormorant text-[30px] leading-[36px];
+    @apply font-cormorant text-[min(5vw,30px)] leading-[1.2] 2xl:text-[30px] 2xl:leading-[36px];
   }
 }
 
 @layer components {
   .body-l {
-    @apply font-montserrat text-[18px] leading-[28px];
+    @apply font-montserrat text-[min(3vw,18px)] leading-[1.5] 2xl:text-[18px] 2xl:leading-[28px];
   }
   
   .body-l-bold {
@@ -28,7 +28,7 @@
   }
   
   .body-m {
-    @apply font-montserrat text-[16px] leading-[22px];
+    @apply font-montserrat text-[min(2.8vw,16px)] leading-[1.4] 2xl:text-[16px] 2xl:leading-[22px];
   }
   
   .body-m-semibold {
@@ -40,16 +40,58 @@
   }
   
   .body-s {
-    @apply font-montserrat text-[14px] leading-[18px];
+    @apply font-montserrat text-[min(2.5vw,14px)] leading-[1.3] 2xl:text-[14px] 2xl:leading-[18px];
+  }
+
+  .btn {
+    @apply rounded-full px-10 py-4 transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply btn bg-gold text-black hover:bg-opacity-90;
+  }
+
+  .btn-secondary {
+    @apply btn bg-darkBlue text-white hover:bg-opacity-90;
+  }
+
+  .container-padding {
+    @apply px-6 lg:px-24;
+  }
+
+  .section-spacing {
+    @apply py-16 lg:py-24;
   }
 }
 
-* {
-  box-sizing: border-box;
-}
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.8s ease-out forwards;
+  }
 
-html {
-  color-scheme: light;
+  .mobile-heading {
+    @apply text-[42px] leading-[51px] lg:text-[61px] lg:leading-[74px];
+  }
+  
+  .mobile-body {
+    @apply text-[14px] leading-[20px] lg:text-[16px] lg:leading-[22px];
+  }
+  
+  .mobile-container {
+    @apply px-4 sm:px-6 lg:px-24;
+  }
+  
+  .mobile-section-spacing {
+    @apply py-12 lg:py-24;
+  }
 }
 
 @keyframes fadeInUp {
@@ -83,32 +125,51 @@ html {
   }
 }
 
-@layer utilities {
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+
+@media (max-width: 1024px) {
   .animate-fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
+    animation-duration: 0.6s;
   }
   
   .animate-fade-in-up {
-    animation: fadeInUp 0.8s ease-out forwards;
-  }
-  
-  .animate-scale-in {
-    animation: scaleIn 0.8s ease-out forwards;
-  }
-  
-  .animation-delay-100 {
-    animation-delay: 100ms;
-  }
-  
-  .animation-delay-200 {
-    animation-delay: 200ms;
-  }
-  
-  .animation-delay-300 {
-    animation-delay: 300ms;
-  }
-  
-  .animation-delay-500 {
-    animation-delay: 500ms;
+    animation-duration: 0.6s;
   }
 }
+
+/* Global scrollbar styles */
+::-webkit-scrollbar {
+  height: 8px;
+  width: 7px;
+  background: rgba(255, 255, 255, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  background: black;
+  -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar:hover {
+  height: 10px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+}
+
