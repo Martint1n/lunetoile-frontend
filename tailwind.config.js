@@ -13,55 +13,33 @@ module.exports = {
         cormorant: ['Cormorant Garamond', 'serif'],
         montserrat: ['Montserrat', 'sans-serif'],
       },
-      fontSize: {
-        'h1': ['61px', '74px'],
-        'h2': ['45px', '55px'],
-        'h3': ['30px', '36px'],
-        'body-l': ['18px', '28px'],
-        'body-m': ['16px', '22px'],
-        'body-s': ['14px', '18px'],
+      colors: {
+        darkBlue: 'rgb(12, 12, 17)',
+        midBlue: '#16203B',
+        gold: 'rgb(222, 183, 93)',
+        lightGrey: 'rgb(125, 127, 129)',
       },
-    },
-    colors: {
-      darkBlue: 'rgb(12, 12, 17)',
-      midBlue: '#16203B',
-      gold: 'rgb(222, 183, 93)',
-      white: '#FFFFFF',
-      black: '#000000',
-      lightGrey: 'rgb(125, 127, 129)',
-      transparent: 'transparent',
+      maxWidth: {
+        'screen-xl': '1440px',
+      },
+      height: {
+        'screen-90': '90vh',
+      },
+      spacing: {
+        '18': '4.5rem',
+        '22': '5.5rem',
+      },
+      screens: {
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+      },
     },
   },
   plugins: [
     nextui(),
     require('@tailwindcss/aspect-ratio'),
-    function ({addUtilities}){
-      const newUtilities = {
-        '.scrollbar-thin': {
-          scrollbarWidth: 'thin',
-          scrollbarColor: 'rgb(12, 12, 17) white ', 
-        },
-        '.scrollbar-webkit': {
-          '&::-webkit-scrollbar': {
-            width: '8px'
-          },
-          '&::-webkit-scrollbar-track': {
-            background: 'white'
-          },
-          '&::-webkit-scrollbar-thumb': {
-            backgroundColor: 'rgb(12, 12, 17)',
-            borderRadius: '20px',
-            border: '1px solid white'
-          }
-        },
-        '.scrollbar-none': {
-          'scrollbar-width': 'none',
-          '&::-webkit-scrollbar': {
-            display: 'none'
-          }
-        }
-      }
-      addUtilities(newUtilities, ['responsive', 'hover'])
-    }
   ],
 }
