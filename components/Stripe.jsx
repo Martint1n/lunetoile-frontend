@@ -5,6 +5,8 @@ import { Elements } from '@stripe/react-stripe-js';
 export default function Stripe({ firstName, lastName, country, phoneNumber, address, zipCode, email, price, artist, city, deckNumber }) {
   const [stripePromise, setStripePromise] = useState(null);
 
+  const fields = [firstName, lastName, country, phoneNumber, address, zipCode, email, city]
+
   useEffect(() => {
     const loadStripeScript = async () => {
       const stripe = await loadStripe('pk_test_51P9EqSEsrCdUsLMuJUcvfBoUVVmVEIPFgBus8RRnVkTCZb9ZqeSdHnnjQdxiTpyXT4W4qG4gAZCDQesaNcyYMdfj00tFOAC5Am');
@@ -15,6 +17,10 @@ export default function Stripe({ firstName, lastName, country, phoneNumber, addr
   }, []);
 
   const makePayment = async () => {
+    const allFieldsFilled = fields(inputValues).every(value => value.trim() !== '');
+    if (allFieldsFilled) {
+      console.log("Tous les champs sont remplis !");
+
     const response = await fetch('https://lunetoile-backend.vercel.app/testpayment/create-checkout-session', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -26,6 +32,10 @@ export default function Stripe({ firstName, lastName, country, phoneNumber, addr
 
     if (result.error) {
       console.error(result.error);
+    }
+    else {
+      console.log("Veuillez remplir tous les champs.");
+      alert("Remplissez les champs")
     }
   };
 

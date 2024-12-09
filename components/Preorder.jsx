@@ -148,10 +148,6 @@ const PreorderForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const allFieldsFilled = Object.values(inputValues).every(value => value.trim() !== '');
-    if (allFieldsFilled) {
-      console.log("Tous les champs sont remplis !");
-
       const { artist } = router.query;
       console.log('Artist:', artist);
 
@@ -163,9 +159,6 @@ const PreorderForm = () => {
       console.log(artist)
       console.log('data :', data)
 
-    } else {
-      console.log("Veuillez remplir tous les champs.");
-      alert("Remplissez les champs")
     }
   };
 
