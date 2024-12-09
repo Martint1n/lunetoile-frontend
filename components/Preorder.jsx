@@ -158,8 +158,6 @@ const PreorderForm = () => {
       console.log(inputValues)
       console.log(artist)
       console.log('data :', data)
-
-    }
   };
 
 //https://tailwindui.com/components/application-ui/forms/form-layouts

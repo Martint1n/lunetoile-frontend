@@ -6,6 +6,7 @@ export default function Stripe({ firstName, lastName, country, phoneNumber, addr
   const [stripePromise, setStripePromise] = useState(null);
 
   const fields = [firstName, lastName, country, phoneNumber, address, zipCode, email, city]
+  const areAllFieldsFilled = fields.every(value => value.trim() !== '');
 
   useEffect(() => {
     const loadStripeScript = async () => {
@@ -17,23 +18,23 @@ export default function Stripe({ firstName, lastName, country, phoneNumber, addr
   }, []);
 
   const makePayment = async () => {
-    const allFieldsFilled = fields.every(value => value.trim() !== '');
-    if (allFieldsFilled) {
+    
+    if (areAllFieldsFilled) {
       console.log("Tous les champs sont remplis !");
 
-    const response = await fetch('https://lunetoile-backend.vercel.app/testpayment/create-checkout-session', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ product: 'card', price, firstName, lastName, city, country, phoneNumber, address, zipCode, email, artist, deckNumber}),
-    });
+      const response = await fetch('https://lunetoile-backend.vercel.app/testpayment/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ product: 'card', price, firstName, lastName, city, country, phoneNumber, address, zipCode, email, artist, deckNumber}),
+      });
 
-    const session = await response.json();
-    const result = await stripePromise.redirectToCheckout({ sessionId: session.id });
+      const session = await response.json();
+      const result = await stripePromise.redirectToCheckout({ sessionId: session.id });
 
-    if (result.error) {
-      console.error(result.error);
-    }
-    else {
+      if (result.error) {
+        console.error(result.error);
+      }
+    }else {
       console.log("Veuillez remplir tous les champs.");
       alert("Remplissez les champs")
     }
