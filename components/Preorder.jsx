@@ -148,36 +148,25 @@ const PreorderForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const { artist } = router.query;
-    console.log('Artist:', artist);
+    const allFieldsFilled = Object.values(inputValues).every(value => value.trim() !== '');
+    if (allFieldsFilled) {
+      console.log("Tous les champs sont remplis !");
 
-    // Préparer les données à envoyer au backend
-    const data = { artist, ...inputValues };
-    console.log('Data:', data);
+      const { artist } = router.query;
+      console.log('Artist:', artist);
 
-    console.log(inputValues)
-    console.log(artist)
-    console.log('data :', data)
+      // Préparer les données à envoyer au backend
+      const data = { artist, ...inputValues };
+      console.log('Data:', data);
 
-    // Ici, vous pouvez récupérer ou générer dynamiquement le paramètre
+      console.log(inputValues)
+      console.log(artist)
+      console.log('data :', data)
 
-    // dispatch(addPreorderInfoToStore(data))
-
-    // fetch(`http://localhost:3000/preorder/${artist}`, {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(data),
-    // })
-    // .then((response) => {
-    //   if (!response.ok) {
-    //     throw new Error('Error submitting data');
-    //   }
-    // })
-    // .catch(error => {
-    //   console.error('Error:', error);
-    // });
+    } else {
+      console.log("Veuillez remplir tous les champs.");
+      alert("Remplissez les champs")
+    }
   };
 
 //https://tailwindui.com/components/application-ui/forms/form-layouts
