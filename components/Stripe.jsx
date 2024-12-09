@@ -36,7 +36,7 @@ export default function Stripe({ firstName, lastName, country, phoneNumber, addr
       }
     }else {
       console.log("Veuillez remplir tous les champs.");
-      alert("Remplissez les champs")
+      alert("Remplissez tous les champs")
     }
   };
 
