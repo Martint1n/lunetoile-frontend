@@ -6,7 +6,7 @@ export default function Stripe({ firstName, lastName, country, phoneNumber, addr
   const [stripePromise, setStripePromise] = useState(null);
 
   const fields = [firstName, lastName, country, phoneNumber, address, zipCode, email, city]
-  const areAllFieldsFilled = fields.every(value => value.trim() !== '');
+  const areAllFieldsFilled = fields.every(value => typeof value === 'string' && value.trim() !== '');
 
   useEffect(() => {
     const loadStripeScript = async () => {
