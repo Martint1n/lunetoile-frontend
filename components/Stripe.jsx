@@ -17,7 +17,7 @@ export default function Stripe({ firstName, lastName, country, phoneNumber, addr
   }, []);
 
   const makePayment = async () => {
-    const allFieldsFilled = fields(inputValues).every(value => value.trim() !== '');
+    const allFieldsFilled = fields.every(value => value.trim() !== '');
     if (allFieldsFilled) {
       console.log("Tous les champs sont remplis !");
 
