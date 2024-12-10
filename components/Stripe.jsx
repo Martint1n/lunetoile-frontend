@@ -22,7 +22,7 @@ export default function Stripe({ firstName, lastName, country, phoneNumber, addr
     if (areAllFieldsFilled) {
       console.log("Tous les champs sont remplis !");
       const emailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-      if (!emailPattern.test(inputValues.email)) {
+      if (!emailPattern.test(fields[6])) {
         alert("L'adresse email est invalide.");
         return;
       }
