@@ -193,6 +193,7 @@ console.log(inputValues.address)
                 isRequired
                 color="primary"
                 type="email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
                 label="Adresse e-mail"
                 name='email'
                 value={inputValues.email}
@@ -238,6 +239,7 @@ console.log(inputValues.address)
               isRequired
               color="primary"
               type='number'
+              pattern="\d*"
               name='zipCode'
               label='Code postal' 
               value={inputValues.zipCode} 
@@ -270,6 +272,7 @@ console.log(inputValues.address)
               isRequired
               color="primary"
               type='number'
+              pattern="\d*"
               name='phoneNumber'
               label='Télélphone' 
               value={inputValues.phoneNumber} 
