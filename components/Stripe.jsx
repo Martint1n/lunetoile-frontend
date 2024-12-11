@@ -57,8 +57,10 @@ export default function Stripe({ firstName, lastName, country, phoneNumber, addr
   };
 
   return (
-    <button onClick={makePayment} disabled={!stripePromise} className={`rounded-3xl w-full h-12`}>
-      Précommander
+    <button onClick={makePayment} disabled={!stripePromise} className={`hover:bg-gold hover:text-black rounded-3xl min-h-[56px] sm:min-h-[48px] font-montserrat font-bold flex items-center justify-center transition-all duration-300 px-4 sm:px-8 whitespace-nowrap bg-gold text-black `}>
+      <span className="body-m sm:body-s tracking-wide">
+        Précommander
+      </span>
     </button>
   );
 }

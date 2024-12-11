@@ -288,7 +288,7 @@ console.log(inputValues.address)
           <div className='relative w-1/3 aspect-[4/3] lg:w-1/2'>
             <Image src='/display-1.webp' layout='fill' objectFit="contain" alt='deck acheté'/>
           </div>
-          <div className='flex flex-col'>
+          <div className='flex flex-col justify-around'>
             <div>jeu de cartes Lunétoile</div>
             <div className='flex items-center'>
               <p>X {deckNumber}</p>
