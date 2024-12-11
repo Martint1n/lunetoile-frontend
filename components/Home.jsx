@@ -173,7 +173,7 @@ function Home() {
       </div>
       <div className='2xl:flex animate-fade-in'>
         <div className='relative w-screen pb-[105.56%] sm:pb-[90%] 2xl:w-[50vw] 2xl:pb-[50%]'>
-          <Image src='/deck6.webp' layout='fill' objectFit="cover" quality={80} loading="lazy" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 50vw"/> 
+          <Image src='/deck6.png' layout='fill' objectFit="cover" quality={80} loading="lazy" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 50vw"/> 
         </div>
         <div className='relative w-screen pb-[105.56%] 2xl:w-[50vw] 2xl:pb-[50%]'> 
           <Image src='/9cards.webp' layout='fill' objectFit="cover" quality={80} loading="lazy" sizes="(max-width: 768px) 100vw, 50vw"/> 
