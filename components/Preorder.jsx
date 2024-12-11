@@ -291,10 +291,10 @@ console.log(inputValues.address)
           <div className='flex flex-col'>
             <div>jeu de cartes Lunétoile</div>
             <div className='flex items-center'>
-              <p className='-ml-[26px]'>X {deckNumber}</p>
-              <button onClick={handAddDeckNumberChange} className='-ml-[14px] flex justify-center items-end w-[32px] h-[32px] text-gold text-3xl border border-gold rounded-full mr-2'>+</button>
+              <p>X {deckNumber}</p>
+              <button onClick={handAddDeckNumberChange} className='ml-[8px] flex justify-center items-end w-[32px] h-[32px] text-gold text-3xl border border-gold rounded-full mr-2'>+</button>
               <button onClick={handMinusDeckNumberChange} className='flex justify-center items-end w-[32px] h-[32px] text-gold text-3xl border border-gold rounded-full'>-</button>
-              <p>{priceWithCurrency}</p>
+              <p className='ml-[8px]'>{priceWithCurrency}</p>
             </div>
             <div>Livraison Gratuite</div>
           </div>
