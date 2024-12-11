@@ -6,6 +6,7 @@ import Stripe from './Stripe';
 // import { addPreorderInfoToStore } from '../reducers/preorderInfos';
 import Image from 'next/image';
 import { Input } from "@nextui-org/react";
+import Link from 'next/link';
 
 
 const PreorderForm = () => {
@@ -166,14 +167,16 @@ console.log(inputValues.address)
   return (
     <div className='bg-dark-background w-screen h-screen'>
       <div className='flex flex-col items-center w-screen '>
-        <div className='relative pt-10 w-4/5 lg:w-[360px] lg:h-[87px]'>
-          <Image 
-            src='/logo.svg' 
-            alt="Logo"
-            layout="fill" 
-            objectFit="contain" 
-          />
-        </div>
+        <Link href={'/'}>
+          <div className='relative pt-10 w-4/5 lg:w-[360px] lg:h-[87px]'>
+            <Image 
+              src='/logo.svg' 
+              alt="Logo"
+              layout="fill" 
+              objectFit="contain" 
+            />
+          </div>
+        </Link>
         <div className='relative w-1/2 h-[49px] lg:w-[200px] lg:h-[60px]'>
           <Image 
             src='/list-symboles.svg' 
@@ -299,8 +302,8 @@ console.log(inputValues.address)
             <div>Livraison Gratuite</div>
           </div>
         </div>
-        {artist && <div><div className='text-xl self-center'>Votre achat soutient directement</div>
-        <div className='self-center text-xl'>{ artist } ✨</div></div>}
+        {artist && <div className='flex flex-col items-center'><div className='text-xl'>Votre achat soutient directement</div>
+        <div className='text-xl'>{ artist } ✨</div></div>}
         
         <Stripe onClick={handleSubmit} firstName={inputValues.firstName} lastName={inputValues.lastName} city={inputValues.city} country={inputValues.country} phoneNumber={inputValues.phoneNumber} address={inputValues.address} zipCode={inputValues.zipCode} deckNumber={deckNumber} email={inputValues.email} price={price} artist={artist}/>
       </div>
