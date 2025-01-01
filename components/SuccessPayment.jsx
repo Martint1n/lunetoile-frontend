@@ -43,7 +43,11 @@ function SuccessPayment() {
   //   sendMails();
   // }, [sessionId]);
 
-  return <div>Success Payment</div>;
+  return (
+    <div className='bg-darkBlue w-screen h-screen'>
+      <div className='text-2xl text-white'><span className='text-gold text-2xl'>Merci</span> de votre achat</div>
+    </div>
+)
 }
 
 export default SuccessPayment;
