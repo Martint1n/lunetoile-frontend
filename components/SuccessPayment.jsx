@@ -44,7 +44,7 @@ function SuccessPayment() {
   // }, [sessionId]);
 
   return (
-    <div className='bg-darkBlue w-screen h-screen'>
+    <div className='bg-darkBlue w-screen h-screen text-center tracking-wider'>
       <div className='tracking-wider text-center text-2xl text-white'><span className='text-gold text-2xl'>Merci</span> de votre achat</div>
     </div>
 )
