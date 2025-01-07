@@ -10,7 +10,7 @@ export default function Stripe({ firstName, lastName, country, phoneNumber, addr
 
   useEffect(() => {
     const loadStripeScript = async () => {
-      const stripe = await loadStripe('pk_test_51P9EqSEsrCdUsLMuJUcvfBoUVVmVEIPFgBus8RRnVkTCZb9ZqeSdHnnjQdxiTpyXT4W4qG4gAZCDQesaNcyYMdfj00tFOAC5Am');
+      const stripe = await loadStripe('pk_live_51PlVInAWrSK8ZKKic0n5c0sYmfacwbmWmLoIAg1HmhuqHDrsUDzFaCihRfvgB4gMz8q3EraGnyCWLcIefcLtwSl700t3MibJq6');
       setStripePromise(stripe);
     };
 
