@@ -34,7 +34,9 @@ export default function Stripe({ firstName, lastName, country, phoneNumber, addr
       });
 
       const session = await response.json();
+      console.log(session);
       const result = await stripePromise.redirectToCheckout({ sessionId: session.id });
+      console.log(result);
 
       if (result.error) {
         console.error(result.error);
