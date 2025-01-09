@@ -69,11 +69,21 @@ function Home() {
       <div className='h-[200vh] w-screen flex flex-col justify-between -mt-1'>
         <div className='w-full flex flex-col mt-[-15vh] sm:mt-[-20vh] 2xl:mt-[-30vh]' style={{ background: 'linear-gradient(to bottom, rgb(12, 12, 17) 50%, white 50%)' }}>
           <div className='relative w-full aspect-[4/3] sm:w-[80%] self-center 2xl:w-1/2 animate-scale-in'>
-            <Image src='/Still-01-Hero-Site0001-1.webp' layout='fill' objectFit="contain" quality={85} sizes="(max-width: 768px) 100vw, 50vw" />
+            <Image 
+              alt = 'etui lunétoile'
+              src='/Still-01-Hero-Site0001-1.webp' 
+              layout='fill' 
+              objectFit="contain" 
+              quality={85} 
+              sizes="(max-width: 768px) 100vw, 50vw" />
           </div>
         </div>
         <div className='self-center animate-fade-in'>
-          <Image src='/etoile.svg' width={24} height={24}/>
+          <Image 
+            alt = 'etoile'
+            src='/etoile.svg' 
+            width={24} 
+            height={24}/>
         </div>
         <div className='text-center h2 pb-12 pt-12 px-[26px] animate-fade-in-up'>
           <h2 className='font-cormorant text-[30px] leading-[36px] 2xl:text-[55px] 2xl:leading-[65px]'>
@@ -98,7 +108,12 @@ function Home() {
       <div className='bg-darkBlue min-h-[85vh] w-screen flex flex-col 2xl:flex-row'>
         <div className='flex flex-col px-4 sm:px-8 py-12 2xl:w-1/2 2xl:justify-center 2xl:pr-20 relative z-10 order-1 2xl:order-2 animate-fade-in-up'>
           <div className='flex justify-center mb-8 2xl:justify-start'>
-            <Image src='/list-symboles.svg' width={200} height={48} className='w-[200px] sm:w-[250px]' alt="game symbols"/> 
+            <Image 
+              src='/list-symboles.svg' 
+              width={200} 
+              height={48} 
+              className='w-[200px] sm:w-[250px]'
+              alt="game symbols"/> 
           </div>
           <div className='font-cormorant text-[26px] sm:text-[30px] md:text-[36px] lg:text-[45px] xl:text-[55px] 2xl:text-[61px] leading-[32px] sm:leading-[36px] md:leading-[42px] lg:leading-[52px] xl:leading-[65px] 2xl:leading-[74px] text-center 2xl:text-left text-white'>
             JOUEZ À LA VERSION <span className='text-gold'>LUNÉTOILE</span> DE VOS<br />
@@ -173,17 +188,37 @@ function Home() {
       </div>
       <div className='2xl:flex animate-fade-in'>
         <div className='relative w-screen pb-[105.56%] sm:pb-[90%] 2xl:w-[50vw] 2xl:pb-[50%]'>
-          <Image src='/deck6.png' layout='fill' objectFit="cover" quality={80} loading="lazy" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 50vw"/> 
+          <Image 
+            alt = "carte 6 d'etoile"
+            src='/deck6.png' 
+            layout='fill' 
+            objectFit="cover" 
+            quality={80} 
+            loading="lazy" 
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 50vw"/> 
         </div>
         <div className='relative w-screen pb-[105.56%] 2xl:w-[50vw] 2xl:pb-[50%]'> 
-          <Image src='/9cards.webp' layout='fill' objectFit="cover" quality={80} loading="lazy" sizes="(max-width: 768px) 100vw, 50vw"/> 
+          <Image 
+            alt = 'eventail de cartes'
+            src='/9cards.webp' 
+            layout='fill' 
+            objectFit="cover" 
+            quality={80} 
+            loading="lazy" 
+            sizes="(max-width: 768px) 100vw, 50vw"
+          /> 
         </div>
       </div>
       
       <div className='flex flex-col 2xl:flex-row animate-fade-in-up'>
         <div className='flex flex-col items-center 2xl:items-start px-6 sm:px-12 pt-12 2xl:w-[40vw] 2xl:justify-center'>
           <div className='mb-8'>
-            <Image src='/coeur.svg' width={24} height={24} alt="heart icon"/>
+            <Image 
+              src='/coeur.svg' 
+              width={24} 
+              height={24} 
+              alt="heart icon"
+            />
           </div>
           <div className='flex flex-col gap-6 sm:gap-8'>
             <h2 className='font-cormorant font-bold text-[36px] sm:text-[42px] md:text-[48px] lg:text-[55px] xl:text-[61px] 2xl:text-[61px] leading-[44px] sm:leading-[51px] 2xl:leading-[74px] text-center 2xl:text-left'>
@@ -220,7 +255,12 @@ function Home() {
       </div>
       <div className=''>
         <div className='relative w-screen pb-[80%] -mt-1 2xl:pb-[45%]'>
-          <Image src='/imgbottom.webp' layout='fill' objectFit="cover"/> 
+          <Image 
+            alt = 'eventail de carte 3D'
+            src='/imgbottom.webp' 
+            layout='fill' 
+            objectFit="cover"
+          /> 
         </div>
       </div>
       <Footer />
