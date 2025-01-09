@@ -32,14 +32,14 @@ export async function getServerSideProps(context) {
   const { artist = '' } = context.params || context.query;
 
   // Si l'artiste n'est pas passé en paramètre dans l'URL, rediriger vers l'URL avec la query (format attendu)
-  if (!artist && context.res) {
+  if (context.res && artist && !context.query.artist) {
     context.res.writeHead(302, {
       Location: `/preorder?artist=${artist}`,
     });
     context.res.end();
     return { props: {} }; // Pas besoin de retourner des props ici
   }
-  
+
   // Nettoyer le nom de l'artiste pour supprimer les @
   const cleanedArtist = artist.replace(/^@/, '').toLowerCase();
 
