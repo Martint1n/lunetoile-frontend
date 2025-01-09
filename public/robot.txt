@@ -1,0 +1,14 @@
+# Blocage de certaines sections de l'application
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Disallow: /checkout/
+Disallow: /api/
+Disallow: /private/
+Disallow: /auth/
+
+# Autorisation de crawler le reste du site
+Allow: /
+
+# Sitemap (optionnel, mais recommandé)
+Sitemap: https://www.lunetoile.fr/sitemap.xml
