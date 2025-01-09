@@ -161,8 +161,6 @@ const PreorderForm = () => {
       console.log('data :', data)
   };
 
-//https://tailwindui.com/components/application-ui/forms/form-layouts
-
 console.log(inputValues.address)
   return (
     <div className='bg-dark-background w-screen h-screen'>

@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
-const BACKEND = process.env.BACKEND;
-const Home = dynamic(() => import('../components/Home'));
+const BACKEND = 'https://lunetoile-backend.vercel.app';
+const Preorder = dynamic(() => import('../../components/Preorder'));
 
 
 function ArtistPage({ artist, isAllowed }) {
@@ -18,7 +18,7 @@ function ArtistPage({ artist, isAllowed }) {
     );
   }
 
-  return <Home />;
+  return <Preorder />;
 }
 
 export default ArtistPage;
@@ -30,15 +30,6 @@ export async function getServerSideProps(context) {
   console.log("Query params:", context.query);
   console.log("Params:", context.params);
   const { artist = '' } = context.params || context.query;
-
-  // Si l'artiste n'est pas passé en paramètre dans l'URL, rediriger vers l'URL avec la query (format attendu)
-  if (context.res && artist && !context.query.artist) {
-    context.res.writeHead(302, {
-      Location: `/preorder?artist=${artist}`,
-    });
-    context.res.end();
-    return { props: {} }; // Pas besoin de retourner des props ici
-  }
 
   // Nettoyer le nom de l'artiste pour supprimer les @
   const cleanedArtist = artist.replace(/^@/, '').toLowerCase();
