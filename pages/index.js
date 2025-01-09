@@ -19,7 +19,7 @@ Index.getLayout = function getLayout(page) {
       <NextThemesProvider attribute="class" defaultTheme="light" forcedTheme="light">
         <NextUIProvider>
         <Head>
-          <title>Preorder Page</title>
+          <title>Lunetoile</title>
         </Head>
         {page}
         </NextUIProvider>
