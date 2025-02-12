@@ -114,14 +114,14 @@ const PreorderForm = () => {
                           'Blaise.bavure@gmail.com',
                           ]
   const [deckNumber, setDeckNumber] = useState(1)
-  const [price, setPrice] = useState((deckNumber * 49.99).toFixed(2))
+  const [price, setPrice] = useState((deckNumber * 59.00).toFixed(2))
   useEffect(() => {
     for (let i = 0; i < adressMailTest.length; i++){
     if (inputValues.email === adressMailTest[i]) {
-      setPrice((deckNumber * 0.99).toFixed(2))
+      setPrice((deckNumber * 59.00).toFixed(2))
       break
     }else {
-      setPrice((deckNumber * 0.99).toFixed(2));
+      setPrice((deckNumber * 59.00).toFixed(2));
     }
   }
   },[inputValues.email, deckNumber])
