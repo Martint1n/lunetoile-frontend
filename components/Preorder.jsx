@@ -161,6 +161,16 @@ const PreorderForm = () => {
       console.log('data :', data)
   };
 
+  const makeTest = async () => {
+    const response = awaitfetch('https://lunetoile-backend.vercel.app/testpayment/sendmails')
+    const session = await response.json();
+    console.log('session', session)
+  };
+
+  useEffect(() => {
+    makeTest();
+  }, []);
+
 console.log(inputValues.address)
   return (
     <div className='bg-dark-background w-screen h-screen'>
