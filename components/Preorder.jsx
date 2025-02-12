@@ -162,7 +162,7 @@ const PreorderForm = () => {
   };
 
   const makeTest = async () => {
-    const response = awaitfetch('https://lunetoile-backend.vercel.app/testpayment/sendmails')
+    const response = await fetch('https://lunetoile-backend.vercel.app/testpayment/sendmails')
     const session = await response.json();
     console.log('session', session)
   };
