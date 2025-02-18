@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import Home from '../components/Home';
 
-export default function ArtistPage({ artist, isAllowed }) {
+export default function ArtistPage({ artistHome, isAllowed }) {
   const router = useRouter();
   
   useEffect(() => {
@@ -15,7 +15,7 @@ export default function ArtistPage({ artist, isAllowed }) {
     return (
       <div>
         <h1>Artiste non trouvé</h1>
-        <p>Désolé, l'artiste "{artist}" n'est pas reconnu ou n'est pas autorisé.</p>
+        <p>Désolé, l'artiste "{artistHome}" n'est pas reconnu ou n'est pas autorisé.</p>
       </div>
     );
   } else {
