@@ -26,7 +26,7 @@ export default function ArtistPage({ artist, isAllowed }) {
   }
 }
 
-ArtistPage.getLayout = function getLayout(page) {
+ArtistPage.getLayout = function getLayout(page, { artist }) {
   return (
     <NextThemesProvider attribute="class" defaultTheme="light" forcedTheme="light">
       <NextUIProvider>
