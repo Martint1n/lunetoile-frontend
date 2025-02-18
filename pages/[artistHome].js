@@ -2,6 +2,7 @@
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import Home from '../components/Home';
+const BACKEND = 'https://lunetoile-backend.vercel.app';
 
 export default function ArtistPage({ artistHome, isAllowed }) {
   const router = useRouter();
