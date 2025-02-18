@@ -36,7 +36,7 @@ export async function getServerSideProps(context) {
   if (artistCache[cleanedArtist] && currentTime - artistCache[cleanedArtist].timestamp < CACHE_DURATION) {
     return {
       props: {
-        artistHome: cleanedArtist,
+        artist: cleanedArtist,
         isAllowed: artistCache[cleanedArtist].isAllowed,
       },
     };
@@ -59,14 +59,14 @@ export async function getServerSideProps(context) {
 
     return {
       props: {
-        artistHome: cleanedArtist,
+        artist: cleanedArtist,
         isAllowed,
       },
     };
   } catch (error) {
     return {
       props: {
-        artistHome: cleanedArtist,
+        artist: cleanedArtist,
         isAllowed: false,
       },
     };
