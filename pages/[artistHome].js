@@ -26,19 +26,6 @@ export default function ArtistPage({ artist, isAllowed }) {
   }
 }
 
-ArtistPage.getLayout = function getLayout(page, { artist }) {
-  return (
-    <NextThemesProvider attribute="class" defaultTheme="light" forcedTheme="light">
-      <NextUIProvider>
-        <Head>
-          <title>{`Lunetoile - ${artist}`}</title>
-        </Head>
-        {page}
-      </NextUIProvider>
-    </NextThemesProvider>
-  );
-};
-
 let artistCache = {}; // Cache basique stocké en mémoire
 const CACHE_DURATION = 1000 * 60 * 5; // 5 minutes de cache
 
