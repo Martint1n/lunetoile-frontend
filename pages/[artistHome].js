@@ -2,9 +2,6 @@
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import Home from '../components/Home';
-import { NextUIProvider } from '@nextui-org/react';
-import { ThemeProvider as NextThemesProvider } from 'next-themes';
-import Head from 'next/head';
 
 export default function ArtistPage({ artist, isAllowed }) {
   const router = useRouter();
@@ -30,9 +27,9 @@ let artistCache = {}; // Cache basique stocké en mémoire
 const CACHE_DURATION = 1000 * 60 * 5; // 5 minutes de cache
 
 export async function getServerSideProps(context) {
-  const { artist = '' } = context.params || context.query;
+  const { artistHome = '' } = context.params || context.query;
 
-  const cleanedArtist = artist.replace(/^@/, '').toLowerCase();
+  const cleanedArtist = artistHome.replace(/^@/, '').toLowerCase();
 
   // Vérification du cache
   const currentTime = Date.now();
@@ -62,14 +59,14 @@ export async function getServerSideProps(context) {
 
     return {
       props: {
-        artist: cleanedArtist,
+        artistHome: cleanedArtist,
         isAllowed,
       },
     };
   } catch (error) {
     return {
       props: {
-        artist: cleanedArtist,
+        artistHome: cleanedArtist,
         isAllowed: false,
       },
     };
