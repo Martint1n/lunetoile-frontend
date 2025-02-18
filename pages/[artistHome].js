@@ -2,6 +2,8 @@
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import Home from '../components/Home';
+import { NextUIProvider } from '@nextui-org/react';
+import { ThemeProvider as NextThemesProvider } from 'next-themes';
 
 export default function ArtistPage({ artist, isAllowed }) {
   const router = useRouter();
