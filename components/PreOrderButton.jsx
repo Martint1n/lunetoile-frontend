@@ -7,8 +7,9 @@ function PreOrderButton({ color = 'bg-gold', text = 'text-black', hoverBg = 'hov
     const [artistName, setArtistName] = useState('');
 
     useEffect(() => {
-        if (router.query.artist) {
-            setArtistName(router.query.artist);
+        if (router.query.artistHome) {
+            setArtistName(router.query.artistHome);
+            console.log(artistName)
         }
     }, [router.query.artist]);
 
