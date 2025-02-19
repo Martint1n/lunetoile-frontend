@@ -1,14 +1,40 @@
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
-import { useEffect, useState } from 'react';
 
 const BACKEND = 'https://lunetoile-backend.vercel.app';
 const Preorder = dynamic(() => import('../../components/Preorder'));
 
-
+// Composant principal de la page
 function ArtistPage({ artist, isAllowed }) {
-  console.log("Artist:", artist);      // Ajout pour débogage
-  console.log("IsAllowed:", isAllowed); // Ajout pour débogage
+  const [artistCache, setArtistCache] = useState({}); // Cache côté client
+  const router = useRouter();
+  
+  const CACHE_DURATION = 1000 * 60 * 5; // 5 minutes de cache
+
+  // Effet pour gérer le cache côté client avec localStorage
+  useEffect(() => {
+    const cachedArtist = localStorage.getItem('artistCache');
+    if (cachedArtist) {
+      setArtistCache(JSON.parse(cachedArtist));
+    }
+  }, []);
+
+  // Effet pour sauvegarder le cache dans localStorage lorsqu'il change
+  useEffect(() => {
+    if (Object.keys(artistCache).length > 0) {
+      localStorage.setItem('artistCache', JSON.stringify(artistCache));
+    }
+  }, [artistCache]);
+
+  // Vérification du cache pour savoir si l'artiste est déjà autorisé
+  const currentTime = Date.now();
+  if (artistCache[artist] && currentTime - artistCache[artist].timestamp < CACHE_DURATION) {
+    // Si l'artiste est trouvé dans le cache et dans la durée valide
+    return <Preorder />;
+  }
+
   if (!isAllowed) {
     return (
       <div>
@@ -22,68 +48,24 @@ function ArtistPage({ artist, isAllowed }) {
   return <Preorder />;
 }
 
-export default ArtistPage;
-
-
-const CACHE_DURATION = 1000 * 60 * 5; // 5 minutes de cache
-
+// Fonction côté serveur pour récupérer les données
 export async function getServerSideProps(context) {
-  console.log("Query params:", context.query);
-  console.log("Params:", context.params);
   const { artist = '' } = context.params || context.query;
-  const [artistCache, setArtistCache] = useState({}) // Cache basique stocké en mémoire
-
-  // Nettoyer le nom de l'artiste pour supprimer les @
   const cleanedArtist = artist.replace(/^@/, '').toLowerCase();
 
-  useEffect(() => {
-    const cachedArtist = localStorage.getItem('artistCache');
-    if (cachedArtist) {
-      setArtistCache(JSON.parse(cachedArtist));
-    }
-  }, []);
-  
-  useEffect(() => {
-    if (artistCache) {
-      localStorage.setItem('artistCache', JSON.stringify(artistCache));
-    }
-  }, [artistCache]);
-
-  // Vérifier si l'artiste est dans le cache
-  const currentTime = Date.now();
-  if (artistCache[cleanedArtist] && currentTime - artistCache[cleanedArtist].timestamp < CACHE_DURATION) {
-    console.log('Returning cached data for artist:', cleanedArtist);
-    return {
-      props: {
-        artist: cleanedArtist,
-        isAllowed: artistCache[cleanedArtist].isAllowed,
-      },
-    };
-  }
-
   try {
-    // Récupérer la liste des artistes autorisés depuis votre backend
+    // Récupérer la liste des artistes autorisés depuis le backend
     const response = await fetch(`${BACKEND}/artists/getartists`);
     const data = await response.json();
-    console.log('Backend artists data:', data);
-
+    
     // Extraire les pseudos autorisés avec le préfixe @
     const allowedArtists = data.map(artist => artist.pseudo.toLowerCase());
-
-    // Ajouter le préfixe @ pour la comparaison
     const artistWithPrefix = `@${cleanedArtist}`;
-    console.log('Artist with prefix:', artistWithPrefix);
 
-    // Vérifier si l'artiste est dans la liste des artistes autorisés
+    // Vérifier si l'artiste est autorisé
     const isAllowed = allowedArtists.includes(artistWithPrefix);
-    console.log('Is artist allowed:', isAllowed);
 
-    // Stocker le résultat dans le cache avec un timestamp
-    artistCache[cleanedArtist] = {
-      isAllowed,
-      timestamp: Date.now(),
-    };
-
+    // Retourner les props nécessaires pour le composant
     return {
       props: {
         artist: cleanedArtist,
@@ -101,28 +83,4 @@ export async function getServerSideProps(context) {
   }
 }
 
-
-//à utiliser pour le theme dark
-// import Preorder from '../components/Preorder'
-// import { NextUIProvider } from '@nextui-org/react';
-// import { ThemeProvider as NextThemesProvider } from 'next-themes';
-// import Head from 'next/head';
-
-// function preorder() {
-//   return <Preorder />;
-// }
-
-// preorder.getLayout = function getLayout(page) {
-//   return (
-//     <NextThemesProvider attribute="class" defaultTheme="dark" forcedTheme="dark">
-//       <NextUIProvider>
-//         <Head>
-//           <title>Preorder Page</title>
-//         </Head>
-//         {page}
-//       </NextUIProvider>
-//     </NextThemesProvider>
-//   );
-// };
-
-// export default preorder;
+export default ArtistPage;
