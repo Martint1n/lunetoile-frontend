@@ -118,7 +118,7 @@ const PreorderForm = () => {
   useEffect(() => {
     for (let i = 0; i < adressMailTest.length; i++){
     if (inputValues.email === adressMailTest[i]) {
-      setPrice((deckNumber * 59.00).toFixed(2))
+      setPrice((deckNumber * 35.00).toFixed(2))
       break
     }else {
       setPrice((deckNumber * 59.00).toFixed(2));
