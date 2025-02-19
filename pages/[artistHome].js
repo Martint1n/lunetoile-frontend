@@ -50,7 +50,7 @@ export async function getServerSideProps(context) {
     // const response = await fetch(`${BACKEND}/artists/getartists`);
     // const data = await response.json();
     
-    const allowedArtists = artistsData.artists.map(artistHome => artistHome.pseudo.toLowerCase());
+    const allowedArtists = artistsData.artists.map(artist => artist.toLowerCase());
     const artistWithPrefix = `@${cleanedArtist}`;
 
     const isAllowed = allowedArtists.includes(artistWithPrefix);
