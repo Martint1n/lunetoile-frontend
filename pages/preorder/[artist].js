@@ -23,16 +23,30 @@ function ArtistPage({ artist, isAllowed }) {
 
 export default ArtistPage;
 
-let artistCache = {}; // Cache basique stocké en mémoire
+
 const CACHE_DURATION = 1000 * 60 * 5; // 5 minutes de cache
 
 export async function getServerSideProps(context) {
   console.log("Query params:", context.query);
   console.log("Params:", context.params);
   const { artist = '' } = context.params || context.query;
+  const [artistCache, setArtistCache] = useState({}) // Cache basique stocké en mémoire
 
   // Nettoyer le nom de l'artiste pour supprimer les @
   const cleanedArtist = artist.replace(/^@/, '').toLowerCase();
+
+  useEffect(() => {
+    const cachedArtist = localStorage.getItem('artistCache');
+    if (cachedArtist) {
+      setArtistCache(JSON.parse(cachedArtist));
+    }
+  }, []);
+  
+  useEffect(() => {
+    if (artistCache) {
+      localStorage.setItem('artistCache', JSON.stringify(artistCache));
+    }
+  }, [artistCache]);
 
   // Vérifier si l'artiste est dans le cache
   const currentTime = Date.now();

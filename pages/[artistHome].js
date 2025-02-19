@@ -25,28 +25,14 @@ export default function ArtistPage({ artistHome, isAllowed }) {
   }
 }
 
-
+let artistCache = {}; // Cache basique stocké en mémoire
 const CACHE_DURATION = 1000 * 60 * 5; // 5 minutes de cache
 
 export async function getServerSideProps(context) {
-    
-const [artistCache, setArtistCache] = useState({}) // Cache basique stocké en mémoire
+
   const { artistHome = '' } = context.params || context.query;
 
   const cleanedArtist = artistHome.replace(/^@/, '').toLowerCase();
-
-  useEffect(() => {
-    const cachedArtist = localStorage.getItem('artistCache');
-    if (cachedArtist) {
-      setArtistCache(JSON.parse(cachedArtist));
-    }
-  }, []);
-  
-  useEffect(() => {
-    if (artistCache) {
-      localStorage.setItem('artistCache', JSON.stringify(artistCache));
-    }
-  }, [artistCache]);
   
   // Vérification du cache
   const currentTime = Date.now();
