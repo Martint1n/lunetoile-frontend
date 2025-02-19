@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import Home from '../components/Home';
 const BACKEND = 'https://lunetoile-backend.vercel.app';
+import artistsData from '../artists.json';
 
 export default function ArtistPage({ artistHome, isAllowed }) {
   const router = useRouter();
@@ -43,10 +44,11 @@ export async function getServerSideProps(context) {
     };
   }
 
+
   try {
     // Récupération des artistes autorisés depuis votre backend
-    const response = await fetch(`${BACKEND}/artists/getartists`);
-    const data = await response.json();
+    // const response = await fetch(`${BACKEND}/artists/getartists`);
+    // const data = await response.json();
     
     const allowedArtists = data.map(artistHome => artistHome.pseudo.toLowerCase());
     const artistWithPrefix = `@${cleanedArtist}`;
@@ -60,7 +62,7 @@ export async function getServerSideProps(context) {
 
     return {
       props: {
-        artistHome: cleanedArtist,
+        artistHome: artistsData,
         isAllowed,
       },
     };
