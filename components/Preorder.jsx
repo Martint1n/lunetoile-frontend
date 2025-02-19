@@ -117,7 +117,7 @@ const PreorderForm = () => {
   const [price, setPrice] = useState((deckNumber * 59.00).toFixed(2))
   useEffect(() => {
     for (let i = 0; i < adressMailTest.length; i++){
-    if (inputValues.email === adressMailTest[i]) {
+    if (inputValues.email === adressMailTest[i] && artist !== undefined ) {
       setPrice((deckNumber * 35.00).toFixed(2))
       break
     }else {
