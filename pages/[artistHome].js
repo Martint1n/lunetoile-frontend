@@ -1,6 +1,6 @@
 // pages/[artist].js
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Home from '../components/Home';
 const BACKEND = 'https://lunetoile-backend.vercel.app';
 import artistsData from '../artists.json';
@@ -25,7 +25,7 @@ export default function ArtistPage({ artistHome, isAllowed }) {
   }
 }
 
-let artistCache = {}; // Cache basique stocké en mémoire
+const [artistCache, setArtistCache] = useState({}) // Cache basique stocké en mémoire
 const CACHE_DURATION = 1000 * 60 * 5; // 5 minutes de cache
 
 export async function getServerSideProps(context) {
@@ -33,6 +33,19 @@ export async function getServerSideProps(context) {
 
   const cleanedArtist = artistHome.replace(/^@/, '').toLowerCase();
 
+  useEffect(() => {
+    const cachedArtist = localStorage.getItem('artistCache');
+    if (cachedArtist) {
+      setArtistCache(JSON.parse(cachedArtist));
+    }
+  }, []);
+  
+  useEffect(() => {
+    if (artistCache) {
+      localStorage.setItem('artistCache', JSON.stringify(artistCache));
+    }
+  }, [artistCache]);
+  
   // Vérification du cache
   const currentTime = Date.now();
   if (artistCache[cleanedArtist] && currentTime - artistCache[cleanedArtist].timestamp < CACHE_DURATION) {
@@ -43,7 +56,6 @@ export async function getServerSideProps(context) {
       },
     };
   }
-
 
   try {
     // Récupération des artistes autorisés depuis votre backend
