@@ -13,7 +13,7 @@ function PreOrderButton({ color = 'bg-gold', text = 'text-black', hoverBg = 'hov
     }, [router.query.artist]);
 
     const preorderLink = artistName 
-        ? `/preorder?artist=${artistName}` 
+        ? `/preorder/${artistName}` 
         : '/preorder';
 
     return (
