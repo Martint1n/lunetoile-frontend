@@ -161,18 +161,19 @@ const PreorderForm = () => {
       console.log('data :', data)
   };
 
-  const makeTest = async () => {
-    const response = await fetch('https://lunetoile-backend.vercel.app/testpayment/sendmails', {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json' },
-    })
-    const session = await response.json();
-    console.log('session', session)
-  };
+  // test mail artist
+  // const makeTest = async () => {
+  //   const response = await fetch('https://lunetoile-backend.vercel.app/testpayment/sendmails', {
+  //     method: 'GET',
+  //     headers: { 'Content-Type': 'application/json' },
+  //   })
+  //   const session = await response.json();
+  //   console.log('session', session)
+  // };
 
-  useEffect(() => {
-    makeTest();
-  }, []);
+  // useEffect(() => {
+  //   makeTest();
+  // }, []);
 
 console.log(inputValues.address)
   return (
