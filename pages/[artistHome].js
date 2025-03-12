@@ -31,16 +31,14 @@ const CACHE_DURATION = 1000 * 60 * 5; // 5 minutes de cache
 export async function getServerSideProps(context) {
 
   const { artistHome = '' } = context.params || context.query;
-
-  const cleanedArtist = artistHome.replace(/^@/, '').toLowerCase();
   
   // Vérification du cache
   const currentTime = Date.now();
-  if (artistCache[cleanedArtist] && currentTime - artistCache[cleanedArtist].timestamp < CACHE_DURATION) {
+  if (artistCache[artistHome] && currentTime - artistCache[artistHome].timestamp < CACHE_DURATION) {
     return {
       props: {
-        artistHome: cleanedArtist,
-        isAllowed: artistCache[cleanedArtist].isAllowed,
+        artistHome: artistHome,
+        isAllowed: artistCache[artistHome].isAllowed,
       },
     };
   }
@@ -51,25 +49,25 @@ export async function getServerSideProps(context) {
     // const data = await response.json();
     
     const allowedArtists = artistsData.artists.map(artist => artist.toLowerCase());
-    const artistWithPrefix = `@${cleanedArtist}`;
+    const artistWithPrefix = `@${artistHome}`;
 
     const isAllowed = allowedArtists.includes(artistWithPrefix);
 
-    artistCache[cleanedArtist] = {
+    artistCache[artistHome] = {
       isAllowed,
       timestamp: Date.now(),
     };
 
     return {
       props: {
-        artistHome: cleanedArtist,
+        artistHome: artistHome,
         isAllowed,
       },
     };
   } catch (error) {
     return {
       props: {
-        artistHome: cleanedArtist,
+        artistHome: artistHome,
         isAllowed: false,
       },
     };
