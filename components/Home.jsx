@@ -9,7 +9,6 @@ import Navbar from "./Navbar";
 function Home() {
   return (
     <div className="overflow-x-hidden">
-      {/* <div className="bg-darkBlue min-h-[80vh] 2xl:min-h-screen bg-[url(/backdrop.jpeg)] mix-blend-multiply"> */}
       <div className="hero-background">
         <div className="flex flex-col justify-center items-center  px-4 sm:px-6 min-h-[80vh] pb-[10vh]">
           <div className="relative w-[180px] sm:w-[200px] h-[49px] 2xl:w-[360px] 2xl:h-[87px] mb-12 animate-fade-in">
