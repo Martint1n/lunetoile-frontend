@@ -49,9 +49,8 @@ export async function getServerSideProps(context) {
     // const data = await response.json();
     
     const allowedArtists = artistsData.artists.map(artist => artist.toLowerCase());
-    const artistWithPrefix = `@${artistHome}`;
 
-    const isAllowed = allowedArtists.includes(artistWithPrefix);
+    const isAllowed = allowedArtists.includes(artistHome);
 
     artistCache[artistHome] = {
       isAllowed,
