@@ -2,7 +2,6 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Home from '../components/Home';
-const BACKEND = 'https://lunetoile-backend.vercel.app';
 import artistsData from '../artists.json';
 
 export default function ArtistPage({ artistHome, isAllowed }) {

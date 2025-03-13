@@ -3,37 +3,13 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
-const BACKEND = 'https://lunetoile-backend.vercel.app';
+import artistsData from '../artists.json';
 const Preorder = dynamic(() => import('../../components/Preorder'));
 
 // Composant principal de la page
 function ArtistPage({ artist, isAllowed }) {
-  const [artistCache, setArtistCache] = useState({}); // Cache côté client
   const router = useRouter();
   
-  const CACHE_DURATION = 1000 * 60 * 5; // 5 minutes de cache
-
-  // Effet pour gérer le cache côté client avec localStorage
-  useEffect(() => {
-    const cachedArtist = localStorage.getItem('artistCache');
-    if (cachedArtist) {
-      setArtistCache(JSON.parse(cachedArtist));
-    }
-  }, []);
-
-  // Effet pour sauvegarder le cache dans localStorage lorsqu'il change
-  useEffect(() => {
-    if (Object.keys(artistCache).length > 0) {
-      localStorage.setItem('artistCache', JSON.stringify(artistCache));
-    }
-  }, [artistCache]);
-
-  // Vérification du cache pour savoir si l'artiste est déjà autorisé
-  const currentTime = Date.now();
-  if (artistCache[artist] && currentTime - artistCache[artist].timestamp < CACHE_DURATION) {
-    // Si l'artiste est trouvé dans le cache et dans la durée valide
-    return <Preorder />;
-  }
 
   if (!isAllowed) {
     return (
@@ -51,24 +27,19 @@ function ArtistPage({ artist, isAllowed }) {
 // Fonction côté serveur pour récupérer les données
 export async function getServerSideProps(context) {
   const { artist = '' } = context.params || context.query;
-  const cleanedArtist = artist.replace(/^@/, '').toLowerCase();
 
   try {
-    // Récupérer la liste des artistes autorisés depuis le backend
-    const response = await fetch(`${BACKEND}/artists/getartists`);
-    const data = await response.json();
     
     // Extraire les pseudos autorisés avec le préfixe @
-    const allowedArtists = data.map(artist => artist.pseudo.toLowerCase());
-    const artistWithPrefix = `@${cleanedArtist}`;
+    const allowedArtists = artistsData.artists.map(art => art.toLowerCase());
 
     // Vérifier si l'artiste est autorisé
-    const isAllowed = allowedArtists.includes(artistWithPrefix);
+    const isAllowed = allowedArtists.includes(artist);
 
     // Retourner les props nécessaires pour le composant
     return {
       props: {
-        artist: cleanedArtist,
+        artist: artist,
         isAllowed,
       },
     };
@@ -76,7 +47,7 @@ export async function getServerSideProps(context) {
     console.error('Erreur lors de la récupération des artistes:', error);
     return {
       props: {
-        artist: cleanedArtist,
+        artist: artist,
         isAllowed: false,
       },
     };
