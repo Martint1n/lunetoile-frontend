@@ -6,6 +6,7 @@ import Stripe from './Stripe';
 // import { addPreorderInfoToStore } from '../reducers/preorderInfos';
 import Image from 'next/image';
 import { Input } from "@nextui-org/react";
+import Link from 'next/link';
 
 
 const PreorderForm = () => {
@@ -113,14 +114,14 @@ const PreorderForm = () => {
                           'Blaise.bavure@gmail.com',
                           ]
   const [deckNumber, setDeckNumber] = useState(1)
-  const [price, setPrice] = useState((deckNumber * 49.99).toFixed(2))
+  const [price, setPrice] = useState((deckNumber * 59.99).toFixed(2))
   useEffect(() => {
     for (let i = 0; i < adressMailTest.length; i++){
-    if (inputValues.email === adressMailTest[i]) {
-      setPrice((deckNumber * 35.99).toFixed(2))
+    if (inputValues.email === adressMailTest[i] && artist === undefined ) {
+      setPrice((deckNumber * 35.00).toFixed(2))
       break
     }else {
-      setPrice((deckNumber * 49.99).toFixed(2));
+      setPrice((deckNumber * 59.99).toFixed(2));
     }
   }
   },[inputValues.email, deckNumber])
@@ -148,52 +149,46 @@ const PreorderForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const { artist } = router.query;
-    console.log('Artist:', artist);
+      const { artist } = router.query;
+      console.log('Artist:', artist);
 
-    // Préparer les données à envoyer au backend
-    const data = { artist, ...inputValues };
-    console.log('Data:', data);
+      // Préparer les données à envoyer au backend
+      const data = { artist, ...inputValues };
+      console.log('Data:', data);
 
-    console.log(inputValues)
-    console.log(artist)
-    console.log('data :', data)
-
-    // Ici, vous pouvez récupérer ou générer dynamiquement le paramètre
-
-    // dispatch(addPreorderInfoToStore(data))
-
-    // fetch(`http://localhost:3000/preorder/${artist}`, {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(data),
-    // })
-    // .then((response) => {
-    //   if (!response.ok) {
-    //     throw new Error('Error submitting data');
-    //   }
-    // })
-    // .catch(error => {
-    //   console.error('Error:', error);
-    // });
+      console.log(inputValues)
+      console.log(artist)
+      console.log('data :', data)
   };
 
-//https://tailwindui.com/components/application-ui/forms/form-layouts
+  // test mail artist
+  // const makeTest = async () => {
+  //   const response = await fetch('https://lunetoile-backend.vercel.app/testpayment/sendmails', {
+  //     method: 'GET',
+  //     headers: { 'Content-Type': 'application/json' },
+  //   })
+  //   const session = await response.json();
+  //   console.log('session', session)
+  // };
+
+  // useEffect(() => {
+  //   makeTest();
+  // }, []);
 
 console.log(inputValues.address)
   return (
     <div className='bg-dark-background w-screen h-screen'>
       <div className='flex flex-col items-center w-screen '>
-        <div className='relative pt-10 w-4/5 lg:w-[360px] lg:h-[87px]'>
-          <Image 
-            src='/logo.svg' 
-            alt="Logo"
-            layout="fill" 
-            objectFit="contain" 
-          />
-        </div>
+        <Link href={'/'}>
+          <div className='relative pt-10 w-4/5 lg:w-[360px] lg:h-[87px]'>
+            <Image 
+              src='/logo.svg' 
+              alt="Logo"
+              layout="fill" 
+              objectFit="contain" 
+            />
+          </div>
+        </Link>
         <div className='relative w-1/2 h-[49px] lg:w-[200px] lg:h-[60px]'>
           <Image 
             src='/list-symboles.svg' 
@@ -213,6 +208,7 @@ console.log(inputValues.address)
                 isRequired
                 color="primary"
                 type="email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
                 label="Adresse e-mail"
                 name='email'
                 value={inputValues.email}
@@ -258,6 +254,7 @@ console.log(inputValues.address)
               isRequired
               color="primary"
               type='number'
+              pattern="\d*"
               name='zipCode'
               label='Code postal' 
               value={inputValues.zipCode} 
@@ -290,6 +287,7 @@ console.log(inputValues.address)
               isRequired
               color="primary"
               type='number'
+              pattern="\d*"
               name='phoneNumber'
               label='Télélphone' 
               value={inputValues.phoneNumber} 
@@ -305,19 +303,19 @@ console.log(inputValues.address)
           <div className='relative w-1/3 aspect-[4/3] lg:w-1/2'>
             <Image src='/display-1.webp' layout='fill' objectFit="contain" alt='deck acheté'/>
           </div>
-          <div className='flex flex-col'>
+          <div className='flex flex-col justify-around'>
             <div>jeu de cartes Lunétoile</div>
             <div className='flex items-center'>
-              <p className='-ml-[26px]'>X {deckNumber}</p>
-              <button onClick={handAddDeckNumberChange} className='-ml-[14px] flex justify-center items-end w-[32px] h-[32px] text-gold text-3xl border border-gold rounded-full mr-2'>+</button>
+              <p>X {deckNumber}</p>
+              <button onClick={handAddDeckNumberChange} className='ml-[8px] flex justify-center items-end w-[32px] h-[32px] text-gold text-3xl border border-gold rounded-full mr-2'>+</button>
               <button onClick={handMinusDeckNumberChange} className='flex justify-center items-end w-[32px] h-[32px] text-gold text-3xl border border-gold rounded-full'>-</button>
-              <p>{priceWithCurrency}</p>
+              <p className='ml-[8px]'>{priceWithCurrency}</p>
             </div>
             <div>Livraison Gratuite</div>
           </div>
         </div>
-        {artist && <div><div className='text-xl self-center'>Votre achat soutient directement</div>
-        <div className='self-center text-xl'>{ artist } ✨</div></div>}
+        {artist && <div className='flex flex-col items-center'><div className='text-xl'>Votre achat soutient directement</div>
+        <div className='text-xl'>{ artist } ✨</div></div>}
         
         <Stripe onClick={handleSubmit} firstName={inputValues.firstName} lastName={inputValues.lastName} city={inputValues.city} country={inputValues.country} phoneNumber={inputValues.phoneNumber} address={inputValues.address} zipCode={inputValues.zipCode} deckNumber={deckNumber} email={inputValues.email} price={price} artist={artist}/>
       </div>

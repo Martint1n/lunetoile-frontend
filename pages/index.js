@@ -3,7 +3,6 @@ import { NextUIProvider } from '@nextui-org/react';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import Head from 'next/head';
 import { useEffect } from 'react';
-import Preorder from '../components/Preorder'
 
 function Index() {
   useEffect(() => {
@@ -19,7 +18,7 @@ Index.getLayout = function getLayout(page) {
       <NextThemesProvider attribute="class" defaultTheme="light" forcedTheme="light">
         <NextUIProvider>
         <Head>
-          <title>Preorder Page</title>
+          <title>Lunetoile</title>
         </Head>
         {page}
         </NextUIProvider>
@@ -28,3 +27,4 @@ Index.getLayout = function getLayout(page) {
 };
 
 export default Index;
+
