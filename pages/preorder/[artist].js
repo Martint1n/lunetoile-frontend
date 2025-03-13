@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
-import artistsData from '../artists.json';
+import artistsData from '../../artists.json';
 const Preorder = dynamic(() => import('../../components/Preorder'));
 
 // Composant principal de la page
