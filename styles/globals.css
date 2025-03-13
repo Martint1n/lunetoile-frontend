@@ -162,7 +162,7 @@
 }
 
 .hero-background {
-  background: url(/backdrop.jpeg), #091639;
+  background: url(/backdrop.avif), #091639;
   background-size: cover;
   background-blend-mode: hard-light, normal;
 }
