@@ -69,7 +69,7 @@ function SuccessPayment() {
         <p>Nous vous avons envoyé les détails de votre commande par email.</p>
       </div>
       <div className="body-l">
-        <p className="body-l text-2xl mb-2">
+        <p className="body-l text-2xl mb-2 text-gold">
           Merci de faire rayonner Lunétoile
         </p>
         <p>N'hésitez pas à en parler autour de vous, ça nous aide vraiment !</p>
