@@ -14,8 +14,8 @@ function Home() {
           <div className="relative w-[180px] sm:w-[200px] h-[49px] 2xl:w-[360px] 2xl:h-[87px] mb-12 animate-fade-in">
             <Image src="/logo.svg" alt="Logo" layout="fill" priority />
           </div>
-          <div className="font-cormorant text-[28px] sm:text-[32px] md:text-[40px] lg:text-[50px] xl:text-[60px] 2xl:text-[65px] leading-[36px] sm:leading-[40px] md:leading-[48px] lg:leading-[58px] xl:leading-[68px] 2xl:leading-[75px] text-center animate-fade-in-up animation-delay-200">
-            <span className="text-gold">PLUS QU'UN JEU DE CARTES</span>
+          <div className="font-cormorant text-[28px] sm:text-[32px] md:text-[40px] lg:text-[50px] xl:text-[60px] 2xl:text-[65px] leading-[36px] sm:leading-[40px] md:leading-[48px] lg:leading-[58px] xl:leading-[68px] 2xl:leading-[75px] text-center animate-fade-in-up animation-delay-200 text-white">
+            PLUS QU'UN <span className="text-gold">JEU DE CARTES</span>
           </div>
           <p className="body-s md:body-m lg:body-l xl:body-xl 2xl:body-2xl text-white text-center mt-8 mb-12 max-w-[90vw] sm:max-w-[80vw] 2xl:max-w-[800px] animate-fade-in-up animation-delay-300">
             Lunétoile est une œuvre collective qui réinvente l’imaginaire
@@ -114,12 +114,11 @@ function Home() {
         />
         <div className="font-cormorant font-bold tracking-wide text-center text-[30px] leading-[36px] 2xl:text-[55px] 2xl:leading-[65px]">
           <div className=" ">
-            UN MOYEN ORIGINAL DE SOUTENIR ET DÉCOUVRIR LA SCÈNE TATOUAGE LOCALE
-            <p className="text-2xl mt-4">
+            UN MOYEN ORIGINAL DE{" "}
+            <span className="text-gold">SOUTENIR ET DÉCOUVRIR</span> LA SCÈNE
+            TATOUAGE LOCALE
+            <p className="text-lg mt-4 font-montserrat font-normal">
               10% de réduction chez les tatoueurs du catalogue
-            </p>
-            <p className="2xl:inline-block mt-12 transform scale-[0.95]">
-              UNE NOUVELLE EXPÉRIENCE DE JEU VOUS ATTEND.
             </p>
           </div>
         </div>

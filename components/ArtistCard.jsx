@@ -67,10 +67,10 @@ function ArtistCard({ artists }) {
   // };
 
   return (
-    <div className="mx-12 w-full">
+    <div className="w-full">
       <div
         ref={scrollRef}
-        className="w-11/12 min-h-[400px] lg:min-h-[550px] flex overflow-x-scroll py-4 lg:py-8 pb-8 artists-list mx-auto"
+        className=" min-h-[400px] lg:min-h-[550px] flex overflow-x-scroll  pb-8 artists-list mx-auto"
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
@@ -84,23 +84,23 @@ function ArtistCard({ artists }) {
           userSelect: "none",
         }}
       >
-        <div className="flex gap-8 lg:gap-12 px-8 lg:px-24 h-full">
+        <div className="flex gap-8 lg:gap-12 py-4 lg:px-12 h-full">
           {artists.map((artist, index) => (
             <div
               key={`${artist.key}-${index}`}
-              className="w-[200px] lg:w-[280px] flex-shrink-0 h-full flex flex-col bg-white rounded-xl hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] transition-all duration-500 hover:-translate-y-3 p-4 lg:p-6"
+              className="w-[280px] lg:w-[400px] flex-shrink-0 h-full flex flex-col bg-white rounded-xl hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] transition-all duration-500 hover:-translate-y-3 p-4 lg:p-6"
             >
               <div className="relative flex flex-col group">
                 <div className="w-full aspect-[3/4] rounded-lg overflow-hidden">
                   <img
                     src={artist.card}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-4/5 object-cover transition-transform duration-500 group-hover:scale-110"
                     alt={`${artist.firstName}'s card`}
                     draggable="false"
                   />
                 </div>
-                <div className="absolute -bottom-[0.1rem] right-[0.1rem] w-24 h-24 lg:w-28 lg:h-28 transform transition-transform duration-500 group-hover:scale-105">
-                  <div className="relative w-full h-full rounded-full overflow-hidden">
+                <div className="absolute -bottom-[0.1rem] right-[0.1rem] w-24 h-24 lg:w-32 lg:h-32 transform transition-transform duration-500 group-hover:scale-105">
+                  <div className="relative w-full h-full rounded-full overflow-hidden -mt-14 ">
                     <img
                       src={artist.picture}
                       className="w-full h-full object-cover"
@@ -110,7 +110,7 @@ function ArtistCard({ artists }) {
                   </div>
                 </div>
               </div>
-              <div className="mt-8 lg:mt-10 space-y-1 lg:space-y-2 text-center">
+              <div className="-mt-12 space-y-1 lg:space-y-2 text-center">
                 <p className="font-cormorant text-lg lg:text-xl font-medium text-darkBlue">
                   {artist.firstName}
                 </p>
