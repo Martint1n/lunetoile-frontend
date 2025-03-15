@@ -207,6 +207,7 @@ const PreorderForm = () => {
             <Input
               isRequired
               type="email"
+              autoComplete="email"
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
               label="Adresse e-mail"
               name="email"
@@ -222,6 +223,7 @@ const PreorderForm = () => {
               label="Prénom"
               name="firstName"
               type="text"
+              autoComplete="given-name"
               value={inputValues.firstName}
               onChange={handleInputChange}
               className="max-w-full"
@@ -231,6 +233,7 @@ const PreorderForm = () => {
               label="Nom"
               name="lastName"
               type="text"
+              autoComplete="family-name"
               value={inputValues.lastName}
               onChange={handleInputChange}
               className="max-w-full"
@@ -240,6 +243,7 @@ const PreorderForm = () => {
             <Input
               isRequired
               type="text"
+              autoComplete="country-name"
               name="country"
               label="Pays/Région"
               value={inputValues.country}
@@ -249,6 +253,7 @@ const PreorderForm = () => {
             <Input
               isRequired
               type="number"
+              autoComplete="postal-code"
               pattern="\d*"
               name="zipCode"
               label="Code postal"
@@ -261,6 +266,7 @@ const PreorderForm = () => {
             <Input
               isRequired
               type="text"
+              autoComplete="address-level2"
               name="city"
               label="Ville"
               value={inputValues.city}
@@ -270,6 +276,7 @@ const PreorderForm = () => {
             <Input
               isRequired
               type="text"
+              autoComplete="street-address"
               name="address"
               label="Adresse"
               value={inputValues.address}
@@ -279,6 +286,7 @@ const PreorderForm = () => {
             <Input
               isRequired
               type="number"
+              autoComplete="tel"
               pattern="\d*"
               name="phoneNumber"
               label="Télélphone"
