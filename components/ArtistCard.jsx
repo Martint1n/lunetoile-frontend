@@ -30,54 +30,11 @@ function ArtistCard({ artists }) {
     };
   }, []);
 
-  const handleMouseDown = (e) => {
-    setIsDragging(true);
-    setStartX(e.pageX - scrollRef.current.offsetLeft);
-    setScrollLeft(scrollRef.current.scrollLeft);
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  const handleMouseMove = (e) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = (x - startX) * 0.75;
-    scrollRef.current.scrollLeft = scrollLeft - walk;
-  };
-
-  const handleTouchStart = (e) => {
-    setIsDragging(true);
-    setStartX(e.touches[0].pageX - scrollRef.current.offsetLeft);
-    setScrollLeft(scrollRef.current.scrollLeft);
-  };
-
-  const handleTouchMove = (e) => {
-    if (!isDragging) return;
-    const x = e.touches[0].pageX - scrollRef.current.offsetLeft;
-    const walk = (x - startX) * 0.75;
-    scrollRef.current.scrollLeft = scrollLeft - walk;
-  };
-
-  // Prevent wheel scrolling
-  const preventScroll = (e) => {
-    e.preventDefault();
-  };
-
   return (
     <div className="w-full">
       <div
         ref={scrollRef}
         className="min-h-[400px] lg:min-h-[550px] flex overflow-x-scroll pb-8 artists-list mx-auto"
-        onMouseDown={handleMouseDown}
-        onMouseUp={handleMouseUp}
-        onMouseMove={handleMouseMove}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleMouseUp}
-        onWheel={preventScroll}
         style={{
           scrollBehavior: isDragging ? "auto" : "smooth",
           cursor: isDragging ? "grabbing" : "grab",
