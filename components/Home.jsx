@@ -127,7 +127,7 @@ function Home() {
           <PreOrderButton color="bg-black" text="text-white" />
         </div>
       </div>
-      <div className="flex flex-col md:flex-row animate-fade-in h-[80vh]">
+      <div className="flex flex-col md:flex-row animate-fade-in h-[90vh]">
         <div className="relative w-screen h-full">
           <Image
             alt="carte 6 d'etoile"
