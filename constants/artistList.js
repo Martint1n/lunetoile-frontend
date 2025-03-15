@@ -1,6 +1,6 @@
 export const artistList = [
   {
-    card: "yanncard.avif",
+    card: "yanncard.webp",
     picture: "yann.svg",
     firstName: "Yann",
     pseudo: "@arsene.ariel",
@@ -8,7 +8,7 @@ export const artistList = [
     key: 1,
   },
   {
-    card: "alicecard.avif",
+    card: "alicecard.webp",
     picture: "alice.svg",
     firstName: "Alice",
     pseudo: "@lullaby.ttt",
@@ -16,7 +16,7 @@ export const artistList = [
     key: 2,
   },
   {
-    card: "damiencard.avif",
+    card: "damiencard.webp",
     picture: "damien.svg",
     firstName: "Damien",
     pseudo: "@kaolin.ttt",
@@ -24,7 +24,7 @@ export const artistList = [
     key: 3,
   },
   {
-    card: "agathecard.avif",
+    card: "agathecard.webp",
     picture: "agathe.svg",
     firstName: "Agathe",
     pseudo: "@poupeekipikdamour",
@@ -32,7 +32,7 @@ export const artistList = [
     key: 4,
   },
   {
-    card: "leacard.avif",
+    card: "leacard.webp",
     picture: "lea.svg",
     firstName: "Léa",
     pseudo: "@leclair_ttt",
@@ -40,7 +40,7 @@ export const artistList = [
     key: 5,
   },
   {
-    card: "martincard.avif",
+    card: "martincard.webp",
     picture: "martin.svg",
     firstName: "Martin",
     pseudo: "@10.tattoo",
@@ -48,7 +48,7 @@ export const artistList = [
     key: 6,
   },
   {
-    card: "zoecard.avif",
+    card: "zoecard.webp",
     picture: "zoe.svg",
     firstName: "Zoé",
     pseudo: "@zozita.slowpoke",
@@ -56,7 +56,7 @@ export const artistList = [
     key: 7,
   },
   {
-    card: "inacard.avif",
+    card: "inacard.webp",
     picture: "ina.svg",
     firstName: "Ina",
     pseudo: "@aim_dessire",
