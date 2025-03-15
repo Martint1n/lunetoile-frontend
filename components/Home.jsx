@@ -4,7 +4,6 @@ import Image from "next/image";
 import Footer from "./Footer";
 import { artistList } from "../constants/artistList";
 import "../styles/Home.module.css";
-import Navbar from "./Navbar";
 
 function Home() {
   return (
@@ -35,7 +34,7 @@ function Home() {
         <div className="relative w-full aspect-[4/3] max-w-2xl self-center animate-scale-in">
           <Image
             alt="etui lunétoile"
-            src="/Still-01-Hero-Site0001-1.webp"
+            src="/display-1.avif"
             layout="fill"
             objectFit="contain"
             sizes="(max-width: 768px) 100vw, 50vw"
@@ -96,7 +95,7 @@ function Home() {
         </div>
         <div className="flex flex-1 translate-y-24 -mt-24 md:mt-0 md:translate-y-0 md:scale-125 md:mr-12">
           <Image
-            src="/display-2-2.webp"
+            src="/display-2-2.avif"
             alt="scattered cards display desktop"
             loading="lazy"
             height={700}
@@ -131,7 +130,7 @@ function Home() {
         <div className="relative w-screen h-full">
           <Image
             alt="carte 6 d'etoile"
-            src="/deck6.png"
+            src="/deck6.avif"
             layout="fill"
             objectFit="cover"
             quality={80}
@@ -142,7 +141,7 @@ function Home() {
         <div className="relative w-screen h-full">
           <Image
             alt="eventail de cartes"
-            src="/9cards.webp"
+            src="/9cards.avif"
             layout="fill"
             objectFit="cover"
             quality={80}
@@ -162,7 +161,7 @@ function Home() {
               UNE ÉDITION LIMITÉE PREMIUM ET ÉCO-CONÇUE
             </h2>
             <div className="flex flex-col gap-4 items-center 2xl:items-start mb-12">
-              <div className="body-l text-[14px] leading-[20px] 2xl:text-[16px] xl:leading-[22px] pl-0 text-left ">
+              <div className="body-xl 2xl:body-2xl pl-0 text-left ">
                 La production est assurée en France en tirage ultra limité, avec
                 une exigence constante de qualité et de respect de
                 l'environnement à toutes les étapes.
@@ -184,7 +183,7 @@ function Home() {
         </div>
         <div className="relative w-screen pb-[78%] xl:w-[50vw] 2xl:w-[60vw] xl:pb-[47.5%] 2xl:mt-8">
           <Image
-            src="/group.webp"
+            src="/group.avif"
             layout="fill"
             objectFit="contain"
             alt="group photo"
@@ -198,7 +197,7 @@ function Home() {
         <div className="relative w-screen pb-[80%] -mt-1 2xl:pb-[45%]">
           <Image
             alt="eventail de carte 3D"
-            src="/imgbottom.webp"
+            src="/imgbottom.avif"
             layout="fill"
             objectFit="cover"
           />

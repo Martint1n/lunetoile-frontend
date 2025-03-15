@@ -64,12 +64,12 @@ function SuccessPayment() {
           d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
         />
       </svg>
-      <div className="body-l">
+      <div className="body-xl 2xl:body-2xl text-white  ">
         <p>Votre transaction a été complétée avec succès.</p>
         <p>Nous vous avons envoyé les détails de votre commande par email.</p>
       </div>
-      <div className="body-l">
-        <p className="body-l text-2xl mb-2 text-gold">
+      <div className="body-xl 2xl:body-2xl text-white ">
+        <p className="text-xl mb-2 text-gold">
           Merci de faire rayonner Lunétoile
         </p>
         <p>N'hésitez pas à en parler autour de vous, ça nous aide vraiment !</p>

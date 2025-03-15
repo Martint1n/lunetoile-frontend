@@ -178,18 +178,16 @@ const PreorderForm = () => {
 
   console.log(inputValues.address);
   return (
-    <div className="bg-midBlue min-h-screen py-6 font-montserrat">
+    <div className="bg-midBlue min-h-screen py-12 font-montserrat">
       <div className="flex flex-col items-center ">
-        <div className="relative mt-10 w-4/5 lg:w-[360px] h-[87px]">
-          <Link href={"/"}>
-            <Image
-              src="/logo.svg"
-              alt="Logo"
-              layout="fill"
-              objectFit="contain"
-            />
-          </Link>
-        </div>
+        <Link href={"/"}>
+          <Image
+            src="/logo.svg"
+            width={300}
+            height={200}
+            alt="Lunétoile logo"
+          />
+        </Link>
         <div className="relative w-1/2 h-[49px] lg:w-[200px] lg:h-[60px]">
           <Image
             src="/list-symboles.svg"
@@ -301,10 +299,10 @@ const PreorderForm = () => {
           <p className="text-gold text-3xl mt-12 lg:mt-0 mb-4 lg:pt-0">
             Aperçu
           </p>
-          <div className="flex flex-col md:flex-row items-stretch justify-evenly lg:justify-between gap-4">
+          <div className="flex flex-col md:flex-row items-stretch justify-evenly lg:justify-start gap-4">
             <div className="relative md:w-1/3 aspect-[4/3] ">
               <Image
-                src="/display-1.webp"
+                src="/display-1.avif"
                 layout="fill"
                 objectFit="contain"
                 alt="deck acheté"

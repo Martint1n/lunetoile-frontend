@@ -16,7 +16,7 @@ function ArtistCard({ artists }) {
     if (!isDragging) return;
     e.preventDefault();
     const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // Adjust speed factor
+    const walk = (x - startX) * 1; // Adjust speed factor
     scrollRef.current.scrollLeft = scrollLeft - walk;
   };
 
