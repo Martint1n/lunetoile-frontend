@@ -32,7 +32,7 @@ export default function ErrorPage() {
           />
         </svg>
       </svg>
-      <p className="body-l text-2xl mb-2">
+      <p className="body-xl 2xl:body-2xl text-white  ">
         Une erreur est survenue lors de votre transaction.
         <br />
         Merci de réessayer.
