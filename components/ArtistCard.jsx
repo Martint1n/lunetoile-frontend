@@ -61,23 +61,23 @@ function ArtistCard({ artists }) {
     scrollRef.current.scrollLeft = scrollLeft - walk;
   };
 
-  // // Prevent wheel scrolling
-  // const preventScroll = (e) => {
-  //   e.preventDefault();
-  // };
+  // Prevent wheel scrolling
+  const preventScroll = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <div className="w-full">
       <div
         ref={scrollRef}
-        className=" min-h-[400px] lg:min-h-[550px] flex overflow-x-scroll  pb-8 artists-list mx-auto"
+        className="min-h-[400px] lg:min-h-[550px] flex overflow-x-scroll pb-8 artists-list mx-auto"
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleMouseUp}
-        // onWheel={preventScroll}
+        onWheel={preventScroll}
         style={{
           scrollBehavior: isDragging ? "auto" : "smooth",
           cursor: isDragging ? "grabbing" : "grab",
@@ -88,7 +88,7 @@ function ArtistCard({ artists }) {
           {artists.map((artist, index) => (
             <div
               key={`${artist.key}-${index}`}
-              className="w-[280px] lg:w-[400px] flex-shrink-0 h-full flex flex-col bg-white rounded-xl hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] transition-all duration-500 hover:-translate-y-3 p-4 lg:p-6"
+              className="w-[320px] lg:w-[400px] flex-shrink-0 h-full flex flex-col bg-white rounded-xl hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] transition-all duration-500 hover:-translate-y-3 p-4 lg:p-6"
             >
               <div className="relative flex flex-col group">
                 <div className="w-full aspect-[3/4] rounded-lg overflow-hidden">
@@ -111,11 +111,11 @@ function ArtistCard({ artists }) {
                 </div>
               </div>
               <div className="-mt-12 space-y-1 lg:space-y-2 text-center">
-                <p className="font-cormorant text-lg lg:text-xl font-medium text-darkBlue">
+                <p className="font-cormorant text-3xl font-medium text-darkBlue">
                   {artist.firstName}
                 </p>
-                <p className="body-s text-gold">{artist.pseudo}</p>
-                <p className="body-s text-lightGrey px-2 lg:px-4">
+                <p className="body-l text-gold text-lg">{artist.pseudo}</p>
+                <p className="body-l text-lightGrey px-2 lg:px-4">
                   {artist.description}
                 </p>
               </div>

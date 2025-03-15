@@ -4,7 +4,7 @@ import React from "react";
 
 export default function ErrorPage() {
   return (
-    <div className="bg-midBlue w-screen min-h-screen text-white flex flex-col items-center justify-center gap-8 text-center px-6 py-12">
+    <div className="bg-midBlue w-screen min-h-screen text-white flex flex-col items-center justify-start gap-8 text-center px-6 py-12">
       <Link href="/">
         <Image src="/logo.svg" width={300} height={200} alt="Lunétoile logo" />
       </Link>

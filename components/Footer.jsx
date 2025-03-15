@@ -13,7 +13,7 @@ function Footer() {
       />
       <div className="max-w-4xl px-6 lg:px-0">
         {/* Desktop view */}
-        <div className="hidden lg:flex body-s flex-wrap justify-center items-center gap-x-4">
+        <div className="hidden lg:flex body-m flex-wrap justify-center items-center gap-x-4 py-4">
           <Link
             href="/conditions-generales-de-vente"
             className="hover:text-gold"
@@ -33,7 +33,7 @@ function Footer() {
         </div>
 
         {/* Mobile view */}
-        <div className="flex lg:hidden body-s flex-col text-center gap-y-1">
+        <div className="flex lg:hidden body-l flex-col text-center gap-y-4 py-4">
           <Link
             href="/conditions-generales-de-vente"
             className="hover:text-gold"
@@ -54,4 +54,3 @@ function Footer() {
 }
 
 export default Footer;
-

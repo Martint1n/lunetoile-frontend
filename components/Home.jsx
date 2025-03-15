@@ -14,10 +14,10 @@ function Home() {
           <div className="relative w-[180px] sm:w-[200px] h-[49px] 2xl:w-[360px] 2xl:h-[87px] mb-12 animate-fade-in">
             <Image src="/logo.svg" alt="Logo" layout="fill" priority />
           </div>
-          <div className="font-cormorant text-[28px] sm:text-[32px] md:text-[40px] lg:text-[50px] xl:text-[60px] 2xl:text-[65px] leading-[36px] sm:leading-[40px] md:leading-[48px] lg:leading-[58px] xl:leading-[68px] 2xl:leading-[75px] text-center animate-fade-in-up animation-delay-200 text-white">
+          <div className="font-cormorant text-[40px] lg:text-[50px] xl:text-[60px] 2xl:text-[65px] leading-[36px] sm:leading-[40px] md:leading-[48px] lg:leading-[58px] xl:leading-[68px] 2xl:leading-[75px] text-center animate-fade-in-up animation-delay-200 text-white">
             PLUS QU'UN <span className="text-gold">JEU DE CARTES</span>
           </div>
-          <p className="body-s md:body-m lg:body-l xl:body-xl 2xl:body-2xl text-white text-center mt-8 mb-12 max-w-[90vw] sm:max-w-[80vw] 2xl:max-w-[800px] animate-fade-in-up animation-delay-300">
+          <p className="body-xl 2xl:body-2xl text-white text-center mt-8 mb-12 max-w-[90vw] sm:max-w-[80vw] 2xl:max-w-[800px] animate-fade-in-up animation-delay-300">
             Lunétoile est une œuvre collective qui réinvente l’imaginaire
             iconique des cartes à jouer.
           </p>
@@ -39,6 +39,7 @@ function Home() {
             layout="fill"
             objectFit="contain"
             sizes="(max-width: 768px) 100vw, 50vw"
+            className="px-4"
           />
         </div>
         <div className="self-center animate-fade-in">
@@ -53,7 +54,7 @@ function Home() {
           </h2>
         </div>
 
-        <p className="body-m lg:body-l xl:body-xl 2xl:body-2xl text-center px-4 sm:px-6 mb-12 w-[90vw] sm:w-[80vw] 2xl:w-[60vw] 2xl:self-center animate-fade-in-up animation-delay-200 mx-auto">
+        <p className="body-xl 2xl:body-2xl text-center px-4 sm:px-6 mb-12 w-[90vw] sm:w-[80vw] 2xl:w-[60vw] 2xl:self-center animate-fade-in-up animation-delay-200 mx-auto">
           Signé par 82 artistes de la scène tattoo francilienne, Lunétoile est
           une constellation d’univers artistique.
           <br />
@@ -61,12 +62,12 @@ function Home() {
           direction artistique unique, créant une harmonieuse diversité.
         </p>
         <ArtistCard artists={artistList} />
-        <div className="flex justify-center animate-fade-in-up animation-delay-200 my-24">
+        <div className="flex justify-center animate-fade-in-up animation-delay-200 my-12">
           <PreOrderButton color="bg-black" text="text-white" />
         </div>
       </div>
       <div className="hero-background flex flex-col-reverse md:flex-row">
-        <div className="flex flex-col flex-1 px-4 sm:px-8 py-12 2xl:w-1/2 2xl:justify-center 2xl:pr-20 relative z-10 order-1 2xl:order-2 animate-fade-in-up gap-8 md:ml-12">
+        <div className="flex flex-col flex-1 px-8 sm:px-8 py-12 2xl:w-1/2 2xl:justify-center 2xl:pr-20 relative z-10 order-1 2xl:order-2 animate-fade-in-up gap-8 md:ml-12">
           <Image
             src="/list-symboles.svg"
             width={200}
@@ -74,10 +75,10 @@ function Home() {
             className="w-[200px] sm:w-[250px]"
             alt="game symbols"
           />
-          <div className="font-cormorant text-[26px] sm:text-[30px] md:text-[36px] lg:text-[45px] xl:text-[55px] 2xl:text-[61px] leading-[32px] sm:leading-[36px] md:leading-[42px] lg:leading-[52px] xl:leading-[65px] 2xl:leading-[74px] text-white">
+          <div className="font-cormorant text-[36px] lg:text-[45px] xl:text-[55px] 2xl:text-[61px] leading-[32px] sm:leading-[36px] md:leading-[42px] lg:leading-[52px] xl:leading-[65px] 2xl:leading-[74px] text-white">
             UNE EXPANSION DE <span className="text-gold">L'IMAGINAIRE</span>
           </div>
-          <p className="body-s md:body-m lg:body-l xl:body-xl 2xl:body-2xl text-white 2xl:max-w-[500px]">
+          <p className="body-xl 2xl:body-2xl text-white 2xl:max-w-[500px]">
             54 cartes traditionnelles (Pique, Trèfle, Cœur, Carreau) sont
             rejoints par 27 cartes inédites réparties en deux nouvelles
             enseignes : <strong>Lune</strong> et <strong>Étoile</strong>.
@@ -107,8 +108,8 @@ function Home() {
       <div className="flex flex-col justify-center items-center my-24 sm:my-32 2xl:my-48 animate-fade-in-up px-8">
         <Image
           src="/lune.svg"
-          width={48}
-          height={48}
+          width={24}
+          height={24}
           alt="moon icon"
           className="text-gold my-8"
         />
@@ -126,7 +127,7 @@ function Home() {
           <PreOrderButton color="bg-black" text="text-white" />
         </div>
       </div>
-      <div className="flex flex-col md:flex-row animate-fade-in h-[75vh]">
+      <div className="flex flex-col md:flex-row animate-fade-in h-[80vh]">
         <div className="relative w-screen h-full">
           <Image
             alt="carte 6 d'etoile"
@@ -151,17 +152,17 @@ function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col xl:flex-row animate-fade-in-up items-end">
+      <div className="flex flex-col xl:flex-row animate-fade-in-up items-end 2xl:items-center">
         <div className="flex flex-col items-center xl:items-start px-6 sm:px-12 pt-12 xl:w-[50vw] 2xl:w-[40vw] xl:justify-center my-8">
           <div className="mb-8">
-            <Image src="/coeur.svg" width={48} height={48} alt="heart icon" />
+            <Image src="/coeur.svg" width={24} height={24} alt="heart icon" />
           </div>
           <div className="flex flex-col gap-6 sm:gap-8">
-            <h2 className="font-cormorant text-[26px] sm:text-[30px] md:text-[36px] lg:text-[45px] xl:text-[55px] 2xl:text-[61px] leading-[32px] sm:leading-[36px] md:leading-[42px] lg:leading-[52px] xl:leading-[65px] 2xl:leading-[74px]">
+            <h2 className="font-cormorant text-[30px] md:text-[36px] lg:text-[45px] xl:text-[55px] 2xl:text-[61px] leading-[32px] sm:leading-[36px] md:leading-[42px] lg:leading-[52px] xl:leading-[65px] 2xl:leading-[74px]">
               UNE ÉDITION LIMITÉE PREMIUM ET ÉCO-CONÇUE
             </h2>
             <div className="flex flex-col gap-4 items-center 2xl:items-start mb-12">
-              <div className="body-m text-[14px] leading-[20px] 2xl:text-[16px] xl:leading-[22px] pl-0 text-left ">
+              <div className="body-l text-[14px] leading-[20px] 2xl:text-[16px] xl:leading-[22px] pl-0 text-left ">
                 La production est assurée en France en tirage ultra limité, avec
                 une exigence constante de qualité et de respect de
                 l'environnement à toutes les étapes.

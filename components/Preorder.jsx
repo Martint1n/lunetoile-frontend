@@ -121,7 +121,7 @@ const PreorderForm = () => {
         setPrice((deckNumber * 35.0).toFixed(2));
         break;
       } else {
-        setPrice((deckNumber * 59.0).toFixed(2));
+        setPrice((deckNumber * 59.99).toFixed(2));
       }
     }
   }, [inputValues.email, deckNumber]);
@@ -178,7 +178,7 @@ const PreorderForm = () => {
 
   console.log(inputValues.address);
   return (
-    <div className="bg-midBlue min-h-screen py-12 font-montserrat">
+    <div className="bg-midBlue min-h-screen py-6 font-montserrat">
       <div className="flex flex-col items-center ">
         <div className="relative mt-10 w-4/5 lg:w-[360px] h-[87px]">
           <Link href={"/"}>
@@ -200,9 +200,9 @@ const PreorderForm = () => {
         </div>
       </div>
 
-      <div className="flex flex-col pl-[26px] lg:flex-row lg:justify-around lg:h-4/5 mt-24">
-        <div className=" w-full flex flex-col justify-around pr-[26px] lg:w-2/5 lg:justify-between">
-          <p className="text-gold text-2xl mb-4">Contact</p>
+      <div className="flex flex-col px-6 lg:flex-row lg:justify-center max-w-[60ch] mx-auto lg:max-w-full lg:h-4/5 mt-12 gap-12">
+        <div className=" w-full max-w-[60ch] flex flex-col justify-around lg:w-2/5 lg:justify-between ">
+          <p className="text-gold text-3xl mb-4">Contact</p>
           <div className="flex w-full flex-wrap lg:flex-nowrap gap-4 mb-4">
             <Input
               isRequired
@@ -215,7 +215,7 @@ const PreorderForm = () => {
               className="max-w-full"
             />
           </div>
-          <p className="text-gold text-2xl pt-5 mb-4">Livraison</p>
+          <p className="text-gold text-3xl pt-5 mb-4">Livraison</p>
           <div className="w-full flex lg:flex-nowrap gap-4">
             <Input
               isRequired
@@ -289,12 +289,12 @@ const PreorderForm = () => {
           </div>
         </div>
 
-        <div className="lg:w-2/5 lg:flex lg:flex-col lg:justify-between">
-          <p className="text-gold text-2xl mt-12 lg:mt-0 mb-4 lg:pt-0">
+        <div className="lg:w-2/5 lg:flex lg:flex-col lg:justify-around">
+          <p className="text-gold text-3xl mt-12 lg:mt-0 mb-4 lg:pt-0">
             Aperçu
           </p>
-          <div className="flex justify-center mr-[26px]">
-            <div className="relative w-1/3 aspect-[4/3] lg:w-1/2">
+          <div className="flex flex-col md:flex-row items-stretch justify-evenly lg:justify-between gap-4">
+            <div className="relative md:w-1/3 aspect-[4/3] ">
               <Image
                 src="/display-1.webp"
                 layout="fill"
@@ -302,59 +302,59 @@ const PreorderForm = () => {
                 alt="deck acheté"
               />
             </div>
-            <div className="flex flex-col justify-center gap-4 text-white">
-              <div className="font-cormorant text-2xl">
+            <div className="flex flex-col justify-center text-white">
+              <div className="font-cormorant text-3xl">
                 Jeu de cartes Lunétoile
               </div>
               <div className="flex justify-between items-center">
-                <div className="flex items-center">
-                  <p className="text-xl">X {deckNumber}</p>
-                  <button
-                    onClick={handAddDeckNumberChange}
-                    className="ml-[8px] flex justify-center items-end text-gold mr-2"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="size-8"
+                <div className="flex items-center gap-4 py-4">
+                  <p className="text-2xl">X {deckNumber}</p>
+                  <div className="flex gap-6 lg:gap-2 justify-start">
+                    <button
+                      onClick={handAddDeckNumberChange}
+                      className="ml-[8px] flex justify-center items-end text-gold "
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                      />
-                    </svg>
-                  </button>
-                  <button
-                    onClick={handMinusDeckNumberChange}
-                    className="flex justify-center items-end text-gold -ml-2"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="size-8"
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="size-12"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      onClick={handMinusDeckNumberChange}
+                      className="flex justify-center items-end text-gold"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M15 12H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                      />
-                    </svg>
-                  </button>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="size-12"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M15 12H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
                 </div>
                 <div>
-                  <p className="ml-[8px] text-gold text-xl">
-                    {priceWithCurrency}
-                  </p>
+                  <p className="text-gold text-2xl ml-6">{priceWithCurrency}</p>
                 </div>
               </div>
-              <div className="font-xl">Livraison Gratuite</div>
+              <div className="font-2xl">Livraison Gratuite</div>
             </div>
           </div>
           {artist && (
@@ -364,7 +364,7 @@ const PreorderForm = () => {
             </div>
           )}
 
-          <div className="flex justify-center ">
+          <div className="flex justify-center my-12">
             <Stripe
               onClick={handleSubmit}
               firstName={inputValues.firstName}
@@ -387,4 +387,3 @@ const PreorderForm = () => {
 };
 
 export default PreorderForm;
-
