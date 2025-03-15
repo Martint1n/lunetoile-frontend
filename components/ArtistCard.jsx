@@ -1,40 +1,38 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 function ArtistCard({ artists }) {
   const scrollRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
-  const [isAtEnd, setIsAtEnd] = useState(false);
 
-  // Check scroll position
-  const handleScroll = () => {
-    if (scrollRef.current) {
-      const isEnd =
-        scrollRef.current.scrollLeft >=
-        scrollRef.current.scrollWidth - scrollRef.current.clientWidth - 10;
-      setIsAtEnd(isEnd);
-    }
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.pageX - scrollRef.current.offsetLeft);
+    setScrollLeft(scrollRef.current.scrollLeft);
   };
 
-  useEffect(() => {
-    const scrollElement = scrollRef.current;
-    if (scrollElement) {
-      scrollElement.addEventListener("scroll", handleScroll);
-    }
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX) * 2; // Adjust speed factor
+    scrollRef.current.scrollLeft = scrollLeft - walk;
+  };
 
-    return () => {
-      if (scrollElement) {
-        scrollElement.removeEventListener("scroll", handleScroll);
-      }
-    };
-  }, []);
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
 
   return (
     <div className="w-full">
       <div
         ref={scrollRef}
         className="min-h-[400px] lg:min-h-[550px] flex overflow-x-scroll pb-8 artists-list mx-auto"
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
         style={{
           scrollBehavior: isDragging ? "auto" : "smooth",
           cursor: isDragging ? "grabbing" : "grab",
