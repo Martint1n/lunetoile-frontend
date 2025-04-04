@@ -1,13 +1,13 @@
 import React from 'react'
-import ConditionsVente from '../components/cgv';
+import Cgv from '../components/Cgv';
 
 
 
-function cgv() {
+function cgvPage() {
 
     return (
-        <ConditionsVente />
+        <Cgv />
     )
 }
 
-export default cgv;
+export default cgvPage;
