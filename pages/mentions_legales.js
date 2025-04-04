@@ -1,12 +1,12 @@
 import React from 'react'
-import MentionLegales from '../components/MentionLegales';
+import MentionsLegales from '../components/MentionsLegales';
 
 
 
 function mentionLegale() {
 
     return (
-        <MentionLegales />
+        <MentionsLegales />
     )
 }
 
