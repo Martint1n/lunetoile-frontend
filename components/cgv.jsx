@@ -9,7 +9,7 @@ const cgv = () => {
 
       <section className="space-y-4 border-b-2 pb-6">
         <h2 className="text-xl font-semibold">1. Identification</h2>
-        <p>Le présent site est édité par LEMAIRE Arthur</strong>, dont le siège social est situé <strong>9 Rue Pascal 78470 Saint-Rémy lès Chevreuse, immatriculé sous le numéro SIREN 954040648.</p>
+        <p>Le présent site est édité par LEMAIRE Arthur, dont le siège social est situé 9 Rue Pascal 78470 Saint-Rémy lès Chevreuse, immatriculé sous le numéro SIREN 954040648.</p>
         <p>Contact : <a href="mailto:arthur-bicyclette@live.fr" className="text-blue-600 underline">arthur-bicyclette@live.fr</a></p>
         <p>En passant commande sur le site <a href="https://lunetoile.fr" className="text-blue-600 underline">lunetoile.fr</a>, le client déclare avoir pris connaissance et accepté sans réserve les présentes Conditions Générales de Vente.</p>
       </section>
