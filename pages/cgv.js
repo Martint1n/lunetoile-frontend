@@ -3,11 +3,11 @@ import cgv from '../components/cgv';
 
 
 
-function cgv() {
+function cgvPage() {
 
     return (
         <cgv />
     )
 }
 
-export default cgv;
+export default cgvPage;
