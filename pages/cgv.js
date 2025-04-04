@@ -1,12 +1,12 @@
 import React from 'react'
-import cgv from '../components/cgv';
+import cgvTest from '../components/cgv'
 
 
 
 function cgvPage() {
 
     return (
-        <cgv />
+        <cgvTest />
     )
 }
 
