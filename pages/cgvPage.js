@@ -1,5 +1,5 @@
 import React from 'react'
-import Cgv from '../components/Cgv';
+import Cgv from '../components/cgv';
 
 
 
