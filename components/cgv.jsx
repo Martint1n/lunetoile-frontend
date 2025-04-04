@@ -3,14 +3,14 @@ import React from "react";
 const cgv = () => {
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg space-y-6">
-      <h1 className="text-3xl font-bold text-center border-b-4 pb-4">Conditions Générales de Vente</h1>
-      <h2 className="text-xl font-semibold text-center border-b-4 pb-4">Précommande Lunétoile</h2>
-      <p className="text-center text-gray-600">Dernière mise à jour : <strong>31 mars 2025</strong></p>
+      <h1 className="text-3xl font-bold border-b-4 pb-4">Conditions Générales de Vente</h1>
+      <h2 className="text-xl font-semibold border-b-4 pb-4">Précommande Lunétoile</h2>
+      <p className="text-gray-600">Dernière mise à jour : <strong>31 mars 2025</strong></p>
 
       <section className="space-y-4 border-b-2 pb-6">
         <h2 className="text-xl font-semibold">1. Identification</h2>
         <p>Le présent site est édité par LEMAIRE Arthur, dont le siège social est situé 9 Rue Pascal 78470 Saint-Rémy lès Chevreuse, immatriculé sous le numéro SIREN 954040648.</p>
-        <p>Contact : <a href="mailto:arthur-bicyclette@live.fr" className="text-blue-600 underline">arthur-bicyclette@live.fr</a></p>
+        <p>Contact : arthur-bicyclette@live.fr</p>
         <p>En passant commande sur le site <a href="https://lunetoile.fr" className="text-blue-600 underline">lunetoile.fr</a>, le client déclare avoir pris connaissance et accepté sans réserve les présentes Conditions Générales de Vente.</p>
       </section>
 
@@ -95,7 +95,7 @@ const cgv = () => {
 
       <section className="space-y-4 border-b-2 pb-6">
         <h2 className="text-xl font-semibold">11. Données personnelles</h2>
-        <p>Les données personnelles collectées sont utilisées uniquement pour traiter votre commande. Conformément au RGPD, vous disposez d’un droit d’accès, de rectification et de suppression en nous contactant à <a href="mailto:arthur-bicyclette@live.fr" className="text-blue-600 underline">arthur-bicyclette@live.fr</a>.</p>
+        <p>Les données personnelles collectées sont utilisées uniquement pour traiter votre commande. Conformément au RGPD, vous disposez d’un droit d’accès, de rectification et de suppression en nous contactant à arthur-bicyclette@live.fr.</p>
       </section>
 
       <section className="space-y-4">
