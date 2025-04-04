@@ -3,7 +3,7 @@ import Confidentialite from '../components/Confidentialite';
 
 
 
-function onfidentialite() {
+function confidentialite() {
 
     return (
         <Confidentialite />
