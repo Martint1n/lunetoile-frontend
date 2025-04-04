@@ -4,7 +4,7 @@ export const artistList = [
     picture: "yann.svg",
     firstName: "Yann",
     pseudo: "@arsene.ariel",
-    description: "Ceci est une description.",
+    description: "Arsène Ariel esquisse en noir et gris des images empreintes de mélancolie, où l’esthétique circassienne et le romantisme se mêlent à une influence traditionnelle.",
     key: 1,
   },
   {
@@ -12,7 +12,7 @@ export const artistList = [
     picture: "alice.svg",
     firstName: "Alice",
     pseudo: "@lullaby.ttt",
-    description: "Ceci est une description.2",
+    description: "Lullaby fusionne amour et morbide dans une esthétique creepycute teintée de poésie. Son style en constante évolution donne vie à des œuvres troublantes et touchantes.",
     key: 2,
   },
   {
@@ -20,7 +20,7 @@ export const artistList = [
     picture: "damien.svg",
     firstName: "Damien",
     pseudo: "@kaolin.ttt",
-    description: "Ceci est une description.3",
+    description: "Inspiré par les bleus cobalt de la porcelaine, Kaolin transforme les motifs céramiques en tatouages raffinés. Son style transmet la délicatesse des lignes classiques, réinterprétées avec finesse et modernité.",
     key: 3,
   },
   {
@@ -28,7 +28,7 @@ export const artistList = [
     picture: "agathe.svg",
     firstName: "Agathe",
     pseudo: "@poupeekipikdamour",
-    description: "Ceci est une description.4",
+    description: "Poupeekipikdamour tisse à main levée des ornements spontanés directement sur la peau. Elle lie avec tendresse art nouveau, formes libres et inspirations végétales.",
     key: 4,
   },
   {
@@ -36,7 +36,7 @@ export const artistList = [
     picture: "lea.svg",
     firstName: "Léa",
     pseudo: "@leclair_ttt",
-    description: "Ceci est une description.5",
+    description: "L’éclair compose des abstractions subtiles, alliant médiums graphiques et extraits de ses propres photographies urbaines ou végétales. Un travail autour du corps, des lignes et des courbes.",
     key: 5,
   },
   {
@@ -44,7 +44,7 @@ export const artistList = [
     picture: "martin.svg",
     firstName: "Martin",
     pseudo: "@10.tattoo",
-    description: "Ceci est une description.6",
+    description: "Dice explore la calligraphie et l’ornementation comme un langage intemporel. Inspiré par les symboles ancestraux et l’abstraction, il trace des compositions rigoureuses où formes et lettres s’entrelacent avec précision.",
     key: 6,
   },
   {
@@ -52,7 +52,7 @@ export const artistList = [
     picture: "zoe.svg",
     firstName: "Zoé",
     pseudo: "@zozita.slowpoke",
-    description: "Ceci est une description.7",
+    description: "Par la douceur du handpoke, Zozita inscrit sur la peau des motifs délicats et symboliques. Son travail marie ésotérisme, ornementation et géométrie sacrée.",
     key: 7,
   },
   {
@@ -60,7 +60,7 @@ export const artistList = [
     picture: "ina.svg",
     firstName: "Ina",
     pseudo: "@aim_dessire",
-    description: "Ceci est une description.8",
+    description: "Inna associe son goût pour les motifs floraux et tribaux à un univers plus personnel, astral et surréaliste. Son trait épuré mêle abstraction et narration, créant des tatouages oniriques à la fois évocateurs et sensibles.",
     key: 8,
   },
 ];
