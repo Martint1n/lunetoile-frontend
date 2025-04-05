@@ -70,7 +70,7 @@ function ArtistCard({ artists }) {
                   {artist.firstName}
                 </p>
                 <p className="body-l text-gold text-lg">{artist.pseudo}</p>
-                <p className="body-l text-lightGrey px-2 lg:px-4">
+                <p className="body-l text-lightGrey text-md px-2 lg:px-4">
                   {artist.description}
                 </p>
               </div>
