@@ -41,6 +41,12 @@ function App({ Component, pageProps }) {
             <link rel="shortcut icon" href="/LogoLunétoile.svg" />
             <meta name="description" content="82 artistes - Un objet unique. Précommande disponible jusqu’au 04 mai"/>
             <meta name="viewport" content="width=device-width, initial-scale=1.0, orientation=portrait "/>
+
+            <meta property="og:title" content="Lunétoile" />
+            <meta property="og:description" content="82 artistes - Un objet unique. Précommande disponible jusqu’au 04 mai" />
+            <meta property="og:image" content="/MiniaLunétoile.svg" />
+            <meta property="og:url" content="https://www.lunetoile.fr" />
+            <meta property="og:type" content="website" />
           </Head>
           {getLayout(<Component {...pageProps} />)}
           </NextUIProvider>
