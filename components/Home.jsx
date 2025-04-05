@@ -106,7 +106,7 @@ function Home() {
       </div>
       <div className="flex flex-col justify-center items-center my-24 sm:my-32 2xl:my-48 animate-fade-in-up px-8">
         <Image
-          src="/lune.svg"
+          src="/coeur.svg"
           width={24}
           height={24}
           alt="moon icon"
@@ -154,7 +154,7 @@ function Home() {
       <div className="flex flex-col xl:flex-row animate-fade-in-up items-end 2xl:items-center">
         <div className="flex flex-col items-center xl:items-start px-6 sm:px-12 pt-12 xl:w-[50vw] 2xl:w-[40vw] xl:justify-center my-8">
           <div className="mb-8">
-            <Image src="/coeur.svg" width={24} height={24} alt="heart icon" />
+            <Image src="/lune.svg" width={24} height={24} alt="heart icon" />
           </div>
           <div className="flex flex-col gap-6 sm:gap-8">
             <h2 className="font-cormorant text-[30px] md:text-[36px] lg:text-[45px] xl:text-[55px] 2xl:text-[61px] leading-[32px] sm:leading-[36px] md:leading-[42px] lg:leading-[52px] xl:leading-[65px] 2xl:leading-[74px]">
