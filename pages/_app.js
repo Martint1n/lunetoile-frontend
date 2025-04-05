@@ -48,7 +48,7 @@ function App({ Component, pageProps }) {
 
             <meta property="og:title" content="Lunétoile" />
             <meta property="og:description" content="82 artistes - Un objet unique. Précommande disponible jusqu’au 04 mai" />
-            <meta property="og:image" content="/MiniaLunétoile.svg" />
+            <meta property="og:image" content="/LogoLunétoile.svg" />
             <meta property="og:url" content="https://www.lunetoile.fr" />
             <meta property="og:type" content="website" />
           </Head>
