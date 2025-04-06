@@ -122,7 +122,7 @@ function Home() {
             </p>
           </div>
         </div>
-        <div className="mt-8">
+        <div className="mt-12">
           <PreOrderButton color="bg-black" text="text-white" />
         </div>
       </div>
@@ -167,7 +167,7 @@ function Home() {
                 Imprimé en <strong>offset de précision</strong> et présenté dans un étui rigide avec fenêtre frontale, il est <strong>entièrement fabriqué en France</strong>.
                 <br />
                 <br />
-                <ul className="list-disc mb-4 ml-4">
+                <ul className="list-disc mb-4 ml-4 text-lightGrey">
                   <li><strong>84 cartes</strong> au format <strong>63 × 88 mm</strong></li>
                   <li>Papier couché 300 g/m²</li>
                   <li>Pelliculage Soft Touch</li>
