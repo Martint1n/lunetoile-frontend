@@ -162,26 +162,24 @@ function Home() {
             </h2>
             <div className="flex flex-col gap-4 items-center 2xl:items-start mb-12">
               <div className="body-xl 2xl:body-2xl pl-0 text-left ">
-              Lunétoile est une pièce de collection en tirage ultra limité, conçu avec une exigence de qualité et de respect de l’environnement à chaque étape.
+              Lunétoile est une <strong>pièce de collection</strong> en tirage <strong>ultra limité</strong>, conçu avec une <strong>exigence de qualité</strong> et de <strong>respect de l’environnement</strong> à chaque étape.
                 <br />
                 <br />
-                Imprimé en offset de précision et présenté dans un étui rigide avec fenêtre frontale, il est entièrement fabriqué en France.
+                Imprimé en <strong>offset de précision</strong> et présenté dans un étui rigide avec fenêtre frontale, il est <strong>entièrement fabriqué en France</strong>.
                 <br />
                 <br />
                 <ul className="list-disc mb-4 ml-4">
-                  <li>84 cartes au format 63 × 88 mm</li>
+                  <li><strong>84 cartes</strong> au format <strong>63 × 88 mm</strong></li>
                   <li>Papier couché 300 g/m²</li>
                   <li>Pelliculage Soft Touch</li>
-                  <li>Dorure à chaud : 100 % des versos dorés, 33 cartes dorées au recto</li>
+                  <li><strong>Dorure à chaud</strong> : 100 % des versos dorés, 33 cartes dorées au recto</li>
                   <li>1 carte exclusive en dorure argentée</li>
                   <li>4 cartes signature combinant dorure or et argent</li>
                 </ul>
-                <br />
-                <br />
-                <strong>Exclusivement durant laa précommande</strong>
+                <strong>Exclusivement durant la précommande</strong>
                 <ul className="list-disc mb-4 ml-4">
                   <li>Livraison gratuite</li>
-                  <li>Carte d’authenticité numérotée à la main</li>
+                  <li>Carte d’authenticité <strong>numérotée à la main</strong></li>
                 </ul>
               </div>
               <PreOrderButton color="bg-black" text="text-white" />
