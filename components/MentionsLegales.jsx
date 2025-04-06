@@ -21,10 +21,9 @@ const MentionsLegales = () => {
       
       <section className="space-y-4  pb-6">
         <h2 className="text-xl font-semibold">Hébergement</h2>
-        <p>Hébergeur : o2switch</p>
-        <p>Adresse : 222 Boulevard Gustave Flaubert, 63000 Clermont-Ferrand, France</p>
-        <p>Téléphone : 04 44 44 60 40</p>
-        <p>Site web : <a href="https://www.o2switch.fr" className="text-blue-600 underline">https://www.o2switch.fr</a></p>
+        <p>Hébergeur : Vercel Inc.</p>
+        <p>Adresse : 440 N Barranca Avenue #4133 Covina, CA 91723 United States</p>
+        <p>Site web : <a href="https://www.vercel.com" className="text-blue-600 underline">https://www.vercel.com</a></p>
       </section>
       
       <section className="space-y-4  pb-6">

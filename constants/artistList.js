@@ -16,19 +16,19 @@ export const artistList = [
     key: 2,
   },
   {
-    card: "yanncard.webp",
-    picture: "yann.svg",
-    firstName: "Yann",
-    pseudo: "@arsene.ariel",
-    description: "Arsène Ariel esquisse en noir et gris des images empreintes de mélancolie, où l’esthétique circassienne et le romantisme se mêlent à une influence traditionnelle.",
-    key: 3,
-  },
-  {
     card: "agathecard.webp",
     picture: "agathe.svg",
     firstName: "Agathe",
     pseudo: "@poupeekipikdamour",
     description: "Poupeekipikdamour tisse à main levée des ornements spontanés directement sur la peau. Elle lie avec tendresse art nouveau, formes libres et inspirations végétales.",
+    key: 3,
+  },
+  {
+    card: "yanncard.webp",
+    picture: "yann.svg",
+    firstName: "Arsène",
+    pseudo: "@arsene.ariel",
+    description: "Arsène Ariel esquisse en noir et gris des images empreintes de mélancolie, où l’esthétique circassienne et le romantisme se mêlent à une influence traditionnelle.",
     key: 4,
   },
   {
@@ -58,7 +58,7 @@ export const artistList = [
   {
     card: "inacard.webp",
     picture: "ina.svg",
-    firstName: "Ina",
+    firstName: "Inna",
     pseudo: "@aim_dessire",
     description: "Inna associe son goût pour les motifs floraux et tribaux à un univers plus personnel, astral et surréaliste. Son trait épuré mêle abstraction et narration, créant des tatouages oniriques à la fois évocateurs et sensibles.",
     key: 8,
