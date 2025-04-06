@@ -39,7 +39,7 @@ function ArtistCard({ artists }) {
           userSelect: "none",
         }}
       >
-        <div className="flex gap-8 lg:gap-12 py-4 lg:px-12 h-full">
+        <div className="flex gap-6 lg:gap-12 py-4 lg:px-12 h-full">
           {artists.map((artist, index) => (
             <div
               key={`${artist.key}-${index}`}
