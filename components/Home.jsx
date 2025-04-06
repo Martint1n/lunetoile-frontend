@@ -162,16 +162,23 @@ function Home() {
             </h2>
             <div className="flex flex-col gap-4 items-center 2xl:items-start mb-12">
               <div className="body-xl 2xl:body-2xl pl-0 text-left ">
-                La production est assurée en France en <strong>tirage ultra limité</strong>, avec
-                une exigence constante de <strong>qualité</strong> et de <strong>respect de
-                l'environnement</strong> à toutes les étapes.
+              Lunétoile est une pièce de collection en tirage ultra limité, conçu avec une exigence de qualité et de respect de l’environnement à chaque étape.
                 <br />
                 <br />
-                Chaque exemplaire est accompagné d’une <strong>carte d'authenticité
-                numérotée à la main</strong>.
+                Imprimé en offset de précision et présenté dans un étui rigide avec fenêtre frontale, il est entièrement fabriqué en France.
                 <br />
                 <br />
-                <strong>Bonus de précommande</strong>
+                <ul className="list-disc mb-4 ml-4">
+                  <li>84 cartes au format 63 × 88 mm</li>
+                  <li>Papier couché 300 g/m²</li>
+                  <li>Pelliculage Soft Touch</li>
+                  <li>Dorure à chaud : 100 % des versos dorés, 33 cartes dorées au recto</li>
+                  <li>1 carte exclusive en dorure argentée</li>
+                  <li>4 cartes signature combinant dorure or et argent</li>
+                </ul>
+                <br />
+                <br />
+                <strong>Exclusivement durant laa précommande</strong>
                 <ul className="list-disc mb-4 ml-4">
                   <li>Livraison gratuite</li>
                   <li>Carte d’authenticité numérotée à la main</li>

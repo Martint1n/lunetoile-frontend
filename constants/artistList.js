@@ -59,7 +59,7 @@ export const artistList = [
     card: "inacard.webp",
     picture: "ina.svg",
     firstName: "Inna",
-    pseudo: "@aim_dessire",
+    pseudo: "@dessire_inna",
     description: "Inna associe son goût pour les motifs floraux et tribaux à un univers plus personnel, astral et surréaliste. Son trait épuré mêle abstraction et narration, créant des tatouages oniriques à la fois évocateurs et sensibles.",
     key: 8,
   },
