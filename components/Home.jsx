@@ -54,11 +54,11 @@ function Home() {
         </div>
 
         <p className="body-xl 2xl:body-2xl text-center px-4 sm:px-6 mb-12 w-[90vw] sm:w-[80vw] 2xl:w-[60vw] 2xl:self-center animate-fade-in-up animation-delay-200 mx-auto">
-          Signé par 82 artistes de la scène tattoo francilienne, Lunétoile est
-          une constellation d’univers artistique.
+          <strong>Signé par 82 artistes</strong> de la scène tattoo francilienne, Lunétoile est
+          une <strong>constellation d’univers artistique</strong>.
           <br />
           Chaque carte est le reflet d'une vision singulière, au service d'une
-          direction artistique unique, créant une harmonieuse diversité.
+          <strong>direction artistique unique</strong>, créant une harmonieuse diversité.
         </p>
         <ArtistCard artists={artistList} />
         <div className="flex justify-center animate-fade-in-up animation-delay-200 my-12">
@@ -78,8 +78,8 @@ function Home() {
             UNE EXPANSION DE <span className="text-gold">L'IMAGINAIRE</span>
           </div>
           <p className="body-xl 2xl:body-2xl text-white 2xl:max-w-[500px]">
-            54 cartes traditionnelles (Pique, Trèfle, Cœur, Carreau) sont
-            rejoints par 27 cartes inédites réparties en deux nouvelles
+          <strong>54 cartes traditionnelles</strong> (Pique, Trèfle, Cœur, Carreau) sont
+            rejoints par <strong>27 cartes inédites</strong> réparties en deux nouvelles
             enseignes : <strong>Lune</strong> et <strong>Étoile</strong>.
             <br />
             Les cartes de Lune et d'Étoile enrichissent le jeu classique,
@@ -118,7 +118,7 @@ function Home() {
             <span className="text-gold">SOUTENIR</span> ET <span className="text-gold">DÉCOUVRIR</span> LA SCÈNE
             TATOUAGE LOCALE
             <p className="mt-4 font-montserrat font-normal text-[16px] leading-normal">
-              Bénéficiez de 10% de réduction sur les tatouages des artistes du catalogue
+              Bénéficiez de <strong>10% de réduction</strong> sur les tatouages des artistes du catalogue
             </p>
           </div>
         </div>
@@ -162,13 +162,13 @@ function Home() {
             </h2>
             <div className="flex flex-col gap-4 items-center 2xl:items-start mb-12">
               <div className="body-xl 2xl:body-2xl pl-0 text-left ">
-                La production est assurée en France en tirage ultra limité, avec
-                une exigence constante de qualité et de respect de
-                l'environnement à toutes les étapes.
+                La production est assurée en France en <strong>tirage ultra limité</strong>, avec
+                une exigence constante de <strong>qualité</strong> et de <strong>respect de
+                l'environnement</strong> à toutes les étapes.
                 <br />
                 <br />
-                Chaque exemplaire est accompagné d’une carte d'authenticité
-                numérotée à la main.
+                Chaque exemplaire est accompagné d’une <strong>carte d'authenticité
+                numérotée à la main</strong>.
                 <br />
                 <br />
                 <strong>Bonus de précommande</strong>
