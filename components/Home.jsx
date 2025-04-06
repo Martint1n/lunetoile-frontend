@@ -167,7 +167,8 @@ function Home() {
                 Imprimé en <strong>offset de précision</strong> et présenté dans un étui rigide avec fenêtre frontale, il est <strong>entièrement fabriqué en France</strong>.
                 <br />
                 <br />
-                <ul className="list-disc mb-4 ml-4 text-lightGrey">
+                <span className="text-[18px]"><strong>Caractéristiques techniques</strong> :</span>
+                <ul className="list-disc mb-4 ml-4 text-lightGrey italic">
                   <li><strong>84 cartes</strong> au format <strong>63 × 88 mm</strong></li>
                   <li>Papier couché 300 g/m²</li>
                   <li>Pelliculage Soft Touch</li>
