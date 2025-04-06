@@ -1,22 +1,20 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-'use client';
-import { useRouter } from 'next/navigation';
 
 const Cgventes = () => {
-  const router = useRouter();
   return (
     <div className="max-w-4xl mx-auto bg-white rounded-lg space-y-6">
       <div className="sticky top-0 p-6 bg-white flex flex-col justify-end items-center">
+        <Link href={"/"}>
           <Image
-            onClick={() => router.back()}
             src="/logoblack.svg"
             width={172}
             height={42}
             alt="Lunétoile Logo"
             className="mb-4 w-[120px] lg:w-[144px]"
           />
+        </Link>
       </div>
       <h1 className="text-3xl font-bold pb-4">Conditions Générales de Vente</h1>
       <h2 className="text-xl font-semibold  pb-4">Précommande Lunétoile</h2>
