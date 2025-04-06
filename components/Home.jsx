@@ -16,8 +16,8 @@ function Home() {
           <div className="font-cormorant text-[40px] lg:text-[50px] xl:text-[60px] 2xl:text-[65px] leading-[36px] sm:leading-[40px] md:leading-[48px] lg:leading-[58px] xl:leading-[68px] 2xl:leading-[75px] text-center animate-fade-in-up animation-delay-200 text-white">
             PLUS QU'UN <span className="text-gold">JEU DE CARTES</span>
           </div>
-          <p className="body-xl 2xl:body-2xl text-white text-center mt-8 mb-12 max-w-[90vw] sm:max-w-[80vw] 2xl:max-w-[800px] animate-fade-in-up animation-delay-300">
-            Lunétoile est une œuvre collective qui réinvente l’imaginaire
+          <p className="body-xl 2xl:body-2xl text-lg text-white text-center mt-8 mb-12 max-w-[90vw] sm:max-w-[80vw] 2xl:max-w-[800px] animate-fade-in-up animation-delay-300">
+            Lunétoile est une <strong>œuvre collective</strong> qui réinvente l’imaginaire
             iconique des cartes à jouer.
           </p>
           <div className="relative z-10 mb-32 animate-fade-in-up animation-delay-500">
@@ -112,13 +112,13 @@ function Home() {
           alt="moon icon"
           className="text-gold my-8"
         />
-        <div className="font-cormorant font-bold tracking-wide text-center text-[30px] leading-[36px] 2xl:text-[55px] 2xl:leading-[65px]">
+        <div className="font-cormorant tracking-wide text-center text-[30px] leading-[36px] 2xl:text-[55px] 2xl:leading-[65px]">
           <div className=" ">
             UN MOYEN ORIGINAL DE{" "}
-            <span className="text-gold">SOUTENIR ET DÉCOUVRIR</span> LA SCÈNE
+            <span className="text-gold">SOUTENIR</span> ET <span className="text-gold">DÉCOUVRIR</span> LA SCÈNE
             TATOUAGE LOCALE
             <p className="text-lg mt-4 font-montserrat font-normal">
-              10% de réduction chez les tatoueurs du catalogue
+              Bénéficiez de 10% de réduction sur les tattouages des artistes du catalogue
             </p>
           </div>
         </div>
