@@ -5,7 +5,7 @@ import Link from "next/link";
 const Cgventes = () => {
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg space-y-6">
-      <div className="sticky top-6 bg-white flex flex-col justify-end items-center">
+      <div className="sticky top-0 mt-6 bg-white flex flex-col justify-end items-center">
         <Link href={"/"}>
           <Image
             src="/logoblack.svg"
