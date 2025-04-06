@@ -53,7 +53,7 @@ function Home() {
           </h2>
         </div>
 
-        <p className="body-xl 2xl:body-2xl px-4 sm:px-6 mb-12 w-[90vw] sm:w-[80vw] 2xl:w-[60vw] 2xl:self-center animate-fade-in-up animation-delay-200 mx-auto">
+        <p className="body-xl 2xl:body-2xl text-center px-4 sm:px-6 mb-12 w-[90vw] sm:w-[80vw] 2xl:w-[60vw] 2xl:self-center animate-fade-in-up animation-delay-200 mx-auto">
           Signé par 82 artistes de la scène tattoo francilienne, Lunétoile est
           une constellation d’univers artistique.
           <br />
@@ -117,7 +117,7 @@ function Home() {
             UN MOYEN ORIGINAL DE{" "}
             <span className="text-gold">SOUTENIR</span> ET <span className="text-gold">DÉCOUVRIR</span> LA SCÈNE
             TATOUAGE LOCALE
-            <p className="mt-4 font-montserrat font-normal">
+            <p className="mt-4 font-montserrat">
               Bénéficiez de 10% de réduction sur les tatouages des artistes du catalogue
             </p>
           </div>
