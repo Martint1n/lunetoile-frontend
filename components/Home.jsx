@@ -16,7 +16,7 @@ function Home() {
           <div className="font-cormorant text-[40px] lg:text-[50px] xl:text-[60px] 2xl:text-[65px] leading-[36px] sm:leading-[40px] md:leading-[48px] lg:leading-[58px] xl:leading-[68px] 2xl:leading-[75px] text-center animate-fade-in-up animation-delay-200 text-white">
             PLUS QU'UN <span className="text-gold">JEU DE CARTES</span>
           </div>
-          <p className="body-xl 2xl:body-2xl xl:text-lg text-white xl:text-center mt-8 mb-12 max-w-[90vw] sm:max-w-[80vw] 2xl:max-w-[800px] animate-fade-in-up animation-delay-300">
+          <p className="body-xl 2xl:body-2xl xl:text-lg text-white text-center mt-8 mb-12 max-w-[90vw] sm:max-w-[80vw] 2xl:max-w-[800px] animate-fade-in-up animation-delay-300">
             Lunétoile est une <strong>œuvre collective</strong> qui réinvente l’imaginaire
             iconique des cartes à jouer.
           </p>
@@ -117,7 +117,7 @@ function Home() {
             UN MOYEN ORIGINAL DE{" "}
             <span className="text-gold">SOUTENIR</span> ET <span className="text-gold">DÉCOUVRIR</span> LA SCÈNE
             TATOUAGE LOCALE
-            <p className="body-xl 2xl:body-2xl mt-4 font-montserrat font-normal text-[16px]">
+            <p className="mt-4 font-montserrat font-normal text-[16px] leading-none">
               Bénéficiez de 10% de réduction sur les tatouages des artistes du catalogue
             </p>
           </div>
