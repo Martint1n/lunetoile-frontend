@@ -168,7 +168,7 @@ function Home() {
                 <br />
                 <br />
                 <span className="text-[18px]"><strong>Caractéristiques techniques</strong> :</span>
-                <ul className="list-disc mb-4 ml-4 text-lightGrey italic">
+                <ul className="list-disc mb-4 ml-4 italic">
                   <li><strong>84 cartes</strong> au format <strong>63 × 88 mm</strong></li>
                   <li>Papier couché 300 g/m²</li>
                   <li>Pelliculage Soft Touch</li>
