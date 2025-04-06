@@ -180,7 +180,7 @@ const PreorderForm = () => {
   return (
     <div className="bg-midBlue min-h-screen py-12 font-montserrat">
       <div className="flex flex-col items-center ">
-        <Link href={"/"}>
+        <Link href={`/${artist}`}>
           <Image
             src="/logo.svg"
             width={300}
