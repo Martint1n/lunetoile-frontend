@@ -117,7 +117,7 @@ function Home() {
             UN MOYEN ORIGINAL DE{" "}
             <span className="text-gold">SOUTENIR</span> ET <span className="text-gold">DÉCOUVRIR</span> LA SCÈNE
             TATOUAGE LOCALE
-            <p className="mt-4 font-montserrat font-normal text-[16px] leading-normal">
+            <p className="mt-12 font-montserrat font-normal text-[16px] leading-normal">
               Bénéficiez de <strong>10% de réduction</strong> sur les tatouages des artistes du catalogue
             </p>
           </div>
@@ -163,8 +163,6 @@ function Home() {
             <div className="flex flex-col gap-4 items-center 2xl:items-start mb-12">
               <div className="body-xl 2xl:body-2xl pl-0 text-left ">
               Lunétoile est une <strong>pièce de collection</strong> en tirage <strong>ultra limité</strong>, conçu avec une <strong>exigence de qualité</strong> et de <strong>respect de l’environnement</strong> à chaque étape.
-                <br />
-                <br />
                 Imprimé en <strong>offset de précision</strong> et présenté dans un étui rigide avec fenêtre frontale, il est <strong>entièrement fabriqué en France</strong>.
                 <br />
                 <br />
@@ -176,7 +174,7 @@ function Home() {
                   <li>1 carte exclusive en dorure argentée</li>
                   <li>4 cartes signature combinant dorure or et argent</li>
                 </ul>
-                <strong>Exclusivement durant la précommande</strong>
+                <span className="text-[18px]"><strong>Exclusivement durant la précommande</strong> :</span>
                 <ul className="list-disc mb-4 ml-4">
                   <li>Livraison gratuite</li>
                   <li>Carte d’authenticité <strong>numérotée à la main</strong></li>
