@@ -1,14 +1,13 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 const Cgventes = () => {
   const router = useRouter();
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg space-y-6">
       <div className="sticky top-0 bg-white flex flex-col justify-end items-center">
-        <Link href={router.back()}>
+        <Link href={"/"}>
           <Image
             src="/logoblack.svg"
             width={144}
