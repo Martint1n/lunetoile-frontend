@@ -169,7 +169,7 @@ function Home() {
                 <br />
                 <span className="text-[18px]"><strong>Caractéristiques techniques</strong> :</span>
                 <ul className="list-disc mb-4 ml-4 italic">
-                  <li><strong>84 cartes</strong> au format <strong>63 × 88 mm</strong></li>
+                  <li className="mt-2"><strong>84 cartes</strong> au format <strong>63 × 88 mm</strong></li>
                   <li>Papier couché 300 g/m²</li>
                   <li>Pelliculage Soft Touch</li>
                   <li><strong>Dorure à chaud</strong> : 100 % des versos dorés, 33 cartes dorées au recto</li>
@@ -178,7 +178,7 @@ function Home() {
                 </ul>
                 <span className="text-[18px]"><strong>Exclusivement durant la précommande</strong> :</span>
                 <ul className="list-disc mb-4 ml-4">
-                  <li>Livraison gratuite</li>
+                  <li className="mt-2">Livraison gratuite</li>
                   <li>Carte d’authenticité <strong>numérotée à la main</strong></li>
                 </ul>
               </div>
