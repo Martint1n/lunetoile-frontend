@@ -1,10 +1,10 @@
 export const artistList = [
   {
-    card: "yanncard.webp",
-    picture: "yann.svg",
-    firstName: "Yann",
-    pseudo: "@arsene.ariel",
-    description: "Arsène Ariel esquisse en noir et gris des images empreintes de mélancolie, où l’esthétique circassienne et le romantisme se mêlent à une influence traditionnelle.",
+    card: "damiencard.webp",
+    picture: "damien.svg",
+    firstName: "Damien",
+    pseudo: "@kaolin.ttt",
+    description: "Inspiré par les bleus cobalt de la porcelaine, Kaolin transforme les motifs céramiques en tatouages raffinés. Son style transmet la délicatesse des lignes classiques, réinterprétées avec finesse et modernité.",
     key: 1,
   },
   {
@@ -16,11 +16,11 @@ export const artistList = [
     key: 2,
   },
   {
-    card: "damiencard.webp",
-    picture: "damien.svg",
-    firstName: "Damien",
-    pseudo: "@kaolin.ttt",
-    description: "Inspiré par les bleus cobalt de la porcelaine, Kaolin transforme les motifs céramiques en tatouages raffinés. Son style transmet la délicatesse des lignes classiques, réinterprétées avec finesse et modernité.",
+    card: "yanncard.webp",
+    picture: "yann.svg",
+    firstName: "Yann",
+    pseudo: "@arsene.ariel",
+    description: "Arsène Ariel esquisse en noir et gris des images empreintes de mélancolie, où l’esthétique circassienne et le romantisme se mêlent à une influence traditionnelle.",
     key: 3,
   },
   {
