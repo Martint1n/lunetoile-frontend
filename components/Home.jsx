@@ -162,7 +162,8 @@ function Home() {
             </h2>
             <div className="flex flex-col gap-4 items-center 2xl:items-start mb-12">
               <div className="body-xl 2xl:body-2xl pl-0 text-left ">
-              Lunétoile est une <strong>pièce de collection</strong> en tirage <strong>ultra limité</strong>, conçu avec une <strong>exigence de qualité</strong> et de <strong>respect de l’environnement</strong> à chaque étape.
+                Lunétoile est une <strong>pièce de collection</strong> en tirage <strong>ultra limité</strong>, conçu avec une <strong>exigence de qualité</strong> et de <strong>respect de l’environnement</strong> à chaque étape.
+                <br />
                 Imprimé en <strong>offset de précision</strong> et présenté dans un étui rigide avec fenêtre frontale, il est <strong>entièrement fabriqué en France</strong>.
                 <br />
                 <br />
