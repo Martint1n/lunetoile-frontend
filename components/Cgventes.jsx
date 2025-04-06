@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Cgventes = () => {
-  const router = useRouter();
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg space-y-6">
       <div className="sticky top-0 bg-white flex flex-col justify-end items-center">
