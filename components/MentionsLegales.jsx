@@ -2,7 +2,18 @@ import React from "react";
 
 const MentionsLegales = () => {
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg space-y-6">
+    <div className="max-w-4xl mx-auto bg-white shadow-md rounded-lg space-y-6">
+            <div className="sticky top-0 p-6 bg-white flex flex-col justify-end items-center">
+              <Link href={"/"}>
+                <Image
+                  src="/logoblack.svg"
+                  width={172}
+                  height={42}
+                  alt="Lunétoile Logo"
+                  className="mb-4 w-[120px] lg:w-[144px]"
+                />
+              </Link>
+            </div>
       <h1 className="text-3xl font-bold  pb-4">Mentions Légales</h1>
       
       <section className="space-y-4  pb-6">
