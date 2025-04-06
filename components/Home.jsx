@@ -117,7 +117,7 @@ function Home() {
             UN MOYEN ORIGINAL DE{" "}
             <span className="text-gold">SOUTENIR</span> ET <span className="text-gold">DÉCOUVRIR</span> LA SCÈNE
             TATOUAGE LOCALE
-            <p className="mt-4 font-montserrat font-normal text-[16px] leading-none">
+            <p className="mt-4 font-montserrat font-normal text-[16px] leading-normal">
               Bénéficiez de 10% de réduction sur les tatouages des artistes du catalogue
             </p>
           </div>
