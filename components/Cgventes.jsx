@@ -3,7 +3,7 @@ import React from "react";
 const Cgventes = () => {
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg space-y-6">
-      <div className="sticky top-0 bg-white z-50">
+      <div className="sticky top-0 bg-white">
         Je reste collée en haut quand on scroll
       </div>
       <h1 className="text-3xl font-bold pb-4">Conditions Générales de Vente</h1>

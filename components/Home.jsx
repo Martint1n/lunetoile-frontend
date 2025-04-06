@@ -58,7 +58,7 @@ function Home() {
           une <strong>constellation d’univers artistique</strong>.
           <br />
           Chaque carte est le reflet d'une vision singulière, au service d'une
-          <strong>direction artistique unique</strong>, créant une harmonieuse diversité.
+          <strong> direction artistique unique</strong>, créant une harmonieuse diversité.
         </p>
         <ArtistCard artists={artistList} />
         <div className="flex justify-center animate-fade-in-up animation-delay-200 my-12">
