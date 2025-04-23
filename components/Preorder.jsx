@@ -287,7 +287,7 @@ const PreorderForm = () => {
               autoComplete="tel"
               pattern="\d*"
               name="phoneNumber"
-              label="Télélphone"
+              label="Téléphone"
               value={inputValues.phoneNumber}
               onChange={handleInputChange}
               className="max-w-full"
