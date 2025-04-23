@@ -52,7 +52,7 @@ export default function Stripe({
       }
 
       const response = await fetch(
-        "http://localhost:3000/testpayment/create-checkout-session",
+        "https://lunetoile-backend.vercel.app/testpayment/create-checkout-session",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
