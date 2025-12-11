@@ -25,7 +25,7 @@ function PreOrderButton({
       <button
         className={`${color} ${text} rounded-full font-montserrat font-bold flex items-center justify-center ${hoverBg} ${hoverText} transition-all duration-300 px-8 py-4 whitespace-nowrap`}
       >
-        <span className="body-xl tracking-wide">Précommander</span>
+        <span className="body-xl tracking-wide">Commander</span>
       </button>
     </Link>
   );
