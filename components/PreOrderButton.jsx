@@ -21,7 +21,7 @@ function PreOrderButton({ color = 'bg-gold', text = 'text-black', hoverBg = 'hov
         <Link href={preorderLink} className="sm:w-[200px]">
             <button className={`${color} ${text} rounded-3xl min-h-[56px] sm:min-h-[48px] font-montserrat font-bold flex items-center justify-center ${hoverBg} ${hoverText} transition-all duration-300 px-4 sm:px-8 whitespace-nowrap`}>
                 <span className="body-m sm:body-s tracking-wide">
-                    Précommander
+                    Commander
                 </span>
             </button>
         </Link>
